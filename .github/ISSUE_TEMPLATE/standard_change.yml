@@ -1,0 +1,72 @@
+name: Standard change
+description: Propose an improvement, feature, or process change
+title: "Change: "
+labels:
+  - enhancement
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for improvements to the AI Handoff standard or repository workflow.
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or opportunity
+      description: What future pain or limitation does this address?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed change
+      description: What should change?
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Standard text
+        - GitHub workflow
+        - Issue template
+        - Pull Request template
+        - ai/ memory structure
+        - Handoff protocol
+        - Smoke tests
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Which simpler or different options were considered?
+    validations:
+      required: false
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What must be true when this is done?
+      placeholder: |
+        - [ ] ...
+        - [ ] ...
+    validations:
+      required: true
+  - type: textarea
+    id: migration
+    attributes:
+      label: Migration or compatibility notes
+      description: Does this affect existing repositories using the standard?
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submit checks
+      options:
+        - label: I checked for an existing related issue.
+          required: true
+        - label: I did not include private access values.
+          required: true
