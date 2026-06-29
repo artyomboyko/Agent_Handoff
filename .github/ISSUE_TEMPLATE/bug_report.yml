@@ -1,0 +1,65 @@
+name: Bug report
+description: Report a problem in the standard, templates, or repository structure
+title: "Bug: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a problem. Please keep the report focused and actionable.
+  - type: textarea
+    id: current
+    attributes:
+      label: Current behavior
+      description: What is wrong now?
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What should happen instead?
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce or inspect
+      description: List files, sections, commands, or UI steps.
+      placeholder: |
+        1. Open ...
+        2. Check ...
+        3. Observe ...
+    validations:
+      required: true
+  - type: dropdown
+    id: area
+    attributes:
+      label: Affected area
+      options:
+        - Standard text
+        - AGENTS.md
+        - ai/ memory files
+        - Handoff protocol
+        - GitHub templates
+        - Repository structure
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: Risk
+      description: Why does this matter for future agents or maintainers?
+    validations:
+      required: false
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submit checks
+      options:
+        - label: I checked for an existing related issue.
+          required: true
+        - label: I did not include private access values.
+          required: true
