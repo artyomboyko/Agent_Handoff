@@ -1,8 +1,8 @@
 # AI Handoff
 
-AI Handoff is a compact standard for passing development state between AI coding agents through GitHub, Git, and small repository-tracked memory files.
+AI Handoff is a compact standard for passing project context between AI coding agents through GitHub, Git, and small repository-tracked memory files.
 
-AI Handoff — компактный стандарт передачи состояния разработки между AI-агентами через GitHub, Git и небольшие файлы памяти внутри репозитория.
+AI Handoff — компактный стандарт передачи проектного контекста между AI-агентами через GitHub, Git и небольшие файлы памяти внутри репозитория.
 
 ## Language / Язык
 
@@ -17,10 +17,10 @@ Version / версия: **1.1**
 
 | English | Русский |
 |---|---|
-| [AI Handoff Standard](AI_HANDOFF_STANDARD.md) | [Стандарт AI Handoff](docs/ru/AI_HANDOFF_STANDARD.md) |
-| [Agent entrypoint](AGENTS.md) | [Инструкция для агентов](docs/ru/AGENTS.md) |
-| [AI memory map](ai/README.md) | [Карта AI-памяти](docs/ru/README.md) |
-| [Workflow protocol](ai/HANDOFF_PROTOCOL.md) | [Протокол работы](docs/ru/HANDOFF_PROTOCOL.md) |
+| [AI Handoff Standard](AI_HANDOFF_STANDARD.md) | [Стандарт AI Handoff](docs/ru/RU_STANDARD_FULL.md) |
+| [Agent entrypoint](AGENTS.md) | [Инструкция](docs/ru/RU_GUIDE.md) |
+| [AI memory map](ai/README.md) | [Карта документов](docs/ru/README.md) |
+| [Workflow protocol](ai/HANDOFF_PROTOCOL.md) | [Протокол](docs/ru/PROTOCOL_RU.md) |
 
 ## Core model / Основная модель
 
@@ -35,7 +35,7 @@ handoffs/  = short snapshots of agent runs
 GitHub     = задачи, Pull Request, ревью, CI, обсуждения
 Git        = код, ветки, коммиты, diff, теги, история
 ai/        = компактная долговременная память проекта
-handoffs/  = короткие снимки агентских сессий
+handoffs/  = короткие снимки сессий
 ```
 
 Large data should stay in GitHub or Git, not in `ai/`.
