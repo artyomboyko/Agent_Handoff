@@ -1,2 +1,3 @@
-# AI_Handoff
-AI Handoff
+# AI Handoff
+
+Version 1.1 draft.
