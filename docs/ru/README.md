@@ -16,6 +16,13 @@
 - [Состояние проекта](PROJECT_RU.md)
 - [Решения](../../ai/DECISIONS.md)
 - [Refactoring workflow](../../ai/REFACTORING.md)
+- [FAQ](../../FAQ.md)
+- [Примеры](../../examples/README.md)
+- [Contributing](../../CONTRIBUTING.md)
+- [Security](../../SECURITY.md)
+- [Code of Conduct](../../CODE_OF_CONDUCT.md)
+- [Changelog](../../CHANGELOG.md)
+- [Настройки обнаружения репозитория](../../.github/REPOSITORY_SETTINGS.md)
 - [English](../en/README.md)
 
 ## Сценарий 1: новый репозиторий
