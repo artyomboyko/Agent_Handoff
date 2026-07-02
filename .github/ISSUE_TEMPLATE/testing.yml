@@ -1,7 +1,8 @@
 name: Validation / Проверка
-about: Checks / Проверки
+description: Checks / Проверки
 title: "Testing: "
-labels: [testing]
+labels:
+  - testing
 body:
   - type: dropdown
     id: language
