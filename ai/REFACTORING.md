@@ -40,3 +40,13 @@ A code cleanup Issue should include:
 - risk;
 - required checks;
 - related files or PRs.
+
+## Agent instruction
+
+Perform the code cleanup task described in the related GitHub Issue.
+
+Before editing, read `AGENTS.md`, `ai/README.md`, `ai/HANDOFF_PROTOCOL.md`, `ai/PROJECT_STATE.md`, `ai/DECISIONS.md`, `ai/REFACTORING.md`, the related Issue or PR, current branch, recent commits, and active handoffs.
+
+Keep external behavior unchanged unless the Issue explicitly allows it. Prefer small reviewable steps. Preserve public APIs and compatibility boundaries unless the Issue says otherwise. Do not mix unrelated product features with cleanup work. Keep `ai/` compact.
+
+Before finishing, run required checks, describe what changed and what was tested, list risks, and add a short handoff only when it helps the next agent.
