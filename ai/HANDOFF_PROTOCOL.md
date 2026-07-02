@@ -3,14 +3,14 @@ type: handoff_protocol
 version: 1
 status: active
 updated: 2026-07-02
-project: AI_Handoff
+project: Agent_Handoff
 ---
 
 # Handoff Protocol
 
 ## Start
 
-Read `AGENTS.md`, `AI_HANDOFF_STANDARD.md`, `ai/README.md`, `ai/AGENT_IDENTITY.md`, `ai/WORK_CLAIM_PROTOCOL.md`, `ai/PROJECT_STATE.md`, `ai/DECISIONS.md`, the related Issue or PR, current branch, recent commits, and `ai/handoffs/INDEX.md`.
+Read `AGENTS.md`, `AGENT_HANDOFF_STANDARD.md`, `ai/README.md`, `ai/AGENT_IDENTITY.md`, `ai/WORK_CLAIM_PROTOCOL.md`, `ai/PROJECT_STATE.md`, `ai/DECISIONS.md`, the related Issue or PR, current branch, recent commits, and `ai/handoffs/INDEX.md`.
 
 Choose `agent_name`, `agent_id`, and `run_id` before taking work.
 
