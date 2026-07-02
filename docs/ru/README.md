@@ -16,7 +16,7 @@
 - [Состояние проекта](PROJECT_RU.md)
 - [Решения](../../ai/DECISIONS.md)
 - [Refactoring workflow](../../ai/REFACTORING.md)
-- [FAQ](../../FAQ.md)
+- [FAQ](FAQ_RU.md)
 - [Примеры](../../examples/README.md)
 - [Promotion checklist](../PROMOTION_CHECKLIST.md)
 - [Contributing](../../CONTRIBUTING.md)
