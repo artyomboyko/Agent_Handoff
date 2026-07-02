@@ -3,7 +3,7 @@ type: work_claim_protocol
 version: 1
 status: active
 updated: 2026-07-02
-project: AI_Handoff
+project: Agent_Handoff
 ---
 
 # Work Claim Protocol
@@ -28,7 +28,7 @@ An agent must:
 ## Claim comment
 
 ```md
-## AI Handoff Work Claim
+## Agent Handoff Work Claim
 
 Agent: <agent_name>
 Agent ID: <agent_id>
@@ -47,7 +47,7 @@ Next update: <time or condition>
 For meaningful work, the agent should add short updates in the Issue or PR:
 
 ```md
-## AI Handoff Work Update
+## Agent Handoff Work Update
 
 Agent ID: <agent_id>
 Run ID: <run_id>
