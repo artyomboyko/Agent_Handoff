@@ -1,11 +1,33 @@
-name: Doc
-title: "Doc: "
+name: Documentation / Документация
+description: Improve docs / Улучшить документацию
+title: "Docs: "
 labels:
   - docs
 body:
-  - type: textarea
-    id: text
+  - type: dropdown
+    id: language
     attributes:
-      label: Text
+      label: Language / Язык
+      options:
+        - English
+        - Русский
     validations:
       required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: Documentation problem / Проблема в документации
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed text or change / Предлагаемый текст или изменение
+    validations:
+      required: true
+  - type: textarea
+    id: related
+    attributes:
+      label: Related page or file / Связанная страница или файл
+    validations:
+      required: false
