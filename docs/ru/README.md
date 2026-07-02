@@ -19,6 +19,7 @@
 - [FAQ](FAQ_RU.md)
 - [Примеры](../../examples/README.md)
 - [Promotion checklist](PROMOTION_CHECKLIST_RU.md)
+- [Community files](../COMMUNITY_FILES.md)
 - [Contributing](../../CONTRIBUTING.md)
 - [Security](../../SECURITY.md)
 - [Code of Conduct](../../CODE_OF_CONDUCT.md)
