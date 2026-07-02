@@ -2,7 +2,7 @@
 type: handoff_index
 version: 1
 status: active
-updated: 2026-06-29
+updated: 2026-07-02
 project: AI_Handoff
 ---
 
@@ -12,4 +12,5 @@ Read this index first. Do not read all handoff files blindly.
 
 | Date | Updated | Run | Issue | PR | Branch | Status | Relevance | Summary | File | Supersedes |
 |---|---|---|---|---|---|---|---|---|---|---|
+| 2026-07-02 | 2026-07-02 | refactoring-workflow | #4 | none | main | completed | active | Added refactoring workflow, issue form, and ai links | 2026-07-02_issue-4_no-pr_run-refactoring-workflow.md | |
 | 2026-06-29 | 2026-06-29 | initial-standard-1-1 | #1 | TBD | ai-handoff-standard-1-1 | completed | active | Added Standard 1.1 repository structure and templates | 2026-06-29_issue-1_pr-tbd_run-initial-standard-1-1.md | |
