@@ -2,7 +2,7 @@
 type: handoff_protocol
 version: 1
 status: active
-updated: 2026-06-29
+updated: 2026-07-02
 project: AI_Handoff
 ---
 
@@ -12,11 +12,15 @@ project: AI_Handoff
 
 Read `AGENTS.md`, `AI_HANDOFF_STANDARD.md`, `ai/README.md`, `ai/PROJECT_STATE.md`, `ai/DECISIONS.md`, the related Issue or PR, current branch, recent commits, and `ai/handoffs/INDEX.md`.
 
+If the task is code cleanup, file decomposition, renaming, dead-code removal, or internal restructuring, also read `ai/REFACTORING.md` before editing.
+
 ## Scope
 
 One meaningful work item should have one Issue, one branch, one PR, and one clear scope.
 
 Open a Draft PR early.
+
+For meaningful refactoring work, use a GitHub Issue with the `refactoring` label and keep task details in GitHub, not as a long backlog in `ai/REFACTORING.md`.
 
 ## Smoke tests
 
