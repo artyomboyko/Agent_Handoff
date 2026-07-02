@@ -28,7 +28,7 @@ Use workflow labels from `ai/GITHUB_WORKFLOW.md` when available.
 
 One meaningful work item should have one Issue, one branch, one PR, and one clear scope.
 
-Use branch names without `/`; example: `work-agent-identity-a91f`.
+Use meaningful branch names without `/`, Issue numbers, or random identifiers by default; example: `workflow-branch-naming`.
 
 Open a Draft PR early.
 
