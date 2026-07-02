@@ -21,7 +21,8 @@ Current ownership is written in GitHub.
 3. Check active handoffs. / Проверить активные handoffs.
 4. Choose `agent_name`, `agent_id`, and `run_id`. / Выбрать `agent_name`, `agent_id` и `run_id`.
 5. Leave a work claim comment. / Оставить work claim comment.
-6. Create a branch and Draft PR early. / Рано создать branch и Draft PR.
+6. Add coordinator and supervision fields. / Добавить поля coordinator и supervision.
+7. Create a branch and Draft PR early. / Рано создать branch и Draft PR.
 
 ## Claim comment / Claim comment
 
@@ -31,6 +32,8 @@ Current ownership is written in GitHub.
 Agent: <agent_name>
 Agent ID: <agent_id>
 Run ID: <run_id>
+Coordinator: <username or none>
+Supervision: autonomous | human-supervised | human-driven
 Started: YYYY-MM-DD HH:MM UTC
 Issue: #<issue-number>
 Branch: <branch-name>
