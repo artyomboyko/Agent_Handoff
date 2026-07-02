@@ -1,8 +1,6 @@
-# AI Handoff
+# Agent Handoff
 
-AI Handoff is a compact standard for passing project context between AI coding agents through GitHub, Git, and small repository-tracked memory files.
-
-AI Handoff — компактный стандарт передачи проектного контекста между AI-агентами через GitHub, Git и небольшие файлы памяти внутри репозитория.
+Agent Handoff is a compact standard for passing project context between AI coding agents through GitHub, Git, and small repository-tracked memory files.
 
 ## Language / Язык
 
@@ -15,13 +13,8 @@ AI Handoff — компактный стандарт передачи проек
 
 Use the language links above. Each language page includes two short examples:
 
-- starting a new repository with AI Handoff;
-- adding AI Handoff to an existing repository.
-
-Откройте нужный язык выше. На странице языка есть два коротких примера:
-
-- запуск нового репозитория с AI Handoff;
-- внедрение AI Handoff в существующий репозиторий.
+- starting a new repository with Agent Handoff;
+- adding Agent Handoff to an existing repository.
 
 ## Current standard / Текущий стандарт
 
@@ -29,10 +22,10 @@ Version / версия: **1.2**
 
 | English | Русский |
 |---|---|
-| [AI Handoff Standard](AI_HANDOFF_STANDARD.md) | [Стандарт AI Handoff](docs/ru/RU_STANDARD_FULL.md) |
+| [Agent Handoff Standard](AGENT_HANDOFF_STANDARD.md) | [Стандарт Agent Handoff](docs/ru/RU_STANDARD_FULL.md) |
 | [Issue labels](ISSUE_LABELS.md) | [Метки Issue](ISSUE_LABELS.md) |
 | [Agent entrypoint](AGENTS.md) | [Инструкция](docs/ru/RU_GUIDE.md) |
-| [AI memory map](ai/README.md) | [Карта документов](docs/ru/README.md) |
+| [Agent memory map](ai/README.md) | [Карта документов](docs/ru/README.md) |
 | [Workflow protocol](ai/HANDOFF_PROTOCOL.md) | [Протокол](docs/ru/PROTOCOL_RU.md) |
 | [Agent identity](ai/AGENT_IDENTITY.md) | [Agent identity](ai/AGENT_IDENTITY.md) |
 | [Work claim protocol](ai/WORK_CLAIM_PROTOCOL.md) | [Work claim protocol](ai/WORK_CLAIM_PROTOCOL.md) |
@@ -46,13 +39,4 @@ ai/        = compact durable project memory
 handoffs/  = short snapshots of agent runs
 ```
 
-```text
-GitHub     = задачи, Pull Request, ревью, CI, обсуждения
-Git        = код, ветки, коммиты, diff, теги, история
-ai/        = компактная долговременная память проекта
-handoffs/  = короткие снимки сессий
-```
-
 Large data should stay in GitHub or Git, not in `ai/`.
-
-Большие данные должны оставаться в GitHub или Git, а не в `ai/`.
