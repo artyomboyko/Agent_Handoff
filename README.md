@@ -25,7 +25,7 @@ Use the language links above. Each language page includes two short examples:
 
 ## Current standard / Текущий стандарт
 
-Version / версия: **1.1**
+Version / версия: **1.2**
 
 | English | Русский |
 |---|---|
@@ -34,6 +34,8 @@ Version / версия: **1.1**
 | [Agent entrypoint](AGENTS.md) | [Инструкция](docs/ru/RU_GUIDE.md) |
 | [AI memory map](ai/README.md) | [Карта документов](docs/ru/README.md) |
 | [Workflow protocol](ai/HANDOFF_PROTOCOL.md) | [Протокол](docs/ru/PROTOCOL_RU.md) |
+| [Agent identity](ai/AGENT_IDENTITY.md) | [Agent identity](ai/AGENT_IDENTITY.md) |
+| [Work claim protocol](ai/WORK_CLAIM_PROTOCOL.md) | [Work claim protocol](ai/WORK_CLAIM_PROTOCOL.md) |
 
 ## Core model / Основная модель
 
