@@ -1,4 +1,6 @@
-# English
+# English documentation
+
+This page mirrors the Russian index `docs/ru/README.md`.
 
 - [Standard](../../AGENT_HANDOFF_STANDARD.md)
 - [Issue labels](../../ISSUE_LABELS.md)
@@ -7,10 +9,9 @@
 - [Protocol](../../ai/HANDOFF_PROTOCOL.md)
 - [Agent identity](../../ai/AGENT_IDENTITY.md)
 - [Work claim protocol](../../ai/WORK_CLAIM_PROTOCOL.md)
+- [Русский](../ru/README.md)
 
 ## Scenario 1: new repository
-
-Ask the coding agent to initialize Agent Handoff from the start.
 
 ```text
 Initialize this repository with Agent Handoff.
@@ -22,8 +23,6 @@ Create the first short handoff and update the handoff index.
 ```
 
 ## Scenario 2: existing repository
-
-Ask the coding agent to migrate carefully.
 
 ```text
 Add Agent Handoff to this existing repository.
@@ -37,5 +36,3 @@ Put durable decisions into ai/DECISIONS.md.
 Configure smoke tests in ai/HANDOFF_PROTOCOL.md.
 Open a pull request and leave a short handoff.
 ```
-
-Russian: [docs/ru/README.md](../ru/README.md)
