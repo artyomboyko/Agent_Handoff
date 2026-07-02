@@ -36,4 +36,4 @@ The labels are intentionally small and task-oriented. They describe the type of 
 | `research` | `.github/ISSUE_TEMPLATE/research.yml` |
 | `backlog` | `.github/ISSUE_TEMPLATE/backlog.yml` |
 | `testing` | `.github/ISSUE_TEMPLATE/testing.yml` |
-| `docs` | `.github/ISSUE_TEMPLATE/docs.yml` |
+| `docs` | `.github/ISSUE_TEMPLATE/doc.yml` |
