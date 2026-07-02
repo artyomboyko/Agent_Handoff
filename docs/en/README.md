@@ -16,7 +16,7 @@ This page mirrors the Russian index `docs/ru/README.md`.
 - [Project state](../../ai/PROJECT_STATE.md)
 - [Decisions](../../ai/DECISIONS.md)
 - [Refactoring workflow](../../ai/REFACTORING.md)
-- [FAQ](../../FAQ.md)
+- [FAQ](FAQ_EN.md)
 - [Examples](../../examples/README.md)
 - [Promotion checklist](../PROMOTION_CHECKLIST.md)
 - [Contributing](../../CONTRIBUTING.md)
