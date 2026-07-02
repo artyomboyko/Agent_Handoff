@@ -1,0 +1,27 @@
+name: Analysis / Анализ
+description: Compare options / Сравнить варианты
+title: "Research: "
+labels:
+  - research
+body:
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language / Язык
+      options:
+        - English
+        - Русский
+    validations:
+      required: true
+  - type: textarea
+    id: question
+    attributes:
+      label: Question / Вопрос
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: Expected result / Ожидаемый результат
+    validations:
+      required: true
