@@ -10,15 +10,15 @@ project: Agent_Handoff
 
 ## Current phase / Текущая фаза
 
-Agent Handoff Standard 1.2 is implemented.
-Agent Handoff Standard 1.2 реализован.
+Agent Handoff Standard 1.2 is implemented and synchronized with the latest repository workflow.
+Agent Handoff Standard 1.2 реализован и синхронизирован с актуальным workflow репозитория.
 
 The repository has bilingual documentation indexes, bilingual Issue Forms, bilingual PR template, Coordinated GitHub Flow, agent identity, work claim, and refactoring workflow.
 В репозитории есть двуязычные индексы документации, двуязычные Issue Forms, двуязычный PR template, Coordinated GitHub Flow, agent identity, work claim и refactoring workflow.
 
 ## Main subsystems / Основные подсистемы
 
-- Standard / Стандарт: `AGENT_HANDOFF_STANDARD.md`
+- Standard / Стандарт: `AGENT_HANDOFF_STANDARD.md`, `docs/ru/RU_STANDARD_FULL.md`
 - Agent entrypoint / Точка входа агента: `AGENTS.md`
 - Project memory / Память проекта: `ai/`
 - GitHub workflow / GitHub workflow: `ai/GITHUB_WORKFLOW.md`
@@ -32,19 +32,16 @@ The repository has bilingual documentation indexes, bilingual Issue Forms, bilin
 ## Implemented / Реализовано
 
 - Agent Handoff Standard 1.2.
+- English and Russian standard documents are synchronized in structure and meaning.
 - Coordinated GitHub Flow.
 - Meaningful branch naming without `/`, Issue numbers, or random identifiers by default.
+- Extended status labels: `needs-triage`, `ready`, `in-progress`, `blocked`, `in-review`, `changes-requested`, `ready-to-merge`.
 - Agent identity and run IDs.
-- Work claim protocol for Issues and Pull Requests.
+- Work claim protocol with coordinator and supervision fields.
 - Issue labels and bilingual Issue Forms.
-- Bilingual Pull Request template.
+- Bilingual Pull Request template aligned with Done checklist.
 - Bilingual documentation indexes.
-- Refactoring workflow and agent instruction.
-
-## In progress / В работе
-
-- Review bilingual parity across all user-facing documents.
-- Проверка соответствия англоязычных и русскоязычных документов.
+- Refactoring workflow and matching Issue form fields.
 
 ## Known risks / Известные риски
 
@@ -56,6 +53,7 @@ The repository has bilingual documentation indexes, bilingual Issue Forms, bilin
 ## Sensitive areas / Чувствительные области
 
 - `AGENT_HANDOFF_STANDARD.md`
+- `docs/ru/RU_STANDARD_FULL.md`
 - `AGENTS.md`
 - `ai/GITHUB_WORKFLOW.md`
 - `ai/HANDOFF_PROTOCOL.md`
@@ -69,4 +67,4 @@ The repository has bilingual documentation indexes, bilingual Issue Forms, bilin
 
 1. Review all Issue Forms in GitHub UI. / Проверить все Issue Forms в GitHub UI.
 2. Add automated Markdown/YAML checks. / Добавить автоматические проверки Markdown/YAML.
-3. Keep English and Russian documentation aligned. / Поддерживать соответствие английской и русской документации.
+3. Keep English and Russian documentation aligned after each standard change. / Поддерживать соответствие английской и русской документации после каждого изменения стандарта.
