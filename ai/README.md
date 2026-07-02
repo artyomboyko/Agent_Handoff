@@ -16,20 +16,22 @@ It is not a replacement for GitHub Issues, Pull Requests, reviews, CI data, or G
 
 1. `AGENTS.md`
 2. `AGENT_HANDOFF_STANDARD.md`
-3. `ai/HANDOFF_PROTOCOL.md`
-4. `ai/AGENT_IDENTITY.md`
-5. `ai/WORK_CLAIM_PROTOCOL.md`
-6. `ai/PROJECT_STATE.md`
-7. `ai/DECISIONS.md`
-8. related GitHub Issue or Pull Request
-9. `ai/REFACTORING.md` when the task is code cleanup or decomposition
-10. `ai/handoffs/INDEX.md`
-11. relevant handoff files only
+3. `ai/GITHUB_WORKFLOW.md`
+4. `ai/HANDOFF_PROTOCOL.md`
+5. `ai/AGENT_IDENTITY.md`
+6. `ai/WORK_CLAIM_PROTOCOL.md`
+7. `ai/PROJECT_STATE.md`
+8. `ai/DECISIONS.md`
+9. related GitHub Issue or Pull Request
+10. `ai/REFACTORING.md` when the task is code cleanup or decomposition
+11. `ai/handoffs/INDEX.md`
+12. relevant handoff files only
 
 ## Files
 
 - `PROJECT_STATE.md` — current project snapshot.
 - `DECISIONS.md` — durable decisions.
+- `GITHUB_WORKFLOW.md` — coordinated GitHub workflow methodology.
 - `HANDOFF_PROTOCOL.md` — workflow protocol.
 - `AGENT_IDENTITY.md` — agent naming and run id protocol.
 - `WORK_CLAIM_PROTOCOL.md` — Issue and Pull Request work claim protocol.
