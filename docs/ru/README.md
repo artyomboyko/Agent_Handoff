@@ -18,7 +18,7 @@
 - [Refactoring workflow](../../ai/REFACTORING.md)
 - [FAQ](FAQ_RU.md)
 - [Примеры](../../examples/README.md)
-- [Promotion checklist](../PROMOTION_CHECKLIST.md)
+- [Promotion checklist](PROMOTION_CHECKLIST_RU.md)
 - [Contributing](../../CONTRIBUTING.md)
 - [Security](../../SECURITY.md)
 - [Code of Conduct](../../CODE_OF_CONDUCT.md)
