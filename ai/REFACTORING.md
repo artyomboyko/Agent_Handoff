@@ -28,3 +28,15 @@ Track concrete tasks in GitHub Issues. Keep this file as protocol, not as a long
 - ordinary bug reports;
 - long implementation logs;
 - full diffs or bulky command output.
+
+## Issue fields
+
+A code cleanup Issue should include:
+
+- code area;
+- current problem;
+- target state;
+- non-goals;
+- risk;
+- required checks;
+- related files or PRs.
