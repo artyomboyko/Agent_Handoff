@@ -13,6 +13,7 @@ Read this index first. Do not read all handoff files blindly.
 
 | Date | Updated | Run | Issue | PR | Branch | Status | Relevance | Summary | File | Supersedes |
 |---|---|---|---|---|---|---|---|---|---|---|
+| 2026-07-02 | 2026-07-02 | consistency-pass | none | none | main | completed | active | Synchronized newer workflow rules into older standard/docs/templates | | bilingual-docs |
 | 2026-07-02 | 2026-07-02 | bilingual-docs | none | none | main | completed | active | Added bilingual docs and issue templates | | |
 | 2026-07-02 | 2026-07-02 | rename-agent-handoff | none | none | main | completed | active | Renamed project content to Agent Handoff | | |
 | 2026-07-02 | 2026-07-02 | refactoring-workflow | #4 | none | main | completed | active | Added refactoring workflow and issue form | 2026-07-02_issue-4_no-pr_run-refactoring-workflow.md | |
