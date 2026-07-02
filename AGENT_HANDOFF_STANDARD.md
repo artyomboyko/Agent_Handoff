@@ -27,6 +27,7 @@ ISSUE_LABELS.md
 ai/README.md
 ai/PROJECT_STATE.md
 ai/DECISIONS.md
+ai/GITHUB_WORKFLOW.md
 ai/HANDOFF_PROTOCOL.md
 ai/AGENT_IDENTITY.md
 ai/WORK_CLAIM_PROTOCOL.md
@@ -43,13 +44,14 @@ Before meaningful work, read:
 1. `AGENTS.md`
 2. `AGENT_HANDOFF_STANDARD.md`
 3. `ai/README.md`
-4. `ai/HANDOFF_PROTOCOL.md`
-5. `ai/AGENT_IDENTITY.md`
-6. `ai/WORK_CLAIM_PROTOCOL.md`
-7. `ai/PROJECT_STATE.md`
-8. `ai/DECISIONS.md`
-9. related GitHub Issue or Pull Request
-10. relevant handoffs through `ai/handoffs/INDEX.md`
+4. `ai/GITHUB_WORKFLOW.md`
+5. `ai/HANDOFF_PROTOCOL.md`
+6. `ai/AGENT_IDENTITY.md`
+7. `ai/WORK_CLAIM_PROTOCOL.md`
+8. `ai/PROJECT_STATE.md`
+9. `ai/DECISIONS.md`
+10. related GitHub Issue or Pull Request
+11. relevant handoffs through `ai/handoffs/INDEX.md`
 
 ## Agent identity
 
@@ -107,6 +109,30 @@ Next:
 
 If an Issue or PR already has a recent work claim, coordinate in the related Issue or PR before continuing.
 
+## Branch naming
+
+Use meaningful branch names without `/`, Issue numbers, or random identifiers by default.
+
+Recommended formats:
+
+```text
+<type>-<topic>
+<type>-<scope>-<topic>
+```
+
+Examples:
+
+```text
+workflow-branch-naming
+protocol-work-claim
+docs-readme-quickstart
+refactor-handoff-index
+research-github-flow
+fix-issue-template-yaml
+```
+
+Issue linkage belongs in the Work Claim comment, PR description, GitHub links, and handoff metadata, not in the branch name.
+
 ## Labels
 
 Type labels: `bug`, `enhancement`, `refactoring`, `research`, `backlog`, `testing`, `docs`.
@@ -120,7 +146,7 @@ Status labels: `in-progress`, `blocked`.
 3. Choose agent identity.
 4. Claim the work.
 5. Define scope.
-6. Create a branch.
+6. Create a meaningful short-lived branch.
 7. Open a Draft PR early.
 8. Write progress updates in Issue or PR comments when useful.
 9. Commit changes.
