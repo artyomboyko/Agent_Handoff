@@ -23,7 +23,7 @@ This page mirrors the Russian index `docs/ru/README.md`.
 - [Security](../../SECURITY.md)
 - [Code of Conduct](../../CODE_OF_CONDUCT.md)
 - [Changelog](../../CHANGELOG.md)
-- [Repository discovery settings](../../.github/REPOSITORY_SETTINGS.md)
+- [Repository discovery settings](REPOSITORY_SETTINGS_EN.md)
 - [Русский](../ru/README.md)
 
 ## Scenario 1: new repository
