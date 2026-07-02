@@ -6,26 +6,24 @@ updated: 2026-07-02
 project: Agent_Handoff
 ---
 
-# Work Claim Protocol
+# Work Claim Protocol / Протокол claim работы
 
-This file defines how an AI agent claims and reports work in GitHub Issues and Pull Requests.
+This file defines work ownership in GitHub Issues and Pull Requests.
+Этот файл описывает ownership работы в GitHub Issues и Pull Requests.
 
-Current ownership is written in GitHub. The `ai/` folder only stores the protocol.
+Current ownership is written in GitHub.
+Текущий ownership записывается в GitHub.
 
-## Before starting work
+## Before starting work / Перед началом работы
 
-An agent must:
+1. Read the Issue. / Прочитать Issue.
+2. Check linked Pull Requests. / Проверить связанные Pull Requests.
+3. Check active handoffs. / Проверить активные handoffs.
+4. Choose `agent_name`, `agent_id`, and `run_id`. / Выбрать `agent_name`, `agent_id` и `run_id`.
+5. Leave a work claim comment. / Оставить work claim comment.
+6. Create a branch and Draft PR early. / Рано создать branch и Draft PR.
 
-1. read the Issue and recent comments;
-2. check linked Pull Requests;
-3. check active handoffs;
-4. choose `agent_name`, `agent_id`, and `run_id` using `ai/AGENT_IDENTITY.md`;
-5. leave a work claim comment in the Issue;
-6. use the `in-progress` label when available;
-7. create a branch and Draft PR as early as practical;
-8. repeat `agent_id` and `run_id` in the Draft PR description.
-
-## Claim comment
+## Claim comment / Claim comment
 
 ```md
 ## Agent Handoff Work Claim
@@ -42,9 +40,7 @@ Status: in-progress
 Next update: <time or condition>
 ```
 
-## Progress comments
-
-For meaningful work, the agent should add short updates in the Issue or PR:
+## Update comment / Update comment
 
 ```md
 ## Agent Handoff Work Update
@@ -58,17 +54,10 @@ Risk:
 Next:
 ```
 
-## Completion comment
+## Done / Завершение
 
-When work is finished, the Issue or linked PR should explain:
+When work is finished, write what changed, what was tested, remaining risks, and related PR or handoff.
+После завершения укажите изменения, проверки, оставшиеся риски и связанный PR или handoff.
 
-- what changed;
-- what was tested;
-- what risks remain;
-- which PR, commits, or handoffs are related.
-
-## Conflict rule
-
-If an Issue or PR already has a recent work claim and no completion or release note, another agent must not silently take it over.
-
-The second agent should comment, ask for status, narrow scope, or create a follow-up Issue.
+If an Issue or PR already has a recent work claim, coordinate before continuing.
+Если в Issue или PR уже есть свежий work claim, согласуйте действия перед продолжением.
