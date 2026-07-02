@@ -18,7 +18,7 @@ This page mirrors the Russian index `docs/ru/README.md`.
 - [Refactoring workflow](../../ai/REFACTORING.md)
 - [FAQ](FAQ_EN.md)
 - [Examples](../../examples/README.md)
-- [Promotion checklist](../PROMOTION_CHECKLIST.md)
+- [Promotion checklist](PROMOTION_CHECKLIST_EN.md)
 - [Contributing](../../CONTRIBUTING.md)
 - [Security](../../SECURITY.md)
 - [Code of Conduct](../../CODE_OF_CONDUCT.md)
