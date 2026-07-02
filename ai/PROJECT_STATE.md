@@ -27,7 +27,7 @@ The repository has a landing README, bilingual documentation indexes, bilingual 
 - Refactoring / Рефакторинг: `ai/REFACTORING.md`
 - Handoffs / Handoffs: `ai/handoffs/`
 - GitHub templates / GitHub templates: `.github/`
-- Community files / Community files: `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`
+- Community files / Community files: `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`, `docs/COMMUNITY_FILES.md`
 - Discovery files / Файлы продвижения: `README.md`, `FAQ.md`, `docs/en/FAQ_EN.md`, `docs/ru/FAQ_RU.md`, `examples/`, `assets/social-preview.svg`, `.github/REPOSITORY_SETTINGS.md`, `docs/en/REPOSITORY_SETTINGS_EN.md`, `docs/ru/REPOSITORY_SETTINGS_RU.md`, `docs/en/PROMOTION_CHECKLIST_EN.md`, `docs/ru/PROMOTION_CHECKLIST_RU.md`
 - Language docs / Языковая документация: `docs/en/`, `docs/ru/`
 
@@ -47,6 +47,7 @@ The repository has a landing README, bilingual documentation indexes, bilingual 
 - FAQ with English and Russian mirrors.
 - Promotion checklist and repository settings with English and Russian mirrors.
 - Examples, contributing guide, security policy, code of conduct, changelog.
+- Community files index.
 - Social preview SVG asset.
 - Repository discovery settings guide with About description and topics.
 
