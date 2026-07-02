@@ -1,0 +1,11 @@
+name: Doc
+title: "Doc: "
+labels:
+  - docs
+body:
+  - type: textarea
+    id: text
+    attributes:
+      label: Text
+    validations:
+      required: true
