@@ -1,0 +1,21 @@
+name: Validation / Проверка
+description: Checks and validation / Проверки и валидация
+title: "Testing: "
+labels:
+  - testing
+body:
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language / Язык
+      options:
+        - English
+        - Русский
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary / Описание
+    validations:
+      required: true
