@@ -23,7 +23,7 @@
 - [Security](../../SECURITY.md)
 - [Code of Conduct](../../CODE_OF_CONDUCT.md)
 - [Changelog](../../CHANGELOG.md)
-- [Настройки обнаружения репозитория](../../.github/REPOSITORY_SETTINGS.md)
+- [Настройки обнаружения репозитория](REPOSITORY_SETTINGS_RU.md)
 - [English](../en/README.md)
 
 ## Сценарий 1: новый репозиторий
