@@ -40,21 +40,29 @@ Closed Issue or merged PR is the normal `done` state.
 
 ## Branch naming
 
-Use branch names without `/` and without mandatory Issue numbers.
+Use meaningful branch names without `/`, Issue numbers, or random identifiers by default.
 
 Recommended format:
 
 ```text
-<type>-<short-slug>-<short-id>
+<type>-<topic>
+```
+
+Optional format for larger work:
+
+```text
+<type>-<scope>-<topic>
 ```
 
 Examples:
 
 ```text
-work-agent-identity-a91f
-fix-broken-template-7c2a
-docs-readme-quickstart-b91d
-research-ci-options-03af
+workflow-branch-naming
+protocol-work-claim
+docs-readme-quickstart
+refactor-handoff-index
+research-github-flow
+fix-issue-template-yaml
 ```
 
 The branch is not the source of truth for Issue linkage. Link the Issue in the Work Claim comment, PR description, and handoff metadata.
