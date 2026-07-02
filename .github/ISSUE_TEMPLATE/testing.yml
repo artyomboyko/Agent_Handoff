@@ -1,8 +1,17 @@
-name: Validation
-about: Checks
+name: Validation / Проверка
+about: Checks / Проверки
 title: "Testing: "
 labels: [testing]
 body:
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language / Язык
+      options:
+        - English
+        - Русский
+    validations:
+      required: true
   - type: textarea
     id: summary
     attributes:
