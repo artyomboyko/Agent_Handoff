@@ -2,10 +2,20 @@
 
 Эта страница соответствует английскому индексу `docs/en/README.md`.
 
+## Документы
+
 - [Стандарт](RU_STANDARD_FULL.md)
+- [Метки Issue](../../ISSUE_LABELS.md)
+- [Статусы Issue](../../ISSUE_STATUS.md)
 - [Инструкция](RU_GUIDE.md)
-- [Протокол](PROTOCOL_RU.md)
-- [Проект](PROJECT_RU.md)
+- [Карта памяти](../../ai/README.md)
+- [GitHub workflow](../../ai/GITHUB_WORKFLOW.md)
+- [Протокол handoff](PROTOCOL_RU.md)
+- [Agent identity](../../ai/AGENT_IDENTITY.md)
+- [Work claim protocol](../../ai/WORK_CLAIM_PROTOCOL.md)
+- [Состояние проекта](PROJECT_RU.md)
+- [Решения](../../ai/DECISIONS.md)
+- [Refactoring workflow](../../ai/REFACTORING.md)
 - [English](../en/README.md)
 
 ## Сценарий 1: новый репозиторий
