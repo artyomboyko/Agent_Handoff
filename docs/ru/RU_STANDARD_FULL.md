@@ -1,26 +1,16 @@
 # Стандарт Agent Handoff
 
-Agent Handoff описывает, как хранить и передавать проектный контекст между AI-агентами через GitHub, Git и `ai/`.
+Agent Handoff описывает, как передавать проектный контекст между людьми, AI-агентами и агентами под контролем человека через GitHub, Git и `ai/`.
 
 ## Модель
 
-GitHub управляет задачами, Pull Request, ревью, CI и обсуждениями.
+GitHub управляет задачами, Pull Request, ревью, проверками, метками, комментариями и текущим ownership.
 
-Git хранит код, ветки, коммиты, diff и историю.
+Git хранит код, ветки, коммиты, diff, теги и историю.
 
-`ai/` хранит компактную долговременную память проекта.
+`ai/` хранит компактную долговременную память проекта и агентские протоколы.
 
 `ai/handoffs/` хранит короткие снимки сессий.
-
-## Приоритет
-
-1. Текущая branch и Git state.
-2. GitHub Pull Request.
-3. GitHub Issue.
-4. Work claim comments в Issue или PR.
-5. `ai/PROJECT_STATE.md`.
-6. `ai/DECISIONS.md`.
-7. Handoff-файлы.
 
 ## Структура
 
@@ -30,6 +20,7 @@ Git хранит код, ветки, коммиты, diff и историю.
 - `ai/README.md`
 - `ai/PROJECT_STATE.md`
 - `ai/DECISIONS.md`
+- `ai/GITHUB_WORKFLOW.md`
 - `ai/HANDOFF_PROTOCOL.md`
 - `ai/AGENT_IDENTITY.md`
 - `ai/WORK_CLAIM_PROTOCOL.md`
@@ -40,33 +31,44 @@ Git хранит код, ветки, коммиты, diff и историю.
 - `docs/en/`
 - `docs/ru/`
 
-## Метки Issue
+## Coordinated GitHub Flow
 
-Базовые универсальные метки:
+Agent Handoff использует Coordinated GitHub Flow для средних репозиториев, где параллельно работают люди, автономные агенты и агенты под контролем человека.
 
-- `bug` — ошибка или проблема.
-- `enhancement` — улучшение стандарта, workflow или шаблонов.
-- `refactoring` — cleanup, decomposition, renaming или внутреннее упрощение без намеренного изменения поведения.
-- `research` — исследование, сравнение подходов или подготовка решения.
-- `backlog` — отложенная полезная работа.
-- `testing` — тесты, smoke checks, validation или нестабильные проверки.
-- `docs` — документация, README, примеры, guides или переводы.
+Единица работы: одно GitHub Issue, один ясный scope, одна короткоживущая branch, один Pull Request и один видимый owner.
 
-Статусные метки:
+## Branch naming
 
-- `in-progress` — работа взята агентом или maintainer'ом.
-- `blocked` — работа временно заблокирована.
+Используйте осмысленные имена веток без `/`, без номеров Issue и без случайных идентификаторов по умолчанию.
 
-Подробная таблица: `ISSUE_LABELS.md`.
+Рекомендуемые форматы:
+
+```text
+<type>-<topic>
+<type>-<scope>-<topic>
+```
+
+Примеры:
+
+```text
+workflow-branch-naming
+protocol-work-claim
+docs-readme-quickstart
+refactor-handoff-index
+research-github-flow
+fix-issue-template-yaml
+```
+
+Связь с Issue фиксируется в Work Claim comment, PR description, GitHub links и handoff metadata, а не в имени ветки.
+
+## Issue templates
+
+Issue templates должны поддерживать выбор языка и двуязычные поля.
 
 ## Завершение
 
 Перед завершением значимого изменения нужны smoke tests, обновлённый PR, короткий handoff и обновлённый index.
 
-## Размеры
-
-`ai/` должен быть компактным. Большие diff, длинные выводы команд, полные обсуждения и артефакты остаются в GitHub, Git или другом подходящем месте.
-
 ## Финальное правило
 
-Код меняется вместе с компактным контекстом для следующего агента.
+Код меняется вместе с компактным контекстом для следующего агента. Большие данные остаются в GitHub и Git.
