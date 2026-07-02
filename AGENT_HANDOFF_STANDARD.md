@@ -7,7 +7,7 @@ updated: 2026-07-02
 
 # Agent Handoff Standard
 
-Agent Handoff is a compact standard for passing development state between AI coding agents through GitHub, Git, and small repository-tracked memory files.
+Agent Handoff is a compact standard for passing development state between humans, AI agents, and human-supervised agents through GitHub, Git, and small repository-tracked memory files.
 
 ## Core model
 
@@ -18,12 +18,25 @@ ai/ stores compact durable memory and agent protocols.
 ai/handoffs/ stores short snapshots of agent runs.
 ```
 
+## Language model
+
+The standard can be applied to English and Russian repositories.
+
+For an English repository, agents should work in English.
+
+For a Russian repository, agents should work in Russian.
+
+English and Russian documentation should keep matching structure and meaning.
+
+Issue Forms and Pull Request templates should support language selection or bilingual field names.
+
 ## Required files
 
 ```text
 AGENTS.md
 AGENT_HANDOFF_STANDARD.md
 ISSUE_LABELS.md
+ISSUE_STATUS.md
 ai/README.md
 ai/PROJECT_STATE.md
 ai/DECISIONS.md
@@ -35,6 +48,8 @@ ai/REFACTORING.md
 ai/handoffs/INDEX.md
 .github/ISSUE_TEMPLATE/
 .github/pull_request_template.md
+docs/en/
+docs/ru/
 ```
 
 ## Start order
@@ -57,14 +72,6 @@ Before meaningful work, read:
 
 Each agent run should use `agent_name`, `agent_id`, and `run_id`.
 
-Example:
-
-```text
-Agent: North Fox
-Agent ID: north-fox-7c2a
-Run ID: 20260702-issue-14-a91f
-```
-
 Recommended formats:
 
 ```text
@@ -76,7 +83,7 @@ run_id: YYYYMMDD-issue-<number>-<4-hex>
 
 Before changing code or docs for a meaningful task, claim the work in GitHub.
 
-Use this comment in the related Issue and repeat the same identity values in the Draft PR:
+Use this comment in the related Issue and repeat identity values in the Draft PR:
 
 ```md
 ## Agent Handoff Work Claim
@@ -84,6 +91,8 @@ Use this comment in the related Issue and repeat the same identity values in the
 Agent: <agent_name>
 Agent ID: <agent_id>
 Run ID: <run_id>
+Coordinator: <username or none>
+Supervision: autonomous | human-supervised | human-driven
 Started: YYYY-MM-DD HH:MM UTC
 Issue: #<issue-number>
 Branch: <branch-name>
@@ -137,7 +146,7 @@ Issue linkage belongs in the Work Claim comment, PR description, GitHub links, a
 
 Type labels: `bug`, `enhancement`, `refactoring`, `research`, `backlog`, `testing`, `docs`.
 
-Status labels: `in-progress`, `blocked`.
+Status labels: `needs-triage`, `ready`, `in-progress`, `blocked`, `in-review`, `changes-requested`, `ready-to-merge`.
 
 ## Workflow
 
