@@ -1,37 +1,26 @@
-## Summary
+## Language / Язык
 
-<!-- What changed and why? -->
+- [ ] English
+- [ ] Русский
 
-## Related issue
+## Summary / Краткое описание
 
-Closes #
+## Related issue / Связанное Issue
 
-## Change type
+## Change type / Тип изменения
 
-- [ ] Bug fix
-- [ ] Standard change
-- [ ] Documentation
-- [ ] Repository structure
-- [ ] Template change
-- [ ] Other
+- [ ] Bug fix / Исправление ошибки
+- [ ] Standard change / Изменение стандарта
+- [ ] Documentation / Документация
+- [ ] Template change / Изменение шаблонов
+- [ ] Other / Другое
 
-## Smoke tests
+## Checks / Проверки
 
-- [ ] Required files exist.
-- [ ] Markdown links point to intended files.
-- [ ] Issue Forms are valid YAML when changed.
-- [ ] PR template includes the required checklist when changed.
-- [ ] Handoff index is updated when a handoff file is added.
-- [ ] Private access values were not added.
+- [ ] Required files exist. / Обязательные файлы существуют.
+- [ ] Links work. / Ссылки работают.
+- [ ] Forms are valid when changed. / Формы валидны при изменении.
 
-Smoke-test notes:
+## Risks / Риски
 
-## State updates
-
-- [ ] `ai/PROJECT_STATE.md` updated, or no stable state change.
-- [ ] `ai/DECISIONS.md` updated, or no durable architecture record.
-- [ ] `ai/handoffs/INDEX.md` updated, or no handoff needed.
-
-## Risks
-
-## Next steps
+## Next steps / Следующие шаги
