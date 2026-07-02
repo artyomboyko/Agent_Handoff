@@ -2,13 +2,20 @@
 
 This page mirrors the Russian index `docs/ru/README.md`.
 
+## Documents
+
 - [Standard](../../AGENT_HANDOFF_STANDARD.md)
 - [Issue labels](../../ISSUE_LABELS.md)
+- [Issue status](../../ISSUE_STATUS.md)
 - [Guide](../../AGENTS.md)
 - [Memory map](../../ai/README.md)
-- [Protocol](../../ai/HANDOFF_PROTOCOL.md)
+- [GitHub workflow](../../ai/GITHUB_WORKFLOW.md)
+- [Handoff protocol](../../ai/HANDOFF_PROTOCOL.md)
 - [Agent identity](../../ai/AGENT_IDENTITY.md)
 - [Work claim protocol](../../ai/WORK_CLAIM_PROTOCOL.md)
+- [Project state](../../ai/PROJECT_STATE.md)
+- [Decisions](../../ai/DECISIONS.md)
+- [Refactoring workflow](../../ai/REFACTORING.md)
 - [Русский](../ru/README.md)
 
 ## Scenario 1: new repository
