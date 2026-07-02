@@ -6,27 +6,25 @@ updated: 2026-07-02
 project: Agent_Handoff
 ---
 
-# Coordinated GitHub Flow
+# Coordinated GitHub Flow / Координированный GitHub Flow
 
-Agent Handoff uses Coordinated GitHub Flow for medium repositories where humans, autonomous agents, and human-supervised agents may work in parallel.
+Agent Handoff uses Coordinated GitHub Flow for medium repositories.
+Agent Handoff использует Coordinated GitHub Flow для средних репозиториев.
 
-This is a lightweight GitHub Flow with issue-driven planning, visible ownership, short-lived branches, early Draft PRs, checks, and compact handoffs.
+## Roles / Роли
 
-## Roles
+- Maintainer or coordinator / Maintainer или coordinator
+- Human contributor / Человек-контрибьютор
+- Autonomous agent / Автономный агент
+- Human-supervised agent / Агент под контролем человека
+- Reviewer / Reviewer
 
-- Maintainer or coordinator — prioritizes, assigns, pauses, splits, or supersedes work.
-- Human contributor — implements or reviews work directly.
-- Autonomous agent — works from an Issue with visible claim and handoff.
-- Human-supervised agent — works under a named human coordinator.
-- Reviewer — reviews PR scope, risks, checks, and implementation.
+## Work unit / Единица работы
 
-## Work unit
+One work item should have one Issue, one scope, one short-lived branch, one Pull Request, and one visible owner.
+Одна задача должна иметь одно Issue, один scope, одну короткоживущую branch, один Pull Request и одного видимого owner.
 
-One meaningful work item should have one GitHub Issue, one clear scope, one short-lived branch, one Pull Request, and one visible owner at a time.
-
-## Status labels
-
-Recommended workflow labels:
+## Status labels / Статусные метки
 
 - `needs-triage`
 - `ready`
@@ -37,24 +35,21 @@ Recommended workflow labels:
 - `ready-to-merge`
 
 Closed Issue or merged PR is the normal `done` state.
+Закрытое Issue или merged PR — обычное состояние `done`.
 
-## Branch naming
+## Branch naming / Имена веток
 
 Use meaningful branch names without `/`, Issue numbers, or random identifiers by default.
+Используйте осмысленные имена веток без `/`, номеров Issue и случайных идентификаторов по умолчанию.
 
-Recommended format:
+Recommended formats / Рекомендуемые форматы:
 
 ```text
 <type>-<topic>
-```
-
-Optional format for larger work:
-
-```text
 <type>-<scope>-<topic>
 ```
 
-Examples:
+Examples / Примеры:
 
 ```text
 workflow-branch-naming
@@ -65,31 +60,34 @@ research-github-flow
 fix-issue-template-yaml
 ```
 
-The branch is not the source of truth for Issue linkage. Link the Issue in the Work Claim comment, PR description, and handoff metadata.
+The branch is not the source of truth for Issue linkage.
+Branch не является источником правды для связи с Issue.
 
-## Workflow
+Link the Issue in the Work Claim comment, PR description, and handoff metadata.
+Связывайте Issue через Work Claim comment, PR description и handoff metadata.
 
-1. Triage or create an Issue.
-2. Mark it `ready` only when scope and acceptance criteria are clear.
-3. Choose agent identity when an agent is involved.
-4. Claim work in the Issue before editing.
-5. Create a short-lived branch.
-6. Open a Draft PR early.
-7. Link the PR to the Issue.
-8. Keep discussion, blockers, and review in Issue or PR.
-9. Run required checks and smoke tests.
-10. Move to review only when scope is complete enough.
-11. Merge only after checks, review, and risks are acceptable.
-12. Delete the branch after merge.
-13. Add a handoff when work is completed, paused, blocked, or transferred.
+## Workflow / Процесс
 
-## Human coordination
+1. Triage or create an Issue. / Провести triage или создать Issue.
+2. Mark it `ready` when scope is clear. / Ставить `ready`, когда scope ясен.
+3. Choose agent identity when an agent is involved. / Выбрать identity агента.
+4. Claim work before editing. / Claim работы перед изменениями.
+5. Create a short-lived branch. / Создать короткоживущую branch.
+6. Open a Draft PR early. / Рано открыть Draft PR.
+7. Link the PR to the Issue. / Связать PR с Issue.
+8. Keep discussion in Issue or PR. / Вести обсуждение в Issue или PR.
+9. Run checks and smoke tests. / Запустить checks и smoke tests.
+10. Merge only after checks and review. / Merge только после checks и review.
+11. Delete the branch after merge. / Удалить branch после merge.
+12. Add a handoff when needed. / Добавить handoff при необходимости.
+
+## Human coordination / Координация людьми
 
 A human coordinator may reassign, pause, split, or supersede agent work.
-
-Agents must not overwrite or ignore human decisions written in Issue or PR comments.
+Человек-координатор может переназначить, остановить, разделить или заменить работу агента.
 
 If the work is human-supervised, the Work Claim should include:
+Если работа идёт под контролем человека, Work Claim должен включать:
 
 ```text
 Coordinator: @username
