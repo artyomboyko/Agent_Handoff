@@ -1,0 +1,50 @@
+name: Testing
+about: Improve tests, smoke checks, validation, or test reliability
+title: "Testing: "
+labels:
+  - testing
+body:
+  - type: markdown
+    attributes:
+      value: Use this form when the main work is test coverage or validation.
+  - type: textarea
+    id: test_gap
+    attributes:
+      label: Test gap or failing check
+      description: What is missing, failing, flaky, or hard to validate?
+    validations:
+      required: true
+  - type: textarea
+    id: scenario
+    attributes:
+      label: Scenario
+      description: Which behavior, workflow, or file should be covered?
+    validations:
+      required: true
+  - type: dropdown
+    id: test_level
+    attributes:
+      label: Test level
+      options:
+        - Unit
+        - Integration
+        - Smoke
+        - Manual
+        - YAML or Markdown validation
+        - Other
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected result
+      description: What should pass after this work?
+    validations:
+      required: true
+  - type: textarea
+    id: related
+    attributes:
+      label: Related files or checks
+      description: Add paths, commands, jobs, or prior issues.
+    validations:
+      required: false
