@@ -1,13 +1,14 @@
-# Русский
+# Русская документация
+
+Эта страница соответствует английскому индексу `docs/en/README.md`.
 
 - [Стандарт](RU_STANDARD_FULL.md)
 - [Инструкция](RU_GUIDE.md)
 - [Протокол](PROTOCOL_RU.md)
 - [Проект](PROJECT_RU.md)
+- [English](../en/README.md)
 
 ## Сценарий 1: новый репозиторий
-
-Попросите coding agent сразу создать проект со структурой Agent Handoff.
 
 ```text
 Инициализируй этот репозиторий с Agent Handoff.
@@ -19,8 +20,6 @@
 ```
 
 ## Сценарий 2: существующий репозиторий
-
-Попросите coding agent выполнить аккуратную миграцию.
 
 ```text
 Внедри Agent Handoff в этот существующий репозиторий.
@@ -34,5 +33,3 @@
 Настрой smoke tests в ai/HANDOFF_PROTOCOL.md.
 Открой pull request и оставь короткий handoff.
 ```
-
-English: [docs/en/README.md](../en/README.md)
