@@ -18,7 +18,7 @@ It is not a replacement for GitHub Issues, Pull Requests, reviews, CI data, or G
 2. `AI_HANDOFF_STANDARD.md`
 3. `ai/HANDOFF_PROTOCOL.md`
 4. `ai/AGENT_IDENTITY.md`
-5. `ai/ISSUE_CLAIM_PROTOCOL.md`
+5. `ai/WORK_CLAIM_PROTOCOL.md`
 6. `ai/PROJECT_STATE.md`
 7. `ai/DECISIONS.md`
 8. related GitHub Issue or Pull Request
@@ -32,7 +32,7 @@ It is not a replacement for GitHub Issues, Pull Requests, reviews, CI data, or G
 - `DECISIONS.md` — durable decisions.
 - `HANDOFF_PROTOCOL.md` — workflow protocol.
 - `AGENT_IDENTITY.md` — agent naming and run id protocol.
-- `ISSUE_CLAIM_PROTOCOL.md` — issue claim and progress comment protocol.
+- `WORK_CLAIM_PROTOCOL.md` — Issue and Pull Request work claim protocol.
 - `REFACTORING.md` — code cleanup and decomposition workflow.
 - `handoffs/INDEX.md` — index of handoffs.
 - `archive/README.md` — rules for stale memory.
