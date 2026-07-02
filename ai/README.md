@@ -2,7 +2,7 @@
 type: ai_readme
 version: 1
 status: active
-updated: 2026-06-29
+updated: 2026-07-02
 project: AI_Handoff
 ---
 
@@ -20,14 +20,16 @@ It is not a replacement for GitHub Issues, Pull Requests, reviews, CI data, or G
 4. `ai/PROJECT_STATE.md`
 5. `ai/DECISIONS.md`
 6. related GitHub Issue or Pull Request
-7. `ai/handoffs/INDEX.md`
-8. relevant handoff files only
+7. `ai/REFACTORING.md` when the task is code cleanup or decomposition
+8. `ai/handoffs/INDEX.md`
+9. relevant handoff files only
 
 ## Files
 
 - `PROJECT_STATE.md` — current project snapshot.
 - `DECISIONS.md` — durable decisions.
 - `HANDOFF_PROTOCOL.md` — workflow protocol.
+- `REFACTORING.md` — code cleanup and decomposition workflow.
 - `handoffs/INDEX.md` — index of handoffs.
 - `archive/README.md` — rules for stale memory.
 
