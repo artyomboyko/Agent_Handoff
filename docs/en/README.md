@@ -16,6 +16,13 @@ This page mirrors the Russian index `docs/ru/README.md`.
 - [Project state](../../ai/PROJECT_STATE.md)
 - [Decisions](../../ai/DECISIONS.md)
 - [Refactoring workflow](../../ai/REFACTORING.md)
+- [FAQ](../../FAQ.md)
+- [Examples](../../examples/README.md)
+- [Contributing](../../CONTRIBUTING.md)
+- [Security](../../SECURITY.md)
+- [Code of Conduct](../../CODE_OF_CONDUCT.md)
+- [Changelog](../../CHANGELOG.md)
+- [Repository discovery settings](../../.github/REPOSITORY_SETTINGS.md)
 - [Русский](../ru/README.md)
 
 ## Scenario 1: new repository
