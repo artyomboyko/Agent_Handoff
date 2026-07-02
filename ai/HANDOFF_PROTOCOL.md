@@ -10,7 +10,7 @@ project: Agent_Handoff
 
 ## Start
 
-Read `AGENTS.md`, `AGENT_HANDOFF_STANDARD.md`, `ai/README.md`, `ai/AGENT_IDENTITY.md`, `ai/WORK_CLAIM_PROTOCOL.md`, `ai/PROJECT_STATE.md`, `ai/DECISIONS.md`, the related Issue or PR, current branch, recent commits, and `ai/handoffs/INDEX.md`.
+Read `AGENTS.md`, `AGENT_HANDOFF_STANDARD.md`, `ai/README.md`, `ai/GITHUB_WORKFLOW.md`, `ai/AGENT_IDENTITY.md`, `ai/WORK_CLAIM_PROTOCOL.md`, `ai/PROJECT_STATE.md`, `ai/DECISIONS.md`, the related Issue or PR, current branch, recent commits, and `ai/handoffs/INDEX.md`.
 
 Choose `agent_name`, `agent_id`, and `run_id` before taking work.
 
@@ -22,11 +22,13 @@ Before editing, leave a work claim comment using `ai/WORK_CLAIM_PROTOCOL.md`.
 
 The claim comment must include agent name, agent id, run id, issue, branch, draft PR, scope, and current status.
 
-Use the `in-progress` label when available. Use `blocked` only with a blocker comment.
+Use workflow labels from `ai/GITHUB_WORKFLOW.md` when available.
 
 ## Scope
 
 One meaningful work item should have one Issue, one branch, one PR, and one clear scope.
+
+Use branch names without `/`, for example `work-issue-14-agent-identity`.
 
 Open a Draft PR early.
 
