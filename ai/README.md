@@ -3,19 +3,19 @@ type: ai_readme
 version: 1
 status: active
 updated: 2026-07-02
-project: AI_Handoff
+project: Agent_Handoff
 ---
 
-# AI Memory Map
+# Agent Memory Map
 
-This folder stores compact repository-tracked memory for AI Handoff work.
+This folder stores compact repository-tracked memory for Agent Handoff work.
 
 It is not a replacement for GitHub Issues, Pull Requests, reviews, CI data, or Git history.
 
 ## Reading order
 
 1. `AGENTS.md`
-2. `AI_HANDOFF_STANDARD.md`
+2. `AGENT_HANDOFF_STANDARD.md`
 3. `ai/HANDOFF_PROTOCOL.md`
 4. `ai/AGENT_IDENTITY.md`
 5. `ai/WORK_CLAIM_PROTOCOL.md`
