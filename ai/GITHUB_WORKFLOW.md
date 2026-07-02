@@ -22,13 +22,7 @@ This is a lightweight GitHub Flow with issue-driven planning, visible ownership,
 
 ## Work unit
 
-One meaningful work item should have:
-
-- one GitHub Issue;
-- one clear scope;
-- one short-lived branch;
-- one Pull Request;
-- one visible owner at a time.
+One meaningful work item should have one GitHub Issue, one clear scope, one short-lived branch, one Pull Request, and one visible owner at a time.
 
 ## Status labels
 
@@ -46,22 +40,24 @@ Closed Issue or merged PR is the normal `done` state.
 
 ## Branch naming
 
-Use branch names without `/` to reduce ambiguity in automation, shells, URLs, and tools.
+Use branch names without `/` and without mandatory Issue numbers.
 
 Recommended format:
 
 ```text
-<type>-issue-<number>-<short-slug>
+<type>-<short-slug>-<short-id>
 ```
 
 Examples:
 
 ```text
-work-issue-14-agent-identity
-fix-issue-21-broken-template
-docs-issue-33-readme-quickstart
-research-issue-40-ci-options
+work-agent-identity-a91f
+fix-broken-template-7c2a
+docs-readme-quickstart-b91d
+research-ci-options-03af
 ```
+
+The branch is not the source of truth for Issue linkage. Link the Issue in the Work Claim comment, PR description, and handoff metadata.
 
 ## Workflow
 
@@ -69,14 +65,15 @@ research-issue-40-ci-options
 2. Mark it `ready` only when scope and acceptance criteria are clear.
 3. Choose agent identity when an agent is involved.
 4. Claim work in the Issue before editing.
-5. Create a short-lived branch without `/` in the name.
+5. Create a short-lived branch.
 6. Open a Draft PR early.
-7. Keep discussion, blockers, and review in Issue or PR.
-8. Run required checks and smoke tests.
-9. Move to review only when scope is complete enough.
-10. Merge only after checks, review, and risks are acceptable.
-11. Delete the branch after merge.
-12. Add a handoff when work is completed, paused, blocked, or transferred.
+7. Link the PR to the Issue.
+8. Keep discussion, blockers, and review in Issue or PR.
+9. Run required checks and smoke tests.
+10. Move to review only when scope is complete enough.
+11. Merge only after checks, review, and risks are acceptable.
+12. Delete the branch after merge.
+13. Add a handoff when work is completed, paused, blocked, or transferred.
 
 ## Human coordination
 
