@@ -17,18 +17,22 @@ It is not a replacement for GitHub Issues, Pull Requests, reviews, CI data, or G
 1. `AGENTS.md`
 2. `AI_HANDOFF_STANDARD.md`
 3. `ai/HANDOFF_PROTOCOL.md`
-4. `ai/PROJECT_STATE.md`
-5. `ai/DECISIONS.md`
-6. related GitHub Issue or Pull Request
-7. `ai/REFACTORING.md` when the task is code cleanup or decomposition
-8. `ai/handoffs/INDEX.md`
-9. relevant handoff files only
+4. `ai/AGENT_IDENTITY.md`
+5. `ai/ISSUE_CLAIM_PROTOCOL.md`
+6. `ai/PROJECT_STATE.md`
+7. `ai/DECISIONS.md`
+8. related GitHub Issue or Pull Request
+9. `ai/REFACTORING.md` when the task is code cleanup or decomposition
+10. `ai/handoffs/INDEX.md`
+11. relevant handoff files only
 
 ## Files
 
 - `PROJECT_STATE.md` — current project snapshot.
 - `DECISIONS.md` — durable decisions.
 - `HANDOFF_PROTOCOL.md` — workflow protocol.
+- `AGENT_IDENTITY.md` — agent naming and run id protocol.
+- `ISSUE_CLAIM_PROTOCOL.md` — issue claim and progress comment protocol.
 - `REFACTORING.md` — code cleanup and decomposition workflow.
 - `handoffs/INDEX.md` — index of handoffs.
 - `archive/README.md` — rules for stale memory.
@@ -38,5 +42,3 @@ It is not a replacement for GitHub Issues, Pull Requests, reviews, CI data, or G
 Keep files compact.
 
 Do not duplicate large diffs, bulky records, full discussions, or CI data.
-
-Private access values stay outside repository memory.
