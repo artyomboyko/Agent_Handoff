@@ -6,67 +6,58 @@ updated: 2026-07-02
 project: Agent_Handoff
 ---
 
-# Project State
+# Project State / Состояние проекта
 
-## Current phase
+## Current phase / Текущая фаза
 
-Agent Handoff Standard 1.2 is implemented in the repository and the documentation now includes usage quick starts, issue labels, agent identity, work claim, and refactoring workflow.
+Agent Handoff Standard 1.2 is implemented.
+Agent Handoff Standard 1.2 реализован.
 
-## Architecture snapshot
+The repository has bilingual documentation indexes, bilingual Issue Forms, bilingual PR template, Coordinated GitHub Flow, agent identity, work claim, and refactoring workflow.
+В репозитории есть двуязычные индексы документации, двуязычные Issue Forms, двуязычный PR template, Coordinated GitHub Flow, agent identity, work claim и refactoring workflow.
 
-This repository contains:
+## Main subsystems / Основные подсистемы
 
-- the Agent Handoff Standard;
-- root `AGENTS.md` entrypoint;
-- compact `ai/` memory structure;
-- GitHub Issue Forms;
-- default Pull Request template;
-- agent identity and work claim protocols;
-- code cleanup and refactoring workflow entry point.
+- Standard / Стандарт: `AGENT_HANDOFF_STANDARD.md`
+- Agent entrypoint / Точка входа агента: `AGENTS.md`
+- Project memory / Память проекта: `ai/`
+- GitHub workflow / GitHub workflow: `ai/GITHUB_WORKFLOW.md`
+- Agent identity / Идентификация агента: `ai/AGENT_IDENTITY.md`
+- Work claim / Claim работы: `ai/WORK_CLAIM_PROTOCOL.md`
+- Refactoring / Рефакторинг: `ai/REFACTORING.md`
+- Handoffs / Handoffs: `ai/handoffs/`
+- GitHub templates / GitHub templates: `.github/`
+- Language docs / Языковая документация: `docs/en/`, `docs/ru/`
 
-## Main subsystems
+## Implemented / Реализовано
 
-- Standard document: `AGENT_HANDOFF_STANDARD.md`
-- Agent entrypoint: `AGENTS.md`
-- Project memory: `ai/`
-- Agent identity: `ai/AGENT_IDENTITY.md`
-- Work claim protocol: `ai/WORK_CLAIM_PROTOCOL.md`
-- Refactoring workflow: `ai/REFACTORING.md`
-- Run handoffs: `ai/handoffs/`
-- GitHub workflow templates: `.github/`
-- Language docs: `docs/en/`, `docs/ru/`
-
-## Implemented
-
-- Versioned standard metadata.
-- Source priority order.
+- Agent Handoff Standard 1.2.
+- Coordinated GitHub Flow.
+- Meaningful branch naming without `/`, Issue numbers, or random identifiers by default.
 - Agent identity and run IDs.
 - Work claim protocol for Issues and Pull Requests.
-- Handoff statuses and relevance values.
-- Extended handoff index format.
-- Parallel-work conflict protocol.
-- Definition of Done with mandatory smoke tests.
-- Issue labels and GitHub Issue Forms.
-- Pull Request template with smoke-test checklist.
-- YAML front matter rules for agent memory files.
-- Security and private access value rules.
-- Bilingual README links and usage quick starts.
+- Issue labels and bilingual Issue Forms.
+- Bilingual Pull Request template.
+- Bilingual documentation indexes.
 - Refactoring workflow and agent instruction.
 
-## In progress
+## In progress / В работе
 
-Repository rename from `AI_Handoff` to `Agent_Handoff` must be completed in GitHub settings.
+- Review bilingual parity across all user-facing documents.
+- Проверка соответствия англоязычных и русскоязычных документов.
 
-## Known risks
+## Known risks / Известные риски
 
-- This repository is documentation-first; smoke tests are mostly structural Markdown/YAML checks.
 - GitHub Issue Forms must remain valid YAML.
+- GitHub Issue Forms должны оставаться валидным YAML.
 - Universal labels may need to be created manually in GitHub if missing.
+- Универсальные labels могут потребовать ручного создания в GitHub.
 
-## Sensitive areas
+## Sensitive areas / Чувствительные области
 
 - `AGENT_HANDOFF_STANDARD.md`
 - `AGENTS.md`
+- `ai/GITHUB_WORKFLOW.md`
 - `ai/HANDOFF_PROTOCOL.md`
 - `ai/AGENT_IDENTITY.md`
 - `ai/WORK_CLAIM_PROTOCOL.md`
@@ -74,14 +65,8 @@ Repository rename from `AI_Handoff` to `Agent_Handoff` must be completed in GitH
 - `.github/ISSUE_TEMPLATE/*.yml`
 - `.github/pull_request_template.md`
 
-## Current technical constraints
+## Next likely milestones / Следующие шаги
 
-- Keep active `ai/` memory compact.
-- Do not store bulky records, full discussions, generated artifacts, or private access values in `ai/`.
-- Track actual refactoring tasks in GitHub Issues, not as a long backlog in `ai/REFACTORING.md`.
-
-## Next likely milestones
-
-1. Rename the GitHub repository to `Agent_Handoff` or `agent-handoff`.
-2. Review all issue forms in GitHub UI.
-3. Optionally add automated Markdown/YAML checks.
+1. Review all Issue Forms in GitHub UI. / Проверить все Issue Forms в GitHub UI.
+2. Add automated Markdown/YAML checks. / Добавить автоматические проверки Markdown/YAML.
+3. Keep English and Russian documentation aligned. / Поддерживать соответствие английской и русской документации.
