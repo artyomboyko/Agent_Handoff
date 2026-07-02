@@ -1,17 +1,15 @@
 ---
 standard: AI Handoff
-version: "1.1"
+version: "1.2"
 status: active
-updated: 2026-06-29
+updated: 2026-07-02
 ---
 
 # AI Handoff Standard
 
 ## 1. Purpose
 
-AI Handoff is a standard for passing development state between AI coding agents through GitHub, Git, and compact files stored inside the repository.
-
-The standard exists so that a new agent can recover project state, understand current architecture, find accepted decisions, continue work after another agent, coordinate parallel work, and avoid dependence on earlier local state.
+AI Handoff is a compact standard for passing development state between AI coding agents through GitHub, Git, and small repository-tracked memory files.
 
 Core formula:
 
@@ -24,52 +22,40 @@ handoffs/ stores short snapshots of AI agent runs.
 
 ## 2. Sources of truth
 
-### GitHub
-
-GitHub is the primary workflow system.
-
-GitHub stores Issues, Pull Requests, PR comments, labels, reviews, GitHub Actions, CI status, task discussions, and links between tasks, branches, and PRs.
-
-GitHub Issues are used for tasks, bugs, features, refactoring, research, and future queue.
-
-Pull Requests are used for implementation, review, checks, and operational state.
-
-### Git
+GitHub is the primary workflow system. It stores Issues, Pull Requests, PR comments, labels, reviews, CI status, task discussions, and links between tasks, branches, agents, and PRs.
 
 Git stores source code, commits, branches, diffs, tags, and history.
 
-Full diffs and history must not be duplicated in `ai/`.
-
-### ai/
-
-The `ai/` folder stores compact project memory that is versioned with the repository.
-
-`ai/` does not replace GitHub Issues, Pull Requests, Actions data, or Git history.
+`ai/` stores compact project memory and workflow protocols. It does not replace GitHub or Git.
 
 ## 3. Source priority
 
 If information conflicts:
 
-1. Git working tree and current branch are the source for actual code state.
-2. GitHub Pull Request is the source for current implementation status.
-3. GitHub Issue is the source for task intent and acceptance criteria.
-4. `ai/PROJECT_STATE.md` is the compact current project snapshot.
-5. `ai/DECISIONS.md` is the source for durable architecture and product decisions.
-6. `ai/handoffs/*.md` are run snapshots, not authoritative history.
+1. Git working tree and current branch.
+2. GitHub Pull Request.
+3. GitHub Issue.
+4. GitHub Issue or PR work claim comments.
+5. `ai/PROJECT_STATE.md`.
+6. `ai/DECISIONS.md`.
+7. `ai/handoffs/*.md`.
 
 A handoff can be stale. Code, PR state, and current GitHub discussion have higher priority.
 
-## 4. Repository structure
-
-Required structure:
+## 4. Required repository structure
 
 ```text
 AGENTS.md
+AI_HANDOFF_STANDARD.md
+ISSUE_LABELS.md
 ai/
   README.md
   PROJECT_STATE.md
   DECISIONS.md
   HANDOFF_PROTOCOL.md
+  AGENT_IDENTITY.md
+  WORK_CLAIM_PROTOCOL.md
+  REFACTORING.md
   handoffs/
     INDEX.md
     YYYY-MM-DD_issue-123_pr-45_run-abc123.md
@@ -79,61 +65,139 @@ ai/
   ISSUE_TEMPLATE/
     bug_report.yml
     standard_change.yml
+    refactoring.yml
+    research.yml
+    backlog.yml
+    testing.yml
+    doc.yml
     config.yml
   pull_request_template.md
 ```
 
-A standalone standard repository may also keep `AI_HANDOFF_STANDARD.md` at the root.
+## 5. Start order
 
-## 5. AGENTS.md
-
-`AGENTS.md` is the short root entrypoint.
-
-It should direct the agent to:
-
-1. `ai/README.md`;
-2. `ai/HANDOFF_PROTOCOL.md`;
-3. `ai/PROJECT_STATE.md`;
-4. `ai/DECISIONS.md`;
-5. the related GitHub Issue or Pull Request;
-6. current Git status and branch.
-
-`AGENTS.md` must stay small.
-
-## 6. ai/README.md
-
-`ai/README.md` is the map of AI documentation.
-
-Recommended reading order:
+Before meaningful work, an agent should read:
 
 1. `AGENTS.md`
-2. `ai/README.md`
-3. `ai/HANDOFF_PROTOCOL.md`
-4. `ai/PROJECT_STATE.md`
-5. `ai/DECISIONS.md`
-6. related GitHub Issue or Pull Request
-7. `ai/handoffs/INDEX.md`
-8. relevant handoff files only
+2. `AI_HANDOFF_STANDARD.md`
+3. `ai/README.md`
+4. `ai/HANDOFF_PROTOCOL.md`
+5. `ai/AGENT_IDENTITY.md`
+6. `ai/WORK_CLAIM_PROTOCOL.md`
+7. `ai/PROJECT_STATE.md`
+8. `ai/DECISIONS.md`
+9. related GitHub Issue or Pull Request
+10. `ai/REFACTORING.md` when the task is cleanup or decomposition
+11. `ai/handoffs/INDEX.md`
+12. relevant handoff files only
 
 The agent must not read every handoff file blindly.
 
-## 7. ai/PROJECT_STATE.md
+## 6. Agent identity
+
+Each AI agent run should use:
+
+- `agent_name` — a human-readable name chosen by the agent;
+- `agent_id` — a short stable slug for this repository context;
+- `run_id` — a unique id for the current run or session.
+
+Recommended example:
+
+```text
+Agent: North Fox
+Agent ID: north-fox-7c2a
+Run ID: 20260702-issue-14-a91f
+```
+
+Recommended `agent_id` format:
+
+```text
+<two-words-slug>-<4-hex>
+```
+
+Recommended `run_id` format:
+
+```text
+YYYYMMDD-issue-<number>-<4-hex>
+```
+
+If there is no Issue yet:
+
+```text
+YYYYMMDD-no-issue-<4-hex>
+```
+
+The agent may choose its own name, but `agent_id` must be short, readable, and unlikely to collide.
+
+## 7. Work claim protocol
+
+Before changing code or documentation for a meaningful task, an agent must claim the work in GitHub.
+
+The claim belongs in the related GitHub Issue. If work is already centered on a Pull Request, the same identity values must also appear in the PR description or PR comments.
+
+Required claim comment:
+
+```md
+## AI Handoff Work Claim
+
+Agent: <agent_name>
+Agent ID: <agent_id>
+Run ID: <run_id>
+Started: YYYY-MM-DD HH:MM UTC
+Issue: #<issue-number>
+Branch: <branch-name>
+Draft PR: #<pr-number or TBD>
+Scope: <short scope>
+Status: in-progress
+Next update: <time or condition>
+```
+
+For meaningful updates:
+
+```md
+## AI Handoff Work Update
+
+Agent ID: <agent_id>
+Run ID: <run_id>
+Status: in-progress | blocked | completed
+Changed:
+Tested:
+Risk:
+Next:
+```
+
+If an Issue or PR already has a recent work claim and no completion note, another agent must not silently take it over. The second agent should comment, ask for status, narrow scope, or create a follow-up Issue.
+
+## 8. Issue labels
+
+Recommended universal type labels:
+
+| Label | Use for |
+|---|---|
+| `bug` | A confirmed or suspected problem in behavior, structure, documentation, templates, or the standard. |
+| `enhancement` | A proposed improvement to the standard, workflow, templates, or repository structure. |
+| `refactoring` | Code cleanup, file decomposition, renaming, dead-code removal, or internal restructuring without intended behavior change. |
+| `research` | Investigation, comparison, feasibility analysis, or design exploration before implementation. |
+| `backlog` | Future work that is useful to keep, but not ready for immediate implementation. |
+| `testing` | Test coverage gaps, failing checks, flaky checks, smoke-test improvements, or validation tasks. |
+| `docs` | Documentation fixes, missing docs, unclear docs, examples, guides, README updates, or translation updates. |
+
+Recommended status labels:
+
+| Label | Use for |
+|---|---|
+| `in-progress` | An agent or maintainer has claimed the Issue and is working on it. |
+| `blocked` | Work cannot continue until a dependency, decision, or external condition is resolved. |
+
+Prefer one primary type label per Issue. Add status labels only while they reflect current work state.
+
+## 9. Project state
 
 `ai/PROJECT_STATE.md` stores the compact current project snapshot.
 
-Recommended structure:
+Recommended sections:
 
 ```md
----
-type: project_state
-version: 1
-status: active
-updated: YYYY-MM-DD
-project: project-name
----
-
-# Project State
-
 ## Current phase
 ## Architecture snapshot
 ## Main subsystems
@@ -145,23 +209,11 @@ project: project-name
 ## Next likely milestones
 ```
 
-It is a snapshot, not a historical journal. Stale material should be compressed or moved to `ai/archive/`.
+It is a snapshot, not a historical journal.
 
-## 8. ai/DECISIONS.md
+## 10. Decisions
 
 `ai/DECISIONS.md` stores durable architecture and product decisions.
-
-Recommended file metadata:
-
-```md
----
-type: decisions
-version: 1
-status: active
-updated: YYYY-MM-DD
-project: project-name
----
-```
 
 Recommended decision format:
 
@@ -171,63 +223,49 @@ Recommended decision format:
 Status: accepted | superseded | rejected
 
 ### Context
-Why the decision was needed.
-
 ### Decision
-What was chosen.
-
 ### Rejected alternatives
-What was rejected.
-
 ### Consequences
-What follows from the decision.
-
 ### Related
-GitHub Issue / PR / commit links.
 ```
 
 Only decisions important for future agents and maintainers should be recorded.
 
-If decisions grow too much, keep `ai/DECISIONS.md` as an index and move full ADRs to `ai/decisions/ADR-YYYY-MM-DD-title.md`.
-
-## 9. ai/HANDOFF_PROTOCOL.md
+## 11. Handoff protocol
 
 `ai/HANDOFF_PROTOCOL.md` defines the operating protocol for agents.
 
 It should define:
 
 - how work starts;
+- how agent identity is chosen;
+- how work is claimed in Issues and Pull Requests;
 - how an Issue is selected;
 - how a branch is created;
 - when a Draft PR is opened;
 - how progress updates are written;
 - how handoff files are created;
 - which checks and smoke tests must run;
-- how Docker or Compose is handled when relevant;
 - how parallel agents coordinate;
-- how work is completed or transferred;
-- which actions need extra care.
+- how work is completed or transferred.
 
-## 10. ai/handoffs/INDEX.md
+## 12. Refactoring workflow
+
+`ai/REFACTORING.md` is the entry point for code cleanup, decomposition, renaming, dependency simplification, dead-code removal, and internal restructuring.
+
+It is a protocol and prompt, not a backlog.
+
+Concrete refactoring tasks should live in GitHub Issues with the `refactoring` label.
+
+## 13. Handoff index
 
 `ai/handoffs/INDEX.md` is the index of handoff files.
 
 Recommended format:
 
 ```md
----
-type: handoff_index
-version: 1
-status: active
-updated: YYYY-MM-DD
-project: project-name
----
-
-# Handoff Index
-
 | Date | Updated | Run | Issue | PR | Branch | Status | Relevance | Summary | File | Supersedes |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 2026-06-29 | 2026-06-29 | abc123 | #123 | #45 | work/issue-123-compose | completed | historical | Fixed Compose startup | 2026-06-29_issue-123_pr-45_run-abc123.md | |
 ```
 
 Allowed `Status` values:
@@ -244,9 +282,7 @@ Allowed `Relevance` values:
 - `historical`
 - `obsolete`
 
-If a handoff is superseded by a newer run, mark the old entry as `obsolete`.
-
-## 11. ai/handoffs/*.md
+## 14. Handoff files
 
 One handoff file represents one meaningful agent run.
 
@@ -262,16 +298,16 @@ If issue or PR is missing:
 YYYY-MM-DD_no-issue_no-pr_run-abc123.md
 ```
 
-Recommended metadata:
+Recommended metadata includes:
 
-```md
----
+```yaml
 type: handoff
 version: 1
 date: YYYY-MM-DD
 updated: YYYY-MM-DD
 run: abc123
 agent: agent-name
+agent_id: agent-id
 project: project-name
 branch: branch-name
 issue: 123
@@ -281,97 +317,32 @@ final_commit: def456
 status: completed
 relevance: active
 supersedes:
----
-```
-
-Recommended body:
-
-```md
-# Handoff: abc123
-
-## Task
-Short task description.
-
-## What changed
-Short description of completed changes.
-
-## Files changed
-Changed files with short explanations.
-
-## Smoke tests
-Mandatory smoke tests and results.
-
-## What was tested
-Other checks and results.
-
-## What failed / risks
-Failures, risks, or attention points.
-
-## Next recommended step
-What the next agent or human should do.
-
-## Links
-- Issue:
-- PR:
-- Commits:
-- Actions:
 ```
 
 A handoff must be a short snapshot, not a full work diary.
 
-## 12. ai/archive/
-
-`ai/archive/` stores stale project memory that is not needed now in the active state.
-
-`ai/archive/README.md` should explain what is stored there and when to archive it.
-
-## 13. Size limits
-
-Recommended soft limits:
-
-- `AGENTS.md`: up to 120 lines;
-- `ai/README.md`: up to 250 lines;
-- `ai/PROJECT_STATE.md`: up to 600 lines;
-- `ai/DECISIONS.md`: up to 1,000 lines total;
-- one decision entry: up to 120 lines;
-- `ai/HANDOFF_PROTOCOL.md`: up to 700 lines;
-- one handoff file: up to 250 lines;
-- active `ai/` memory, excluding archive: preferably under 150 KB.
-
-These are soft limits. If state becomes hard to load, compress or archive.
-
-Do not place in `ai/`:
-
-- large diffs;
-- bulky command records;
-- full work diaries;
-- large stack traces;
-- full GitHub discussions;
-- full GitHub Actions data;
-- private access values;
-- large tool data;
-- generated artifacts that fit elsewhere.
-
-Use links to GitHub, commits, PRs, Actions, or repository files for large data.
-
-## 14. GitHub workflow
+## 15. GitHub workflow
 
 Each meaningful work item should be connected to a GitHub Issue or Pull Request.
 
 Recommended process:
 
 1. Select or create a GitHub Issue.
-2. Define work scope.
-3. Create a branch.
-4. Open a Draft PR early.
-5. Write progress updates in PR comments.
-6. Commit changes.
-7. Run checks and mandatory smoke tests.
-8. Update PR description.
-9. Leave a handoff when work is completed or interrupted.
+2. Check existing work claims, linked PRs, active handoffs, and recent comments.
+3. Choose agent identity.
+4. Claim the work in the Issue.
+5. Define work scope.
+6. Create a branch.
+7. Open a Draft PR early.
+8. Write progress updates in Issue or PR comments when useful.
+9. Commit changes.
+10. Run checks and mandatory smoke tests.
+11. Update PR description.
+12. Leave a handoff when work is completed or interrupted.
 
 PR description should contain:
 
+- agent name, agent id, and run id when work was done by an AI agent;
 - what changed;
 - related issue;
 - how it was tested;
@@ -380,23 +351,23 @@ PR description should contain:
 - remaining work;
 - links to relevant handoff files if needed.
 
-## 15. GitHub templates
+## 16. GitHub templates
 
-Recommended default:
+Use GitHub Issue Forms for structured issues.
 
-- use GitHub Issue Forms for structured issues;
-- provide at least two issue templates:
-  - Bug report;
-  - Standard change / enhancement;
-- keep one default PR template at `.github/pull_request_template.md`.
+Recommended issue forms:
 
-Multiple PR templates may be added later in `.github/PULL_REQUEST_TEMPLATE/`, but the default single template is preferred unless the repository has clearly different PR workflows.
+- bug;
+- enhancement;
+- refactoring;
+- research;
+- backlog;
+- testing;
+- docs.
 
-Issue forms should collect structured data, required fields, affected section, expected behavior, risks, and acceptance criteria.
+Keep one default PR template at `.github/pull_request_template.md` unless the repository has clearly different PR workflows.
 
-PR templates should require summary, related issue, change type, smoke tests, state updates, risks, and next steps.
-
-## 16. Parallel work and conflict protocol
+## 17. Parallel work and conflict protocol
 
 Main rule:
 
@@ -410,10 +381,9 @@ Before editing high-risk files, check:
 
 - open PRs touching the same files;
 - related Issues;
+- recent Issue or PR work claim comments;
 - recent commits on the base branch;
 - `ai/handoffs/INDEX.md` for active work.
-
-High-risk files include dependency manifests, Dockerfiles, Compose files, CI workflows, migrations, auth code, shared configuration, public API contracts, core architecture files, and active `ai/` memory files.
 
 If overlap is found:
 
@@ -423,29 +393,12 @@ If overlap is found:
 4. create a follow-up Issue if needed;
 5. leave a handoff if the current work is paused.
 
-## 17. Start protocol
-
-Before changing code, the agent must:
-
-1. read `AGENTS.md`;
-2. read `ai/README.md`;
-3. read `ai/HANDOFF_PROTOCOL.md`;
-4. read `ai/PROJECT_STATE.md`;
-5. read `ai/DECISIONS.md`;
-6. find the related GitHub Issue or PR;
-7. check `git status`;
-8. check current branch;
-9. check recent commits;
-10. check relevant handoffs through `ai/handoffs/INDEX.md`.
-
-Only after that may the agent propose or make changes.
-
 ## 18. Completion protocol and Definition of Done
 
 After completing or interrupting meaningful work, the agent must:
 
 1. update or create the PR;
-2. add a progress update in a PR comment when useful;
+2. add a progress update in an Issue or PR comment when useful;
 3. run mandatory smoke tests before marking work as ready;
 4. create a short handoff file in `ai/handoffs/`;
 5. update `ai/handoffs/INDEX.md`;
@@ -456,6 +409,8 @@ After completing or interrupting meaningful work, the agent must:
 Definition of Done:
 
 - related Issue or PR is linked;
+- work claim comment exists for AI-agent work;
+- agent id and run id are repeated in PR or handoff when relevant;
 - changes are committed;
 - smoke tests were run before completion, or not-run reason is documented;
 - focused checks were run, or not-run reason is documented;
@@ -464,8 +419,7 @@ Definition of Done:
 - handoff file exists for meaningful work;
 - `ai/handoffs/INDEX.md` is updated;
 - `PROJECT_STATE.md` is updated only if stable state changed;
-- `DECISIONS.md` is updated only if a durable decision was made;
-- private access values were not added.
+- `DECISIONS.md` is updated only if a durable decision was made.
 
 ## 19. Mandatory smoke tests
 
@@ -480,17 +434,7 @@ Default smoke-test categories:
 - the application starts, imports, builds, or shows help, depending on project type;
 - at least one focused check covers the changed area;
 - documentation-only changes pass Markdown/YAML/link sanity checks where practical;
-- GitHub Issue Forms and PR templates remain syntactically valid when changed;
-- private access values are not present in changed files.
-
-If smoke tests cannot be run, write:
-
-```text
-Smoke tests: not run
-Reason:
-Risk:
-Next step:
-```
+- GitHub Issue Forms and PR templates remain syntactically valid when changed.
 
 ## 20. When to update ai/
 
@@ -514,60 +458,26 @@ Required for:
 - `ai/PROJECT_STATE.md`;
 - `ai/DECISIONS.md`;
 - `ai/HANDOFF_PROTOCOL.md`;
+- `ai/AGENT_IDENTITY.md`;
+- `ai/WORK_CLAIM_PROTOCOL.md`;
+- `ai/REFACTORING.md`;
 - `ai/handoffs/INDEX.md`;
 - `ai/handoffs/*.md`;
 - archive index files.
 
-Optional for:
-
-- `AI_HANDOFF_STANDARD.md`;
-- large standalone ADR files if decisions are split.
-
-Not required for:
-
-- `AGENTS.md`;
-- `.github` issue templates;
-- `.github/pull_request_template.md`.
-
 Required front matter fields:
 
 ```yaml
-type: project_state | decisions | handoff_protocol | handoff_index | handoff | archive_index
+type: project_state | decisions | handoff_protocol | agent_identity_protocol | work_claim_protocol | refactoring_protocol | handoff_index | handoff | archive_index
 version: 1
 status: active
 updated: YYYY-MM-DD
 project: project-name
 ```
 
-Handoff files should additionally include run, branch, issue, PR, base commit, final commit, status, relevance, and supersedes.
+Handoff files should additionally include run, agent, agent_id, branch, issue, PR, base commit, final commit, status, relevance, and supersedes.
 
-The goal is to keep files human-readable while making indexing and automation easier.
-
-## 22. Security and private access values
-
-Private access values must stay outside `ai/` and outside handoff files.
-
-Do not place in repository memory:
-
-- API keys;
-- auth values;
-- sign-in values;
-- local key material;
-- production access values;
-- personal data;
-- full local environment files;
-- private customer data;
-- sensitive internal incident data.
-
-If a private access value was exposed:
-
-1. stop normal work;
-2. notify the owner or maintainer;
-3. rotate the value;
-4. repair Git history if needed;
-5. document only the remediation, never the value itself.
-
-## 23. Portability
+## 22. Portability
 
 AI Handoff must be portable.
 
@@ -575,7 +485,7 @@ A new agent should recover state after `git clone` and access to GitHub.
 
 Recovery must not require a local database of a previous agent, old local state, uncommitted local files, or hidden tool data.
 
-## 24. Final rule
+## 23. Final rule
 
 Code changes together with compact state for the next agent.
 
