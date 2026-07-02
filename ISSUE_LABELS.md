@@ -1,30 +1,28 @@
-# AI Handoff Issue Labels
+# Agent Handoff Issue Labels
 
-This file defines the recommended universal Issue labels for AI Handoff repositories.
+This file defines the recommended universal Issue labels for Agent Handoff repositories.
 
-The labels are intentionally small and task-oriented. They describe the type of work, not every subsystem in a project.
+## Type labels
 
-## Core labels
+- `bug`
+- `enhancement`
+- `refactoring`
+- `research`
+- `backlog`
+- `testing`
+- `docs`
 
-| Label | Use for |
-|---|---|
-| `bug` | A confirmed or suspected problem in behavior, structure, documentation, templates, or the standard. |
-| `enhancement` | A proposed improvement to the standard, workflow, templates, or repository structure. |
-| `refactoring` | Code cleanup, file decomposition, renaming, dead-code removal, or internal restructuring without intended behavior change. |
-| `research` | Investigation, comparison, feasibility analysis, or design exploration before implementation. |
-| `backlog` | Future work that is useful to keep, but not ready or not scheduled for immediate implementation. |
-| `testing` | Test coverage gaps, failing checks, flaky checks, smoke-test improvements, or validation tasks. |
-| `docs` | Documentation fixes, missing docs, unclear docs, examples, guides, README updates, or translation updates. |
+## Status labels
+
+- `in-progress`
+- `blocked`
 
 ## Rules
 
 - Prefer one primary type label per Issue.
-- Add extra labels only when they clarify routing.
+- Add status labels only while they reflect current work state.
 - Keep project-specific area labels optional and separate from these universal labels.
 - Do not use `ai/` files as a long issue backlog; use GitHub Issues.
-- Use `backlog` for deferred work and `research` for investigation work.
-- Use `testing` when the main task is about checks, coverage, validation, or test reliability.
-- Use `docs` when the main deliverable is documentation.
 
 ## Template mapping
 
