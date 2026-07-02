@@ -1,8 +1,9 @@
-# Agent Handoff Issue Labels
+# Agent Handoff Issue Labels / Метки Issue
 
-This file defines the recommended universal Issue labels for Agent Handoff repositories.
+This file defines recommended universal Issue labels for Agent Handoff repositories.
+Этот файл описывает рекомендуемые универсальные метки Issue для репозиториев Agent Handoff.
 
-## Type labels
+## Type labels / Типовые метки
 
 - `bug`
 - `enhancement`
@@ -12,26 +13,30 @@ This file defines the recommended universal Issue labels for Agent Handoff repos
 - `testing`
 - `docs`
 
-## Status labels
+## Status labels / Статусные метки
 
+- `needs-triage`
+- `ready`
 - `in-progress`
 - `blocked`
+- `in-review`
+- `changes-requested`
+- `ready-to-merge`
 
-## Rules
+## Rules / Правила
 
-- Prefer one primary type label per Issue.
-- Add status labels only while they reflect current work state.
-- Keep project-specific area labels optional and separate from these universal labels.
-- Do not use `ai/` files as a long issue backlog; use GitHub Issues.
+- Prefer one primary type label per Issue. / Предпочитайте одну основную типовую метку на Issue.
+- Add status labels only while they reflect current work state. / Добавляйте статусные метки только пока они отражают текущее состояние работы.
+- Keep project-specific area labels optional. / Проектные area-метки остаются опциональными.
 
-## Template mapping
+## Template mapping / Соответствие шаблонов
 
-| Label | Issue form |
+| Label / Метка | Issue form / Форма Issue |
 |---|---|
 | `bug` | `.github/ISSUE_TEMPLATE/bug_report.yml` |
 | `enhancement` | `.github/ISSUE_TEMPLATE/standard_change.yml` |
-| `refactoring` | `.github/ISSUE_TEMPLATE/refactoring.yml` |
-| `research` | `.github/ISSUE_TEMPLATE/research.yml` |
+| `refactoring` | `.github/ISSUE_TEMPLATE/maintenance.yml` |
+| `research` | `.github/ISSUE_TEMPLATE/analysis.yml` |
 | `backlog` | `.github/ISSUE_TEMPLATE/backlog.yml` |
 | `testing` | `.github/ISSUE_TEMPLATE/testing.yml` |
 | `docs` | `.github/ISSUE_TEMPLATE/doc.yml` |
