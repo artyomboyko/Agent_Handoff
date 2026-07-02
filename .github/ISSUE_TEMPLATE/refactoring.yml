@@ -1,0 +1,26 @@
+name: Refactoring
+about: Plan code cleanup or internal restructuring
+title: "Refactor: "
+labels: ["refactoring"]
+body:
+  - type: markdown
+    attributes:
+      value: Use this form for focused internal code cleanup.
+  - type: textarea
+    id: code_area
+    attributes:
+      label: Code area
+    validations:
+      required: true
+  - type: textarea
+    id: target_state
+    attributes:
+      label: Target state
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: Required checks
+    validations:
+      required: true
