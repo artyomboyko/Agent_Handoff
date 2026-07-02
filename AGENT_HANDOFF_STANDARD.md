@@ -1,5 +1,149 @@
+---
+standard: Agent Handoff
+version: "1.2"
+status: active
+updated: 2026-07-02
+---
+
 # Agent Handoff Standard
 
 Agent Handoff is a compact standard for passing development state between AI coding agents through GitHub, Git, and small repository-tracked memory files.
 
-See `AI_HANDOFF_STANDARD.md` while the repository migration is in progress.
+## Core model
+
+```text
+GitHub manages work: Issues, Pull Requests, reviews, checks, labels, comments, and current ownership.
+Git stores code: branches, commits, diffs, tags, and history.
+ai/ stores compact durable memory and agent protocols.
+ai/handoffs/ stores short snapshots of agent runs.
+```
+
+## Required files
+
+```text
+AGENTS.md
+AGENT_HANDOFF_STANDARD.md
+ISSUE_LABELS.md
+ai/README.md
+ai/PROJECT_STATE.md
+ai/DECISIONS.md
+ai/HANDOFF_PROTOCOL.md
+ai/AGENT_IDENTITY.md
+ai/WORK_CLAIM_PROTOCOL.md
+ai/REFACTORING.md
+ai/handoffs/INDEX.md
+.github/ISSUE_TEMPLATE/
+.github/pull_request_template.md
+```
+
+## Start order
+
+Before meaningful work, read:
+
+1. `AGENTS.md`
+2. `AGENT_HANDOFF_STANDARD.md`
+3. `ai/README.md`
+4. `ai/HANDOFF_PROTOCOL.md`
+5. `ai/AGENT_IDENTITY.md`
+6. `ai/WORK_CLAIM_PROTOCOL.md`
+7. `ai/PROJECT_STATE.md`
+8. `ai/DECISIONS.md`
+9. related GitHub Issue or Pull Request
+10. relevant handoffs through `ai/handoffs/INDEX.md`
+
+## Agent identity
+
+Each agent run should use `agent_name`, `agent_id`, and `run_id`.
+
+Example:
+
+```text
+Agent: North Fox
+Agent ID: north-fox-7c2a
+Run ID: 20260702-issue-14-a91f
+```
+
+Recommended formats:
+
+```text
+agent_id: <two-words-slug>-<4-hex>
+run_id: YYYYMMDD-issue-<number>-<4-hex>
+```
+
+## Work claim
+
+Before changing code or docs for a meaningful task, claim the work in GitHub.
+
+Use this comment in the related Issue and repeat the same identity values in the Draft PR:
+
+```md
+## Agent Handoff Work Claim
+
+Agent: <agent_name>
+Agent ID: <agent_id>
+Run ID: <run_id>
+Started: YYYY-MM-DD HH:MM UTC
+Issue: #<issue-number>
+Branch: <branch-name>
+Draft PR: #<pr-number or TBD>
+Scope: <short scope>
+Status: in-progress
+Next update: <time or condition>
+```
+
+For updates:
+
+```md
+## Agent Handoff Work Update
+
+Agent ID: <agent_id>
+Run ID: <run_id>
+Status: in-progress | blocked | completed
+Changed:
+Tested:
+Risk:
+Next:
+```
+
+If an Issue or PR already has a recent work claim, coordinate in the related Issue or PR before continuing.
+
+## Labels
+
+Type labels: `bug`, `enhancement`, `refactoring`, `research`, `backlog`, `testing`, `docs`.
+
+Status labels: `in-progress`, `blocked`.
+
+## Workflow
+
+1. Select or create a GitHub Issue.
+2. Check existing work claims, linked PRs, active handoffs, and recent comments.
+3. Choose agent identity.
+4. Claim the work.
+5. Define scope.
+6. Create a branch.
+7. Open a Draft PR early.
+8. Write progress updates in Issue or PR comments when useful.
+9. Commit changes.
+10. Run checks and smoke tests.
+11. Update PR description.
+12. Leave a handoff when work is completed or interrupted.
+
+## Definition of Done
+
+- related Issue or PR is linked;
+- work claim comment exists for agent work;
+- agent id and run id are repeated in PR or handoff when relevant;
+- changes are committed;
+- smoke tests were run or reason is documented;
+- PR description is updated;
+- risks are listed;
+- handoff exists for meaningful work;
+- `ai/handoffs/INDEX.md` is updated when needed.
+
+## Final rule
+
+Code changes together with compact state for the next agent.
+
+Large data stays in GitHub and Git.
+
+`ai/` stores only what helps future agents continue development quickly and safely.
