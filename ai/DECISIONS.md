@@ -6,44 +6,49 @@ updated: 2026-07-02
 project: Agent_Handoff
 ---
 
-# Architecture Records
+# Architecture Records / Архитектурные записи
 
-## 2026-06-29 — Adopt Agent Handoff Standard 1.1
+## 2026-06-29 — Adopt Agent Handoff Standard 1.1 / Принять Agent Handoff Standard 1.1
 
-Status: accepted
+Status / Статус: accepted
 
-### Background
+### Background / Контекст
 
-The initial standard needed stronger support for parallel agents, structured GitHub templates, smoke-test discipline, private value policy, and machine-readable metadata.
+The initial standard needed support for parallel agents, GitHub templates, smoke tests, and machine-readable metadata.
+Начальному стандарту требовалась поддержка параллельных агентов, GitHub templates, smoke tests и machine-readable metadata.
 
-### Chosen approach
+### Decision / Решение
 
-Adopt Agent Handoff Standard 1.1 with source priority order, handoff statuses, expanded index columns, conflict protocol, Definition of Done, mandatory smoke tests, larger size guidance, GitHub Issue Forms, default PR template, YAML front matter, and private value policy.
+Adopt Agent Handoff Standard 1.1 as a compact workflow scaffold.
+Принять Agent Handoff Standard 1.1 как компактный workflow scaffold.
 
-### Alternatives
-
-Avoid bulky operational records in `ai/`; keep GitHub and Git as primary history.
-
-### Consequences
-
-Future repositories get a compact workflow scaffold.
-
-### Related
+### Related / Связано
 
 - Issue: #1
 
-## 2026-07-02 — Rename to Agent Handoff
+## 2026-07-02 — Rename to Agent Handoff / Переименовать в Agent Handoff
 
-Status: accepted
+Status / Статус: accepted
 
-### Background
+### Background / Контекст
 
 The project name should emphasize agent-to-agent development handoff.
+Название проекта должно подчёркивать передачу контекста между агентами.
 
-### Chosen approach
+### Decision / Решение
 
 Use Agent Handoff as the project and standard name.
+Использовать Agent Handoff как название проекта и стандарта.
 
-### Related
+### Related / Связано
 
 - Standard file: `AGENT_HANDOFF_STANDARD.md`
+
+## 2026-07-02 — Bilingual documentation / Двуязычная документация
+
+Status / Статус: accepted
+
+### Decision / Решение
+
+User-facing docs and templates should support English and Russian and keep matching meaning.
+Пользовательские документы и шаблоны должны поддерживать английский и русский языки и сохранять соответствие смысла.
