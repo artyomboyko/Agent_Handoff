@@ -6,13 +6,15 @@ updated: 2026-07-02
 project: Agent_Handoff
 ---
 
-# Agent Memory Map
+# Agent Memory Map / Карта памяти агента
 
-This folder stores compact repository-tracked memory for Agent Handoff work.
+This folder stores compact repository memory.
+Эта папка хранит компактную память репозитория.
 
-It is not a replacement for GitHub Issues, Pull Requests, reviews, CI data, or Git history.
+It does not replace GitHub Issues, Pull Requests, checks, or Git history.
+Она не заменяет GitHub Issues, Pull Requests, проверки или историю Git.
 
-## Reading order
+## Reading order / Порядок чтения
 
 1. `AGENTS.md`
 2. `AGENT_HANDOFF_STANDARD.md`
@@ -22,25 +24,23 @@ It is not a replacement for GitHub Issues, Pull Requests, reviews, CI data, or G
 6. `ai/WORK_CLAIM_PROTOCOL.md`
 7. `ai/PROJECT_STATE.md`
 8. `ai/DECISIONS.md`
-9. related GitHub Issue or Pull Request
-10. `ai/REFACTORING.md` when the task is code cleanup or decomposition
+9. Related Issue or PR / Связанное Issue или PR
+10. `ai/REFACTORING.md`
 11. `ai/handoffs/INDEX.md`
-12. relevant handoff files only
+12. Relevant handoff files only / Только релевантные handoff-файлы
 
-## Files
+## Files / Файлы
 
-- `PROJECT_STATE.md` — current project snapshot.
-- `DECISIONS.md` — durable decisions.
-- `GITHUB_WORKFLOW.md` — coordinated GitHub workflow methodology.
-- `HANDOFF_PROTOCOL.md` — workflow protocol.
-- `AGENT_IDENTITY.md` — agent naming and run id protocol.
-- `WORK_CLAIM_PROTOCOL.md` — Issue and Pull Request work claim protocol.
-- `REFACTORING.md` — code cleanup and decomposition workflow.
-- `handoffs/INDEX.md` — index of handoffs.
-- `archive/README.md` — rules for stale memory.
+- `PROJECT_STATE.md` — project snapshot / snapshot проекта.
+- `DECISIONS.md` — durable decisions / устойчивые решения.
+- `GITHUB_WORKFLOW.md` — coordinated GitHub workflow / координированный GitHub workflow.
+- `HANDOFF_PROTOCOL.md` — workflow protocol / протокол работы.
+- `AGENT_IDENTITY.md` — agent identity protocol / протокол идентификации агента.
+- `WORK_CLAIM_PROTOCOL.md` — work claim protocol / протокол claim работы.
+- `REFACTORING.md` — cleanup workflow / workflow cleanup.
+- `handoffs/INDEX.md` — handoff index / индекс handoff.
 
-## Rules
+## Rules / Правила
 
 Keep files compact.
-
-Do not duplicate large diffs, bulky records, full discussions, or CI data.
+Файлы должны быть компактными.
