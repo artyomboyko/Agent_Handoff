@@ -1,0 +1,30 @@
+name: Backlog item
+about: Park a deferred work item
+title: "Backlog: "
+labels:
+  - backlog
+body:
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary
+    validations:
+      required: true
+  - type: textarea
+    id: reason
+    attributes:
+      label: Reason
+    validations:
+      required: true
+  - type: textarea
+    id: ready_when
+    attributes:
+      label: Ready when
+    validations:
+      required: false
+  - type: textarea
+    id: related
+    attributes:
+      label: Related context
+    validations:
+      required: false
