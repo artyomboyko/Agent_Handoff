@@ -1,30 +1,33 @@
-name: Backlog item
-about: Park a deferred work item
+name: Backlog / Бэклог
+description: Future work / Отложенная работа
 title: "Backlog: "
 labels:
   - backlog
 body:
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language / Язык
+      options:
+        - English
+        - Русский
+    validations:
+      required: true
   - type: textarea
     id: summary
     attributes:
-      label: Summary
+      label: Summary / Описание
     validations:
       required: true
   - type: textarea
     id: reason
     attributes:
-      label: Reason
+      label: Reason / Причина
     validations:
       required: true
   - type: textarea
-    id: ready_when
-    attributes:
-      label: Ready when
-    validations:
-      required: false
-  - type: textarea
     id: related
     attributes:
-      label: Related context
+      label: Related context / Связанный контекст
     validations:
       required: false
