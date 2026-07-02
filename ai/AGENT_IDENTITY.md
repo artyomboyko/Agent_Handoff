@@ -57,3 +57,14 @@ If there is no issue yet:
 ```text
 YYYYMMDD-no-issue-<4-hex>
 ```
+
+## Where to repeat the values
+
+Repeat `agent_name`, `agent_id`, and `run_id` in:
+
+- Issue claim comment;
+- Draft PR description;
+- handoff metadata when a handoff is created;
+- `ai/handoffs/INDEX.md` when a handoff is added.
+
+Do not keep an active agent registry in `ai/`. It becomes stale quickly.
