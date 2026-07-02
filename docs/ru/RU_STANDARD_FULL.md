@@ -1,6 +1,6 @@
-# Стандарт AI Handoff
+# Стандарт Agent Handoff
 
-AI Handoff описывает, как хранить и передавать проектный контекст через GitHub, Git и `ai/`.
+Agent Handoff описывает, как хранить и передавать проектный контекст между AI-агентами через GitHub, Git и `ai/`.
 
 ## Модель
 
@@ -17,19 +17,23 @@ Git хранит код, ветки, коммиты, diff и историю.
 1. Текущая branch и Git state.
 2. GitHub Pull Request.
 3. GitHub Issue.
-4. `ai/PROJECT_STATE.md`.
-5. `ai/DECISIONS.md`.
-6. Handoff-файлы.
+4. Work claim comments в Issue или PR.
+5. `ai/PROJECT_STATE.md`.
+6. `ai/DECISIONS.md`.
+7. Handoff-файлы.
 
 ## Структура
 
 - `AGENTS.md`
-- `AI_HANDOFF_STANDARD.md`
+- `AGENT_HANDOFF_STANDARD.md`
 - `ISSUE_LABELS.md`
 - `ai/README.md`
 - `ai/PROJECT_STATE.md`
 - `ai/DECISIONS.md`
 - `ai/HANDOFF_PROTOCOL.md`
+- `ai/AGENT_IDENTITY.md`
+- `ai/WORK_CLAIM_PROTOCOL.md`
+- `ai/REFACTORING.md`
 - `ai/handoffs/INDEX.md`
 - `.github/ISSUE_TEMPLATE/`
 - `.github/pull_request_template.md`
@@ -47,6 +51,11 @@ Git хранит код, ветки, коммиты, diff и историю.
 - `backlog` — отложенная полезная работа.
 - `testing` — тесты, smoke checks, validation или нестабильные проверки.
 - `docs` — документация, README, примеры, guides или переводы.
+
+Статусные метки:
+
+- `in-progress` — работа взята агентом или maintainer'ом.
+- `blocked` — работа временно заблокирована.
 
 Подробная таблица: `ISSUE_LABELS.md`.
 
