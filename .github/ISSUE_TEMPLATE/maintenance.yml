@@ -1,5 +1,5 @@
-name: Maintenance / Обслуживание
-description: Maintenance work / Техническая работа
+name: Refactoring / Рефакторинг
+description: Code cleanup or restructuring / Cleanup или перестройка кода
 title: "Refactor: "
 labels:
   - refactoring
@@ -14,8 +14,44 @@ body:
     validations:
       required: true
   - type: textarea
-    id: summary
+    id: code_area
     attributes:
-      label: Summary / Описание
+      label: Code area / Область кода
     validations:
       required: true
+  - type: textarea
+    id: current_problem
+    attributes:
+      label: Current problem / Текущая проблема
+    validations:
+      required: true
+  - type: textarea
+    id: target_state
+    attributes:
+      label: Target state / Целевое состояние
+    validations:
+      required: true
+  - type: textarea
+    id: non_goals
+    attributes:
+      label: Non-goals / Что не входит в задачу
+    validations:
+      required: true
+  - type: textarea
+    id: risk
+    attributes:
+      label: Risk / Риск
+    validations:
+      required: true
+  - type: textarea
+    id: checks
+    attributes:
+      label: Required checks / Обязательные проверки
+    validations:
+      required: true
+  - type: textarea
+    id: related
+    attributes:
+      label: Related files or PRs / Связанные файлы или PR
+    validations:
+      required: false
