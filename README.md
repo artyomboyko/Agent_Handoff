@@ -30,6 +30,7 @@ Version / версия: **1.1**
 | English | Русский |
 |---|---|
 | [AI Handoff Standard](AI_HANDOFF_STANDARD.md) | [Стандарт AI Handoff](docs/ru/RU_STANDARD_FULL.md) |
+| [Issue labels](ISSUE_LABELS.md) | [Метки Issue](ISSUE_LABELS.md) |
 | [Agent entrypoint](AGENTS.md) | [Инструкция](docs/ru/RU_GUIDE.md) |
 | [AI memory map](ai/README.md) | [Карта документов](docs/ru/README.md) |
 | [Workflow protocol](ai/HANDOFF_PROTOCOL.md) | [Протокол](docs/ru/PROTOCOL_RU.md) |
