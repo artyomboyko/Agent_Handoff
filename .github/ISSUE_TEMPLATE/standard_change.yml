@@ -1,27 +1,33 @@
-name: Standard change
-description: Propose an improvement, feature, or process change
+name: Standard change / Изменение стандарта
+description: Improve the standard / Улучшить стандарт
 title: "Change: "
 labels:
   - enhancement
 body:
-  - type: markdown
+  - type: dropdown
+    id: language
     attributes:
-      value: Use this form for improvements to the Agent Handoff standard or repository workflow.
+      label: Language / Язык
+      options:
+        - English
+        - Русский
+    validations:
+      required: true
   - type: textarea
     id: problem
     attributes:
-      label: Problem or opportunity
+      label: Problem or opportunity / Проблема или возможность
     validations:
       required: true
   - type: textarea
     id: proposal
     attributes:
-      label: Proposed change
+      label: Proposed change / Предлагаемое изменение
     validations:
       required: true
   - type: textarea
     id: acceptance
     attributes:
-      label: Acceptance criteria
+      label: Acceptance criteria / Критерии приёмки
     validations:
       required: true
