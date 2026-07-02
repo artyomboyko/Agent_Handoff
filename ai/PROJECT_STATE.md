@@ -10,11 +10,11 @@ project: Agent_Handoff
 
 ## Current phase / Текущая фаза
 
-Agent Handoff Standard 1.2 is implemented and synchronized with the latest repository workflow.
-Agent Handoff Standard 1.2 реализован и синхронизирован с актуальным workflow репозитория.
+Agent Handoff Standard 1.2 is implemented and prepared for public presentation.
+Agent Handoff Standard 1.2 реализован и подготовлен к публичному оформлению.
 
-The repository has bilingual documentation indexes, bilingual Issue Forms, bilingual PR template, Coordinated GitHub Flow, agent identity, work claim, and refactoring workflow.
-В репозитории есть двуязычные индексы документации, двуязычные Issue Forms, двуязычный PR template, Coordinated GitHub Flow, agent identity, work claim и refactoring workflow.
+The repository has a landing README, bilingual documentation indexes, bilingual Issue Forms, bilingual PR template, Coordinated GitHub Flow, agent identity, work claim, refactoring workflow, FAQ, examples, contributing guide, security policy, code of conduct, changelog, promotion checklist, and social preview asset.
+В репозитории есть landing README, двуязычные индексы документации, двуязычные Issue Forms, двуязычный PR template, Coordinated GitHub Flow, agent identity, work claim, refactoring workflow, FAQ, examples, contributing guide, security policy, code of conduct, changelog, promotion checklist и social preview asset.
 
 ## Main subsystems / Основные подсистемы
 
@@ -27,11 +27,14 @@ The repository has bilingual documentation indexes, bilingual Issue Forms, bilin
 - Refactoring / Рефакторинг: `ai/REFACTORING.md`
 - Handoffs / Handoffs: `ai/handoffs/`
 - GitHub templates / GitHub templates: `.github/`
+- Community files / Community files: `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`
+- Discovery files / Файлы продвижения: `README.md`, `FAQ.md`, `examples/`, `assets/social-preview.svg`, `.github/REPOSITORY_SETTINGS.md`
 - Language docs / Языковая документация: `docs/en/`, `docs/ru/`
 
 ## Implemented / Реализовано
 
 - Agent Handoff Standard 1.2.
+- Landing README with problem, solution, diagram, quick start, principles, comparison, search terms, humans/agents sections.
 - English and Russian standard documents are synchronized in structure and meaning.
 - Coordinated GitHub Flow.
 - Meaningful branch naming without `/`, Issue numbers, or random identifiers by default.
@@ -41,17 +44,22 @@ The repository has bilingual documentation indexes, bilingual Issue Forms, bilin
 - Issue labels and bilingual Issue Forms.
 - Bilingual Pull Request template aligned with Done checklist.
 - Bilingual documentation indexes.
-- Refactoring workflow and matching Issue form fields.
+- FAQ, examples, contributing guide, security policy, code of conduct, changelog.
+- Social preview SVG asset.
+- Repository discovery settings guide with About description and topics.
 
 ## Known risks / Известные риски
 
+- Repository is still private; Google and GitHub public discovery require public visibility.
+- Репозиторий всё ещё private; для Google и GitHub public discovery нужна public visibility.
+- GitHub About description, topics, and social preview must be set manually in GitHub UI.
+- GitHub About description, topics и social preview нужно установить вручную в GitHub UI.
 - GitHub Issue Forms must remain valid YAML.
 - GitHub Issue Forms должны оставаться валидным YAML.
-- Universal labels may need to be created manually in GitHub if missing.
-- Универсальные labels могут потребовать ручного создания в GitHub.
 
 ## Sensitive areas / Чувствительные области
 
+- `README.md`
 - `AGENT_HANDOFF_STANDARD.md`
 - `docs/ru/RU_STANDARD_FULL.md`
 - `AGENTS.md`
@@ -62,9 +70,11 @@ The repository has bilingual documentation indexes, bilingual Issue Forms, bilin
 - `ai/REFACTORING.md`
 - `.github/ISSUE_TEMPLATE/*.yml`
 - `.github/pull_request_template.md`
+- `.github/REPOSITORY_SETTINGS.md`
 
 ## Next likely milestones / Следующие шаги
 
 1. Review all Issue Forms in GitHub UI. / Проверить все Issue Forms в GitHub UI.
-2. Add automated Markdown/YAML checks. / Добавить автоматические проверки Markdown/YAML.
-3. Keep English and Russian documentation aligned after each standard change. / Поддерживать соответствие английской и русской документации после каждого изменения стандарта.
+2. Apply About description, topics, and social preview in GitHub settings. / Применить About description, topics и social preview в GitHub settings.
+3. Add automated Markdown/YAML checks. / Добавить автоматические проверки Markdown/YAML.
+4. Prepare public release `v1.2`. / Подготовить public release `v1.2`.
