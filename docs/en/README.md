@@ -1,18 +1,21 @@
 # English
 
-- [Standard](../../AI_HANDOFF_STANDARD.md)
+- [Standard](../../AGENT_HANDOFF_STANDARD.md)
+- [Issue labels](../../ISSUE_LABELS.md)
 - [Guide](../../AGENTS.md)
 - [Memory map](../../ai/README.md)
 - [Protocol](../../ai/HANDOFF_PROTOCOL.md)
+- [Agent identity](../../ai/AGENT_IDENTITY.md)
+- [Work claim protocol](../../ai/WORK_CLAIM_PROTOCOL.md)
 
 ## Scenario 1: new repository
 
-Ask the coding agent to initialize AI Handoff from the start.
+Ask the coding agent to initialize Agent Handoff from the start.
 
 ```text
-Initialize this repository with AI Handoff.
-Use the latest standard from https://github.com/artyomboyko/AI_Handoff.
-Create the AI Handoff files, GitHub issue templates, and pull request template.
+Initialize this repository with Agent Handoff.
+Use the latest standard from https://github.com/artyomboyko/Agent_Handoff.
+Create the Agent Handoff files, GitHub issue templates, and pull request template.
 Fill PROJECT_STATE.md with the initial project snapshot.
 Configure HANDOFF_PROTOCOL.md with smoke tests for this project.
 Create the first short handoff and update the handoff index.
@@ -23,8 +26,8 @@ Create the first short handoff and update the handoff index.
 Ask the coding agent to migrate carefully.
 
 ```text
-Add AI Handoff to this existing repository.
-Use the latest standard from https://github.com/artyomboyko/AI_Handoff.
+Add Agent Handoff to this existing repository.
+Use the latest standard from https://github.com/artyomboyko/Agent_Handoff.
 Inspect the current repository first.
 Do not overwrite existing important files blindly.
 Merge similar files carefully.
