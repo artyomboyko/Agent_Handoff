@@ -25,6 +25,7 @@ Git хранит код, ветки, коммиты, diff и историю.
 
 - `AGENTS.md`
 - `AI_HANDOFF_STANDARD.md`
+- `ISSUE_LABELS.md`
 - `ai/README.md`
 - `ai/PROJECT_STATE.md`
 - `ai/DECISIONS.md`
@@ -34,6 +35,20 @@ Git хранит код, ветки, коммиты, diff и историю.
 - `.github/pull_request_template.md`
 - `docs/en/`
 - `docs/ru/`
+
+## Метки Issue
+
+Базовые универсальные метки:
+
+- `bug` — ошибка или проблема.
+- `enhancement` — улучшение стандарта, workflow или шаблонов.
+- `refactoring` — cleanup, decomposition, renaming или внутреннее упрощение без намеренного изменения поведения.
+- `research` — исследование, сравнение подходов или подготовка решения.
+- `backlog` — отложенная полезная работа.
+- `testing` — тесты, smoke checks, validation или нестабильные проверки.
+- `docs` — документация, README, примеры, guides или переводы.
+
+Подробная таблица: `ISSUE_LABELS.md`.
 
 ## Завершение
 
