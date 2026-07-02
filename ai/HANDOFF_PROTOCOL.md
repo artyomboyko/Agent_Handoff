@@ -28,11 +28,11 @@ Use workflow labels from `ai/GITHUB_WORKFLOW.md` when available.
 
 One meaningful work item should have one Issue, one branch, one PR, and one clear scope.
 
-Use branch names without `/`, for example `work-issue-14-agent-identity`.
+Use branch names without `/`; example: `work-agent-identity-a91f`.
 
 Open a Draft PR early.
 
-For meaningful refactoring work, use a GitHub Issue with the `refactoring` label and keep task details in GitHub, not as a long backlog in `ai/REFACTORING.md`.
+For meaningful refactoring work, use a GitHub Issue with the `refactoring` label and keep task details in GitHub.
 
 ## Smoke tests
 
