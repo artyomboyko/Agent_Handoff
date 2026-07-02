@@ -1,0 +1,57 @@
+name: Research
+about: Investigate an option, compare approaches, or prepare a design decision
+title: "Research: "
+labels:
+  - research
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when the main work is investigation before implementation.
+  - type: textarea
+    id: question
+    attributes:
+      label: Research question
+      description: What needs to be answered?
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Why does this matter now?
+    validations:
+      required: true
+  - type: textarea
+    id: options
+    attributes:
+      label: Options to compare
+      description: Which approaches, tools, repositories, or designs should be compared?
+    validations:
+      required: false
+  - type: textarea
+    id: constraints
+    attributes:
+      label: Constraints
+      description: What limits the solution space?
+    validations:
+      required: false
+  - type: textarea
+    id: output
+    attributes:
+      label: Expected output
+      description: What should the research produce?
+      placeholder: |
+        - recommendation
+        - trade-offs
+        - links to sources
+        - next issue or decision
+    validations:
+      required: true
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      description: What makes the research complete enough to act on?
+    validations:
+      required: true
