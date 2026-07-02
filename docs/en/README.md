@@ -19,6 +19,7 @@ This page mirrors the Russian index `docs/ru/README.md`.
 - [FAQ](FAQ_EN.md)
 - [Examples](../../examples/README.md)
 - [Promotion checklist](PROMOTION_CHECKLIST_EN.md)
+- [Community files](../COMMUNITY_FILES.md)
 - [Contributing](../../CONTRIBUTING.md)
 - [Security](../../SECURITY.md)
 - [Code of Conduct](../../CODE_OF_CONDUCT.md)
