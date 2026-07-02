@@ -6,64 +6,69 @@ updated: 2026-07-02
 project: Agent_Handoff
 ---
 
-# Handoff Protocol
+# Handoff Protocol / Протокол handoff
 
-## Start
+## Start / Старт
 
-Read `AGENTS.md`, `AGENT_HANDOFF_STANDARD.md`, `ai/README.md`, `ai/GITHUB_WORKFLOW.md`, `ai/AGENT_IDENTITY.md`, `ai/WORK_CLAIM_PROTOCOL.md`, `ai/PROJECT_STATE.md`, `ai/DECISIONS.md`, the related Issue or PR, current branch, recent commits, and `ai/handoffs/INDEX.md`.
+Read the required files before work.
+Перед работой прочитайте обязательные файлы.
+
+1. `AGENTS.md`
+2. `AGENT_HANDOFF_STANDARD.md`
+3. `ai/README.md`
+4. `ai/GITHUB_WORKFLOW.md`
+5. `ai/AGENT_IDENTITY.md`
+6. `ai/WORK_CLAIM_PROTOCOL.md`
+7. `ai/PROJECT_STATE.md`
+8. `ai/DECISIONS.md`
+9. Related Issue or PR / Связанное Issue или PR
+10. Current branch and recent commits / Текущая branch и последние commits
+11. `ai/handoffs/INDEX.md`
 
 Choose `agent_name`, `agent_id`, and `run_id` before taking work.
+Перед работой выберите `agent_name`, `agent_id` и `run_id`.
 
-If the task is code cleanup, file decomposition, renaming, dead-code removal, or internal restructuring, also read `ai/REFACTORING.md` before editing.
-
-## Work claim
+## Work claim / Claim работы
 
 Before editing, leave a work claim comment using `ai/WORK_CLAIM_PROTOCOL.md`.
+Перед изменениями оставьте work claim comment по `ai/WORK_CLAIM_PROTOCOL.md`.
 
-The claim comment must include agent name, agent id, run id, issue, branch, draft PR, scope, and current status.
-
-Use workflow labels from `ai/GITHUB_WORKFLOW.md` when available.
-
-## Scope
+## Scope / Scope
 
 One meaningful work item should have one Issue, one branch, one PR, and one clear scope.
+Одна значимая задача должна иметь одно Issue, одну branch, один PR и один ясный scope.
 
-Use meaningful branch names without `/`, Issue numbers, or random identifiers by default; example: `workflow-branch-naming`.
+Use meaningful branch names without `/`, Issue numbers, or random identifiers by default.
+Используйте осмысленные имена branch без `/`, номеров Issue и случайных идентификаторов по умолчанию.
 
 Open a Draft PR early.
+Открывайте Draft PR рано.
 
-For meaningful refactoring work, use a GitHub Issue with the `refactoring` label and keep task details in GitHub.
-
-## Smoke tests
+## Smoke tests / Smoke-проверки
 
 Smoke tests are mandatory before marking work ready or setting a handoff to `completed`.
+Smoke-проверки обязательны перед готовностью работы или статусом handoff `completed`.
 
-For this repository:
+Repository checks / Проверки репозитория:
 
-1. Required files exist.
-2. Markdown links point to intended files.
-3. Issue Forms are valid YAML.
-4. PR template includes the smoke-test checklist.
-5. Handoff index is updated when a handoff file is added.
+1. Required files exist. / Обязательные файлы существуют.
+2. Markdown links work. / Markdown-ссылки работают.
+3. Issue Forms are valid YAML. / Issue Forms являются валидным YAML.
+4. PR template includes the checklist. / PR template содержит checklist.
+5. Handoff index is updated when needed. / Handoff index обновлён при необходимости.
 
-If smoke tests cannot be run, document reason, risk, and next step.
+## Done checklist / Checklist завершения
 
-## Done checklist
+- [ ] Related Issue or PR is linked. / Связанное Issue или PR указано.
+- [ ] Work claim comment exists. / Work claim comment существует.
+- [ ] Branch contains only intended changes. / Branch содержит только ожидаемые изменения.
+- [ ] Smoke tests were run or reason is documented. / Smoke tests выполнены или причина описана.
+- [ ] PR description is updated. / PR description обновлён.
+- [ ] Risks are listed. / Риски указаны.
+- [ ] Handoff file is created when needed. / Handoff-файл создан при необходимости.
+- [ ] `ai/handoffs/INDEX.md` is updated when needed. / `ai/handoffs/INDEX.md` обновлён при необходимости.
 
-- [ ] Related Issue or PR is linked.
-- [ ] Work claim comment exists for agent work.
-- [ ] Agent ID and run ID are repeated in PR or handoff when relevant.
-- [ ] Branch contains only intended changes.
-- [ ] Smoke tests were run, or reason is documented.
-- [ ] PR description is updated.
-- [ ] Risks are listed.
-- [ ] Handoff file is created for meaningful work.
-- [ ] `ai/handoffs/INDEX.md` is updated when needed.
-- [ ] `ai/PROJECT_STATE.md` is updated only if stable state changed.
-- [ ] `ai/DECISIONS.md` is updated only if a durable architecture record was made.
+## Parallel work / Параллельная работа
 
-## Parallel work
-
-Before editing high-risk files, check open PRs, related Issues, recent commits, active handoffs, and recent work claim comments.
-
-If overlap exists, coordinate in the related Issue or PR before continuing.
+Before editing shared files, check open PRs, related Issues, recent commits, active handoffs, and recent work claim comments.
+Перед изменением общих файлов проверьте открытые PR, связанные Issues, последние commits, активные handoff и последние work claim comments.
