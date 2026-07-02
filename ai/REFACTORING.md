@@ -3,7 +3,7 @@ type: refactoring_protocol
 version: 1
 status: active
 updated: 2026-07-02
-project: AI_Handoff
+project: Agent_Handoff
 ---
 
 # Refactoring Workflow
