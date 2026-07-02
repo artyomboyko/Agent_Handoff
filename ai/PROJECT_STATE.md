@@ -28,7 +28,7 @@ The repository has a landing README, bilingual documentation indexes, bilingual 
 - Handoffs / Handoffs: `ai/handoffs/`
 - GitHub templates / GitHub templates: `.github/`
 - Community files / Community files: `CONTRIBUTING.md`, `SECURITY.md`, `CODE_OF_CONDUCT.md`
-- Discovery files / Файлы продвижения: `README.md`, `FAQ.md`, `examples/`, `assets/social-preview.svg`, `.github/REPOSITORY_SETTINGS.md`
+- Discovery files / Файлы продвижения: `README.md`, `FAQ.md`, `docs/en/FAQ_EN.md`, `docs/ru/FAQ_RU.md`, `examples/`, `assets/social-preview.svg`, `.github/REPOSITORY_SETTINGS.md`
 - Language docs / Языковая документация: `docs/en/`, `docs/ru/`
 
 ## Implemented / Реализовано
@@ -44,7 +44,8 @@ The repository has a landing README, bilingual documentation indexes, bilingual 
 - Issue labels and bilingual Issue Forms.
 - Bilingual Pull Request template aligned with Done checklist.
 - Bilingual documentation indexes.
-- FAQ, examples, contributing guide, security policy, code of conduct, changelog.
+- FAQ with English and Russian mirrors.
+- Examples, contributing guide, security policy, code of conduct, changelog.
 - Social preview SVG asset.
 - Repository discovery settings guide with About description and topics.
 
