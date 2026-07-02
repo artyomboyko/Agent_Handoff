@@ -1,0 +1,21 @@
+name: Maintenance / Обслуживание
+description: Maintenance work / Техническая работа
+title: "Refactor: "
+labels:
+  - refactoring
+body:
+  - type: dropdown
+    id: language
+    attributes:
+      label: Language / Язык
+      options:
+        - English
+        - Русский
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary / Описание
+    validations:
+      required: true
