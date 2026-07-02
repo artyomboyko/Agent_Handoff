@@ -23,6 +23,7 @@ This page mirrors the Russian index `docs/ru/README.md`.
 - [Security](../../SECURITY.md)
 - [Code of Conduct](../../CODE_OF_CONDUCT.md)
 - [Changelog](../../CHANGELOG.md)
+- [Promotion changelog appendix](../CHANGELOG_PROMOTION_APPENDIX.md)
 - [Repository discovery settings](REPOSITORY_SETTINGS_EN.md)
 - [Русский](../ru/README.md)
 
