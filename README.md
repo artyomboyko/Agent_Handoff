@@ -11,6 +11,18 @@ AI Handoff — компактный стандарт передачи проек
 | English | [Open English documentation](docs/en/README.md) |
 | Русский | [Открыть русскую документацию](docs/ru/README.md) |
 
+## Quick start / Быстрый старт
+
+Use the language links above. Each language page includes two short examples:
+
+- starting a new repository with AI Handoff;
+- adding AI Handoff to an existing repository.
+
+Откройте нужный язык выше. На странице языка есть два коротких примера:
+
+- запуск нового репозитория с AI Handoff;
+- внедрение AI Handoff в существующий репозиторий.
+
 ## Current standard / Текущий стандарт
 
 Version / версия: **1.1**
