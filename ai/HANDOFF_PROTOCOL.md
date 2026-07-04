@@ -2,7 +2,7 @@
 type: handoff_protocol
 version: 1
 status: active
-updated: 2026-07-02
+updated: 2026-07-04
 project: Agent_Handoff
 ---
 
@@ -49,13 +49,17 @@ Open a Draft PR early.
 Smoke tests are mandatory before marking work ready or setting a handoff to `completed`.
 Smoke-проверки обязательны перед готовностью работы или статусом handoff `completed`.
 
-Repository checks / Проверки репозитория:
+Current automated repository checks / Текущие автоматические проверки репозитория:
 
 1. Required files exist. / Обязательные файлы существуют.
-2. Markdown links work. / Markdown-ссылки работают.
-3. Issue Forms are valid YAML. / Issue Forms являются валидным YAML.
-4. PR template includes the checklist. / PR template содержит checklist.
-5. Handoff index is updated when needed. / Handoff index обновлён при необходимости.
+2. Issue Forms and workflows are valid YAML. / Issue Forms и workflows являются валидным YAML.
+3. Issue Forms include a clear Issue language selector. / Issue Forms содержат понятный selector языка заполнения Issue.
+4. PR template includes the required checklist. / PR template содержит обязательный checklist.
+5. English and Russian documentation indexes have matching item counts. / Английский и русский индексы документации имеют одинаковое число пунктов.
+6. Social preview asset uses the expected 1280x640 size and no ambiguous `ai/` label. / Social preview asset использует ожидаемый размер 1280x640 и не содержит неоднозначный label `ai/`.
+
+Rendered Markdown, changed links, GitHub Pages, and UI behavior are reviewed manually when relevant.
+Rendered Markdown, изменённые links, GitHub Pages и UI behavior проверяются вручную при необходимости.
 
 ## Done checklist / Checklist завершения
 
