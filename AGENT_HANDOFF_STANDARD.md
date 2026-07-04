@@ -2,7 +2,7 @@
 standard: Agent Handoff
 version: "1.2"
 status: active
-updated: 2026-07-02
+updated: 2026-07-04
 ---
 
 # Agent Handoff Standard
