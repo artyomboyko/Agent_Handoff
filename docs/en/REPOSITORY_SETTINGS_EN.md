@@ -11,43 +11,36 @@ GitHub-native standard for AI coding agent handoff, project context, and coordin
 ## Website
 
 ```text
-https://github.com/artyomboyko/Agent_Handoff
+https://artyomboyko.github.io/Agent_Handoff/
 ```
 
 ## Topics
 
-Recommended final topics:
+Current public topics:
 
 ```text
-agent-handoff
-ai-handoff
-ai-agents
-coding-agents
-llm-agents
-agentic-ai
-autonomous-agents
-agent-memory
-agent-orchestration
-multi-agent
-multi-agent-system
-github-workflow
-pull-request-workflow
-handoff-protocol
-protocol-validation
-developer-tools
-software-engineering
 project-management
-documentation
+software-engineering
+multi-agent-systems
+autonomous-agents
+ai-agents
+documentations
+multi-agents
+github-workflows
+coding-agents
+agentic-ai
+agent-orchestration
+agent-handoff
+developer-tools-ai-agent
+pull-request-workflow
+agent-memory-system
+protocol-validation
+handoff-protocol
+ai-handoff
+llm-agents-coding-agents
 ```
 
-Remove:
-
-```text
-devops
-llm
-```
-
-Do not add for now:
+Topics reserved for future compatibility only:
 
 ```text
 mcp
@@ -64,11 +57,14 @@ These tags imply specific external protocols, wire-level communication, or broad
 
 Use `assets/social-preview.svg` as the source and export it as PNG 1280x640 for GitHub social preview upload.
 
+## GitHub Pages
+
+GitHub Pages is published from the `/docs` folder on `main`.
+
 ## Public release checklist
 
-- Confirm no secrets are committed.
 - Review repository history.
 - Review Issues, PRs, and Actions logs.
-- Set About description and topics.
-- Upload social preview image.
+- Confirm About description, Website, topics, and social preview.
+- Confirm GitHub Actions checks and Pages deployment are green.
 - Create release `v1.2`.
