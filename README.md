@@ -137,10 +137,10 @@ Start from `AGENTS.md`, read the required files, claim work in GitHub, open a Dr
 
 ## Repository visibility / Видимость репозитория
 
-This repository is public. Before reusing the standard in your own public repository, review private data, history, generated files, and workflow logs.
+This repository is public. Before reusing the standard in your own public repository, review repository history, generated files, and workflow logs.
 
-Этот репозиторий публичный. Перед использованием стандарта в своём публичном репозитории проверьте private data, history, generated files и workflow logs.
+Этот репозиторий публичный. Перед использованием стандарта в своём публичном репозитории проверьте историю репозитория, generated files и workflow logs.
 
 ## License / Лицензия
 
-Planned license: AGPL-3.0. See [CHANGELOG.md](CHANGELOG.md) for version history.
+License: GPL-3.0. See [CHANGELOG.md](CHANGELOG.md) for version history.
