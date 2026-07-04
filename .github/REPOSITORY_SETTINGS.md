@@ -1,7 +1,7 @@
 # Repository discovery settings / Настройки обнаружения репозитория
 
-These settings should be applied in GitHub UI when the repository is ready to become public.
-Эти настройки нужно применить в GitHub UI, когда репозиторий будет готов стать публичным.
+These settings should be applied in GitHub UI.
+Эти настройки нужно применить в GitHub UI.
 
 ## About description / Описание About
 
@@ -9,17 +9,10 @@ These settings should be applied in GitHub UI when the repository is ready to be
 GitHub-native standard for AI coding agent handoff, project context, and coordinated human-agent development.
 ```
 
-```text
-GitHub-native стандарт передачи контекста между AI-агентами, людьми и human-supervised agents.
-```
-
-Use the English description for GitHub About if the repository is promoted globally.
-Для глобального продвижения в GitHub About лучше использовать английское описание.
+Use the English description for global promotion.
+Для глобального продвижения лучше использовать английское описание.
 
 ## Website / Сайт
-
-Use the repository URL now. Later replace it with GitHub Pages.
-Сейчас используйте URL репозитория. Позже замените на GitHub Pages.
 
 ```text
 https://github.com/artyomboyko/Agent_Handoff
@@ -27,40 +20,55 @@ https://github.com/artyomboyko/Agent_Handoff
 
 ## Topics / Темы
 
-GitHub supports up to 20 repository topics.
-GitHub поддерживает до 20 repository topics.
-
-Recommended topics / Рекомендуемые topics:
+Recommended final topics / Рекомендуемые итоговые topics:
 
 ```text
-ai-agents
-coding-agents
 agent-handoff
 ai-handoff
+ai-agents
+coding-agents
+llm-agents
+agentic-ai
+autonomous-agents
+agent-memory
+agent-orchestration
+multi-agent
+multi-agent-system
 github-workflow
+pull-request-workflow
+handoff-protocol
+protocol-validation
 developer-tools
 software-engineering
-llm
-llm-agents
-agent-memory
 project-management
-devops
 documentation
-multi-agent
-pull-request-workflow
 ```
+
+Remove from the current list / Убрать из текущего списка:
+
+```text
+devops
+llm
+```
+
+Do not add for now / Пока не добавлять:
+
+```text
+mcp
+a2a
+acp
+agent-communication-protocol
+communication-protocol
+debugging
+```
+
+These tags imply specific external protocols, wire-level communication, or broad debugging tooling that Agent Handoff does not implement yet.
+Эти topics подразумевают конкретные внешние протоколы, wire-level communication или широкий debugging tooling, которые Agent Handoff пока не реализует.
 
 ## Social preview / Social preview
 
-Use this repository asset as the preview source:
-Используйте этот asset как основу preview:
-
-```text
-assets/social-preview.svg
-```
-
-For GitHub social preview upload, export it as PNG 1280x640.
-Для GitHub social preview экспортируйте его как PNG 1280x640.
+Use `assets/social-preview.svg` as the source and export it as PNG 1280x640 for GitHub social preview upload.
+Используйте `assets/social-preview.svg` как источник и экспортируйте его в PNG 1280x640 для GitHub social preview upload.
 
 ## Public release checklist / Checklist перед публикацией
 
