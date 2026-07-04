@@ -7,7 +7,8 @@ body:
   - type: dropdown
     id: language
     attributes:
-      label: Language / Язык
+      label: Issue language / Язык заполнения Issue
+      description: Choose the language for the text you write in this Issue. Field names stay bilingual. / Выберите язык текста, который вы будете писать в этом Issue. Названия полей остаются двуязычными.
       options:
         - English
         - Русский
