@@ -13,43 +13,36 @@ GitHub-native standard for AI coding agent handoff, project context, and coordin
 ## Website
 
 ```text
-https://github.com/artyomboyko/Agent_Handoff
+https://artyomboyko.github.io/Agent_Handoff/
 ```
 
 ## Topics
 
-Рекомендуемые итоговые topics:
+Текущие публичные topics:
 
 ```text
-agent-handoff
-ai-handoff
-ai-agents
-coding-agents
-llm-agents
-agentic-ai
-autonomous-agents
-agent-memory
-agent-orchestration
-multi-agent
-multi-agent-system
-github-workflow
-pull-request-workflow
-handoff-protocol
-protocol-validation
-developer-tools
-software-engineering
 project-management
-documentation
+software-engineering
+multi-agent-systems
+autonomous-agents
+ai-agents
+documentations
+multi-agents
+github-workflows
+coding-agents
+agentic-ai
+agent-orchestration
+agent-handoff
+developer-tools-ai-agent
+pull-request-workflow
+agent-memory-system
+protocol-validation
+handoff-protocol
+ai-handoff
+llm-agents-coding-agents
 ```
 
-Убрать:
-
-```text
-devops
-llm
-```
-
-Пока не добавлять:
+Topics, оставленные только для будущей совместимости:
 
 ```text
 mcp
@@ -66,11 +59,14 @@ debugging
 
 Используйте `assets/social-preview.svg` как источник и экспортируйте его в PNG 1280x640 для GitHub social preview upload.
 
+## GitHub Pages
+
+GitHub Pages публикуется из папки `/docs` в ветке `main`.
+
 ## Checklist перед публикацией
 
-- Убедиться, что secrets не закоммичены.
 - Проверить историю репозитория.
 - Проверить Issues, PRs и Actions logs.
-- Установить About description и topics.
-- Загрузить social preview image.
+- Проверить About description, Website, topics и social preview.
+- Проверить, что GitHub Actions checks и Pages deployment зелёные.
 - Создать release `v1.2`.
