@@ -16,23 +16,49 @@ https://github.com/artyomboyko/Agent_Handoff
 
 ## Topics
 
+Recommended final topics:
+
 ```text
-ai-agents
-coding-agents
 agent-handoff
 ai-handoff
+ai-agents
+coding-agents
+llm-agents
+agentic-ai
+autonomous-agents
+agent-memory
+agent-orchestration
+multi-agent
+multi-agent-system
 github-workflow
+pull-request-workflow
+handoff-protocol
+protocol-validation
 developer-tools
 software-engineering
-llm
-llm-agents
-agent-memory
 project-management
-devops
 documentation
-multi-agent
-pull-request-workflow
 ```
+
+Remove:
+
+```text
+devops
+llm
+```
+
+Do not add for now:
+
+```text
+mcp
+a2a
+acp
+agent-communication-protocol
+communication-protocol
+debugging
+```
+
+These tags imply specific external protocols, wire-level communication, or broad debugging tooling that Agent Handoff does not implement yet.
 
 ## Social preview
 
