@@ -137,9 +137,9 @@ Start from `AGENTS.md`, read the required files, claim work in GitHub, open a Dr
 
 ## Repository visibility / Видимость репозитория
 
-This repository is currently private during preparation. Before making it public, review secrets, history, generated files, and workflow logs.
+This repository is public. Before reusing the standard in your own public repository, review private data, history, generated files, and workflow logs.
 
-Сейчас репозиторий готовится в private-режиме. Перед публикацией проверьте secrets, history, generated files и workflow logs.
+Этот репозиторий публичный. Перед использованием стандарта в своём публичном репозитории проверьте private data, history, generated files и workflow logs.
 
 ## License / Лицензия
 
