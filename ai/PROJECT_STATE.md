@@ -10,8 +10,8 @@ project: Agent_Handoff
 
 ## Current phase / Текущая фаза
 
-Agent Handoff Standard 1.2 is implemented and prepared for public presentation.
-Agent Handoff Standard 1.2 реализован и подготовлен к публичному оформлению.
+Agent Handoff Standard 1.2 is implemented and publicly available.
+Agent Handoff Standard 1.2 реализован и публично доступен.
 
 The repository has a landing README, bilingual documentation indexes, bilingual Issue Forms, bilingual PR template, Coordinated GitHub Flow, agent identity, work claim, refactoring workflow, FAQ, examples, contributing guide, security policy, code of conduct, changelog, promotion checklist, and social preview asset.
 В репозитории есть landing README, двуязычные индексы документации, двуязычные Issue Forms, двуязычный PR template, Coordinated GitHub Flow, agent identity, work claim, refactoring workflow, FAQ, examples, contributing guide, security policy, code of conduct, changelog, promotion checklist и social preview asset.
@@ -34,6 +34,7 @@ The repository has a landing README, bilingual documentation indexes, bilingual 
 ## Implemented / Реализовано
 
 - Agent Handoff Standard 1.2.
+- Public GitHub repository.
 - Landing README with problem, solution, diagram, quick start, principles, comparison, search terms, humans/agents sections.
 - English and Russian standard documents are synchronized in structure and meaning.
 - Coordinated GitHub Flow.
@@ -53,10 +54,8 @@ The repository has a landing README, bilingual documentation indexes, bilingual 
 
 ## Known risks / Известные риски
 
-- Repository is still private; Google and GitHub public discovery require public visibility.
-- Репозиторий всё ещё private; для Google и GitHub public discovery нужна public visibility.
-- GitHub About description, topics, and social preview must be set manually in GitHub UI.
-- GitHub About description, topics и social preview нужно установить вручную в GitHub UI.
+- GitHub social preview must be uploaded manually in GitHub UI.
+- GitHub social preview нужно загрузить вручную в GitHub UI.
 - GitHub Issue Forms must remain valid YAML.
 - GitHub Issue Forms должны оставаться валидным YAML.
 
@@ -77,7 +76,7 @@ The repository has a landing README, bilingual documentation indexes, bilingual 
 
 ## Next likely milestones / Следующие шаги
 
-1. Review all Issue Forms in GitHub UI. / Проверить все Issue Forms в GitHub UI.
-2. Apply About description, topics, and social preview in GitHub settings. / Применить About description, topics и social preview в GitHub settings.
+1. Upload social preview in GitHub settings. / Загрузить social preview в GitHub settings.
+2. Review all Issue Forms in GitHub UI. / Проверить все Issue Forms в GitHub UI.
 3. Add automated Markdown/YAML checks. / Добавить автоматические проверки Markdown/YAML.
 4. Prepare public release `v1.2`. / Подготовить public release `v1.2`.
