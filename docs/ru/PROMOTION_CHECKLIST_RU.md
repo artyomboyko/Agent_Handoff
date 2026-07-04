@@ -2,25 +2,23 @@
 
 Эта страница соответствует `docs/PROMOTION_CHECKLIST.md` и предназначена для быстрого чтения на русском.
 
-## Оформление репозитория
+## Сделано
 
-- [x] Landing README объясняет problem, solution, audience, examples и comparison.
-- [x] Естественные поисковые формулировки добавлены в README.
-- [x] FAQ существует.
-- [x] Examples существуют.
-- [x] Contributing, Security, Code of Conduct и Changelog существуют.
-- [x] Social preview asset существует.
+- Landing README.
+- Естественные поисковые формулировки в README.
+- FAQ.
+- Examples.
+- Contributing, Security, Code of Conduct и Changelog.
+- Social preview asset и загруженный social preview image.
+- Public repository.
+- About description.
+- Website указывает на GitHub Pages.
+- Topics.
+- GitHub Pages site.
+- Citation metadata.
+- GitHub Actions checks.
 
-## Настройки GitHub
+## Осталось
 
-- [ ] Репозиторий public, когда готов.
-- [ ] About description установлен.
-- [ ] Topics установлены.
-- [ ] Social preview image загружен.
-- [ ] Release `v1.2` создан.
-
-## Безопасность
-
-- [ ] Git history проверена.
-- [ ] Secrets отсутствуют или перевыпущены.
-- [ ] Issues, PRs и Actions logs проверены.
+- Финальная проверка репозитория.
+- Создать release `v1.2`.
