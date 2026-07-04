@@ -1,7 +1,7 @@
 # Repository discovery settings / Настройки обнаружения репозитория
 
-These settings should be applied in GitHub UI.
-Эти настройки нужно применить в GitHub UI.
+These settings reflect the current public GitHub repository setup.
+Эти настройки отражают текущую публичную настройку GitHub репозитория.
 
 ## About description / Описание About
 
@@ -15,40 +15,33 @@ Use the English description for global promotion.
 ## Website / Сайт
 
 ```text
-https://github.com/artyomboyko/Agent_Handoff
+https://artyomboyko.github.io/Agent_Handoff/
 ```
 
 ## Topics / Темы
 
-Recommended final topics / Рекомендуемые итоговые topics:
+Current public topics / Текущие публичные topics:
 
 ```text
-agent-handoff
-ai-handoff
-ai-agents
-coding-agents
-llm-agents
-agentic-ai
-autonomous-agents
-agent-memory
-agent-orchestration
-multi-agent
-multi-agent-system
-github-workflow
-pull-request-workflow
-handoff-protocol
-protocol-validation
-developer-tools
-software-engineering
 project-management
-documentation
-```
-
-Remove from the current list / Убрать из текущего списка:
-
-```text
-devops
-llm
+software-engineering
+multi-agent-systems
+autonomous-agents
+ai-agents
+documentations
+multi-agents
+github-workflows
+coding-agents
+agentic-ai
+agent-orchestration
+agent-handoff
+developer-tools-ai-agent
+pull-request-workflow
+agent-memory-system
+protocol-validation
+handoff-protocol
+ai-handoff
+llm-agents-coding-agents
 ```
 
 Do not add for now / Пока не добавлять:
@@ -70,11 +63,15 @@ These tags imply specific external protocols, wire-level communication, or broad
 Use `assets/social-preview.svg` as the source and export it as PNG 1280x640 for GitHub social preview upload.
 Используйте `assets/social-preview.svg` как источник и экспортируйте его в PNG 1280x640 для GitHub social preview upload.
 
+## GitHub Pages / GitHub Pages
+
+GitHub Pages is published from the `/docs` folder on `main`.
+GitHub Pages публикуется из папки `/docs` в ветке `main`.
+
 ## Public release checklist / Checklist перед публикацией
 
-- Confirm no secrets are committed. / Убедиться, что secrets не закоммичены.
 - Review repository history. / Проверить историю репозитория.
 - Review Issues, PRs, and Actions logs. / Проверить Issues, PRs и Actions logs.
-- Set About description and topics. / Установить About description и topics.
-- Upload social preview image. / Загрузить social preview image.
+- Confirm About description, Website, topics, and social preview. / Проверить About description, Website, topics и social preview.
+- Confirm GitHub Actions checks and Pages deployment are green. / Проверить, что GitHub Actions checks и Pages deployment зелёные.
 - Create release `v1.2`. / Создать release `v1.2`.
