@@ -2,21 +2,22 @@
 type: project_state
 version: 1
 status: active
-updated: 2026-07-04
+updated: 2026-07-07
 project: Agent_Handoff
 ---
 
-# Project State / Состояние проекта
+# Project State
 
-## Current phase / Текущая фаза
+## Current phase
 
 Agent Handoff Standard 1.2 is in final pre-release review.
-Agent Handoff Standard 1.2 находится на финальной проверке перед release.
 
-## Implemented / Реализовано
+The repository is being simplified to an English-only canonical version.
+
+## Implemented
 
 - Landing README and GitHub Pages site.
-- English and Russian standard documents.
+- English canonical standard document.
 - GitHub Issue Forms and Pull Request template.
 - Coordinated GitHub Flow.
 - Agent identity protocol.
@@ -27,10 +28,9 @@ Agent Handoff Standard 1.2 находится на финальной прове
 - GitHub Actions checks workflow.
 - Citation metadata.
 
-## Main files / Основные файлы
+## Main files
 
 - `AGENT_HANDOFF_STANDARD.md`
-- `docs/ru/RU_STANDARD_FULL.md`
 - `AGENTS.md`
 - `ai/README.md`
 - `ai/GITHUB_WORKFLOW.md`
@@ -42,7 +42,7 @@ Agent Handoff Standard 1.2 находится на финальной прове
 - `.github/pull_request_template.md`
 - `scripts/check_agent_handoff.py`
 
-## Next / Далее
+## Next
 
 1. Confirm checks are green.
-2. Publish release `v1.2`.
+2. Publish release `v1.2` after final review.
