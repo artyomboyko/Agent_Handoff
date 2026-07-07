@@ -2,7 +2,7 @@
 type: github_workflow
 version: 1
 status: active
-updated: 2026-07-02
+updated: 2026-07-04
 project: Agent_Handoff
 ---
 
@@ -11,18 +11,10 @@ project: Agent_Handoff
 Agent Handoff uses Coordinated GitHub Flow for medium repositories.
 Agent Handoff использует Coordinated GitHub Flow для средних репозиториев.
 
-## Roles / Роли
-
-- Maintainer or coordinator / Maintainer или coordinator
-- Human contributor / Человек-контрибьютор
-- Autonomous agent / Автономный агент
-- Human-supervised agent / Агент под контролем человека
-- Reviewer / Reviewer
-
 ## Work unit / Единица работы
 
-One work item should have one Issue, one scope, one short-lived branch, one Pull Request, and one visible owner.
-Одна задача должна иметь одно Issue, один scope, одну короткоживущую branch, один Pull Request и одного видимого owner.
+One work item should have one Issue, one scope, one short-lived branch, one Pull Request, one visible owner, and required result reporting.
+Одна задача должна иметь одно Issue, один scope, одну короткоживущую branch, один Pull Request, одного видимого owner и обязательный result report.
 
 ## Status labels / Статусные метки
 
@@ -42,29 +34,22 @@ Closed Issue or merged PR is the normal `done` state.
 Use meaningful branch names without `/`, Issue numbers, or random identifiers by default.
 Используйте осмысленные имена веток без `/`, номеров Issue и случайных идентификаторов по умолчанию.
 
-Recommended formats / Рекомендуемые форматы:
+Issue linkage belongs in the Work Claim comment, PR description, GitHub links, and handoff metadata.
+Связь с Issue фиксируется в Work Claim comment, PR description, GitHub links и handoff metadata.
 
-```text
-<type>-<topic>
-<type>-<scope>-<topic>
-```
+## Result reports / Отчёты результата
 
-Examples / Примеры:
+Every meaningful Issue must have a result comment.
+Каждое значимое Issue должно иметь result comment.
 
-```text
-workflow-branch-naming
-protocol-work-claim
-docs-readme-quickstart
-refactor-handoff-index
-research-github-flow
-fix-issue-template-yaml
-```
+Large or multi-stage Issues use stage result comments after stable stages.
+Большие или многоэтапные Issues используют stage result comments после стабильных stages.
 
-The branch is not the source of truth for Issue linkage.
-Branch не является источником правды для связи с Issue.
+Small Issues use one final result comment.
+Небольшие Issues используют один final result comment.
 
-Link the Issue in the Work Claim comment, PR description, and handoff metadata.
-Связывайте Issue через Work Claim comment, PR description и handoff metadata.
+Use `ai/TASK_REPORT_PROTOCOL.md`.
+Используйте `ai/TASK_REPORT_PROTOCOL.md`.
 
 ## Workflow / Процесс
 
@@ -75,21 +60,7 @@ Link the Issue in the Work Claim comment, PR description, and handoff metadata.
 5. Create a short-lived branch. / Создать короткоживущую branch.
 6. Open a Draft PR early. / Рано открыть Draft PR.
 7. Link the PR to the Issue. / Связать PR с Issue.
-8. Keep discussion in Issue or PR. / Вести обсуждение в Issue или PR.
+8. Keep discussion and result reports in Issue or PR. / Вести обсуждение и result reports в Issue или PR.
 9. Run checks and smoke tests. / Запустить checks и smoke tests.
-10. Merge only after checks and review. / Merge только после checks и review.
-11. Delete the branch after merge. / Удалить branch после merge.
-12. Add a handoff when needed. / Добавить handoff при необходимости.
-
-## Human coordination / Координация людьми
-
-A human coordinator may reassign, pause, split, or supersede agent work.
-Человек-координатор может переназначить, остановить, разделить или заменить работу агента.
-
-If the work is human-supervised, the Work Claim should include:
-Если работа идёт под контролем человека, Work Claim должен включать:
-
-```text
-Coordinator: @username
-Supervision: autonomous | human-supervised | human-driven
-```
+10. Finish only after checks, review, and result report. / Завершать только после checks, review и result report.
+11. Add a handoff when needed. / Добавить handoff при необходимости.
