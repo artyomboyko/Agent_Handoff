@@ -14,6 +14,7 @@ Closes #
 - Agent ID / ID агента:
 - Run ID / ID запуска:
 - Work claim exists / Work claim существует: yes/no
+- Stage or final result comment exists / Stage или final result comment существует: yes/no
 
 ## Change type / Тип изменения
 
@@ -31,6 +32,7 @@ Closes #
 - [ ] Required files exist. / Обязательные файлы существуют.
 - [ ] Links work. / Ссылки работают.
 - [ ] Forms are valid when changed. / Формы валидны при изменении.
+- [ ] Required stage or final result comment exists. / Обязательный stage или final result comment существует.
 - [ ] Smoke tests were run or reason is documented. / Smoke tests выполнены или причина описана.
 
 ## State updates / Обновления состояния
