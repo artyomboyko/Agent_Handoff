@@ -14,6 +14,7 @@ All notable changes to Agent Handoff are documented here.
 - Explicit Issue language selector explaining that field names stay bilingual.
 - Agent identity protocol with `agent_name`, `agent_id`, and `run_id`.
 - Work Claim protocol with `Coordinator` and `Supervision` fields.
+- Mandatory task result reports for large multi-stage Issues and small Issues.
 - Refactoring workflow and matching Issue form fields.
 - Documentation parity rules.
 - Landing README with problem, solution, use cases, comparison, and search terms.
@@ -29,30 +30,6 @@ All notable changes to Agent Handoff are documented here.
 - Repository topics aligned with the current public About sidebar.
 - Social preview asset updated to use `AI memory` instead of ambiguous `ai/`.
 
-### Добавлено
-
-- Coordinated GitHub Flow для людей, автономных агентов и агентов под контролем человека.
-- Осмысленные имена веток без `/`, номеров Issue и случайных идентификаторов по умолчанию.
-- Двуязычная модель документации для английских и русских репозиториев.
-- Двуязычные GitHub Issue Forms и Pull Request template.
-- Явное поле Issue language с пояснением, что названия полей остаются двуязычными.
-- Agent identity protocol с `agent_name`, `agent_id` и `run_id`.
-- Work Claim protocol с полями `Coordinator` и `Supervision`.
-- Refactoring workflow и соответствующие поля Issue form.
-- Правила соответствия документации.
-- Landing README с problem, solution, use cases, comparison и search terms.
-- GitHub Pages landing site из `/docs`.
-- GitHub Actions checks workflow для структуры репозитория и YAML validation.
-- `CITATION.cff` metadata.
-- Repository discovery settings для About, Website, topics и social preview.
-
-### Изменено
-
-- License note репозитория финализирован как GPL-3.0.
-- Repository Website заменён с URL репозитория на GitHub Pages site.
-- Repository topics приведены к текущему публичному About sidebar.
-- Social preview asset обновлён: вместо неоднозначного `ai/` используется `AI memory`.
-
 ## 1.1 — 2026-06-29
 
 ### Added / Добавлено
@@ -61,10 +38,3 @@ All notable changes to Agent Handoff are documented here.
 - `ai/` memory map.
 - Handoff index.
 - Basic Issue and Pull Request templates.
-
-### Добавлено
-
-- Начальная структура стандарта Agent Handoff.
-- Карта памяти `ai/`.
-- Handoff index.
-- Базовые Issue и Pull Request templates.
