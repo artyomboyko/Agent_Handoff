@@ -30,7 +30,8 @@ PR_REQUIRED = [
 
 ENGLISH_ONLY_PATHS = [
     'README.md', 'AGENTS.md', 'AGENT_HANDOFF_STANDARD.md', 'CONTRIBUTING.md',
-    'FAQ.md', 'CHANGELOG.md', 'ai', 'docs/en', '.github/ISSUE_TEMPLATE',
+    'CODE_OF_CONDUCT.md', 'SECURITY.md', 'ISSUE_LABELS.md', 'ISSUE_STATUS.md',
+    'FAQ.md', 'CHANGELOG.md', 'ai', 'docs/en', 'docs/ru', '.github/ISSUE_TEMPLATE',
     '.github/pull_request_template.md', 'docs/index.html', 'examples/README.md',
 ]
 
@@ -42,9 +43,6 @@ def main():
     for item in REQUIRED:
         if not (ROOT / item).exists():
             errors.append(f'missing required path: {item}')
-
-    if (ROOT / 'docs' / 'ru').exists():
-        errors.append('docs/ru should not exist in the English-only repository')
 
     for directory in [ROOT / '.github' / 'ISSUE_TEMPLATE', ROOT / '.github' / 'workflows']:
         if directory.exists():
