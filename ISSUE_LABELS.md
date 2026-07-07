@@ -1,9 +1,8 @@
-# Agent Handoff Issue Labels / Метки Issue
+# Agent Handoff Issue Labels
 
 This file defines recommended universal Issue labels for Agent Handoff repositories.
-Этот файл описывает рекомендуемые универсальные метки Issue для репозиториев Agent Handoff.
 
-## Type labels / Типовые метки
+## Type labels
 
 - `bug`
 - `enhancement`
@@ -13,7 +12,7 @@ This file defines recommended universal Issue labels for Agent Handoff repositor
 - `testing`
 - `docs`
 
-## Status labels / Статусные метки
+## Status labels
 
 - `needs-triage`
 - `ready`
@@ -23,15 +22,15 @@ This file defines recommended universal Issue labels for Agent Handoff repositor
 - `changes-requested`
 - `ready-to-merge`
 
-## Rules / Правила
+## Rules
 
-- Prefer one primary type label per Issue. / Предпочитайте одну основную типовую метку на Issue.
-- Add status labels only while they reflect current work state. / Добавляйте статусные метки только пока они отражают текущее состояние работы.
-- Keep project-specific area labels optional. / Проектные area-метки остаются опциональными.
+- Prefer one primary type label per Issue.
+- Add status labels only while they reflect current work state.
+- Keep project-specific area labels optional.
 
-## Template mapping / Соответствие шаблонов
+## Template mapping
 
-| Label / Метка | Issue form / Форма Issue |
+| Label | Issue form |
 |---|---|
 | `bug` | `.github/ISSUE_TEMPLATE/bug_report.yml` |
 | `enhancement` | `.github/ISSUE_TEMPLATE/standard_change.yml` |
