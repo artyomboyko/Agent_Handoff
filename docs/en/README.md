@@ -13,7 +13,6 @@ This page mirrors the Russian index `docs/ru/README.md`.
 - [Handoff protocol](../../ai/HANDOFF_PROTOCOL.md)
 - [Agent identity](../../ai/AGENT_IDENTITY.md)
 - [Work claim protocol](../../ai/WORK_CLAIM_PROTOCOL.md)
-- [Task report protocol](../../ai/TASK_REPORT_PROTOCOL.md)
 - [Project state](../../ai/PROJECT_STATE.md)
 - [Decisions](../../ai/DECISIONS.md)
 - [Refactoring workflow](../../ai/REFACTORING.md)
