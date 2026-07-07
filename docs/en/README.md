@@ -1,6 +1,6 @@
 # English documentation
 
-This page mirrors the Russian index `docs/ru/README.md`.
+This page is the documentation index for Agent Handoff.
 
 ## Documents
 
@@ -27,7 +27,6 @@ This page mirrors the Russian index `docs/ru/README.md`.
 - [Changelog](../../CHANGELOG.md)
 - [Promotion changelog appendix](../CHANGELOG_PROMOTION_APPENDIX.md)
 - [Repository discovery settings](REPOSITORY_SETTINGS_EN.md)
-- [Русский](../ru/README.md)
 
 ## Scenario 1: new repository
 
@@ -46,9 +45,7 @@ Create the first short handoff and update the handoff index.
 Add Agent Handoff to this existing repository.
 Use the latest standard from https://github.com/artyomboyko/Agent_Handoff.
 Inspect the current repository first.
-Do not overwrite existing important files blindly.
 Merge similar files carefully.
-Move outdated long notes to ai/archive when appropriate.
 Compress current state into ai/PROJECT_STATE.md.
 Put durable decisions into ai/DECISIONS.md.
 Configure smoke tests in ai/HANDOFF_PROTOCOL.md.
