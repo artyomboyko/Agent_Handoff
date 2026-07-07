@@ -44,6 +44,7 @@ ai/GITHUB_WORKFLOW.md
 ai/HANDOFF_PROTOCOL.md
 ai/AGENT_IDENTITY.md
 ai/WORK_CLAIM_PROTOCOL.md
+ai/TASK_REPORT_PROTOCOL.md
 ai/REFACTORING.md
 ai/handoffs/INDEX.md
 .github/ISSUE_TEMPLATE/
@@ -63,10 +64,11 @@ Before meaningful work, read:
 5. `ai/HANDOFF_PROTOCOL.md`
 6. `ai/AGENT_IDENTITY.md`
 7. `ai/WORK_CLAIM_PROTOCOL.md`
-8. `ai/PROJECT_STATE.md`
-9. `ai/DECISIONS.md`
-10. related GitHub Issue or Pull Request
-11. relevant handoffs through `ai/handoffs/INDEX.md`
+8. `ai/TASK_REPORT_PROTOCOL.md`
+9. `ai/PROJECT_STATE.md`
+10. `ai/DECISIONS.md`
+11. related GitHub Issue or Pull Request
+12. relevant handoffs through `ai/handoffs/INDEX.md`
 
 ## Agent identity
 
@@ -118,6 +120,18 @@ Next:
 
 If an Issue or PR already has a recent work claim, coordinate in the related Issue or PR before continuing.
 
+## Task result reports
+
+Task result comments are mandatory for meaningful Issues.
+
+Large or multi-stage Issues must have a stage result comment after each stable stage.
+
+Small single-stage Issues must have one final result comment before the work is marked done.
+
+For each large-task stage, an agent must record findings, make a small focused change, run targeted tests or explain why they were not run, update AI or project docs when relevant, make a bilingual commit when the repository is bilingual, and continue only after the layer is stable.
+
+Use `ai/TASK_REPORT_PROTOCOL.md` for the required comment templates.
+
 ## Branch naming
 
 Use meaningful branch names without `/`, Issue numbers, or random identifiers by default.
@@ -154,10 +168,10 @@ Status labels: `needs-triage`, `ready`, `in-progress`, `blocked`, `in-review`, `
 2. Check existing work claims, linked PRs, active handoffs, and recent comments.
 3. Choose agent identity.
 4. Claim the work.
-5. Define scope.
+5. Define scope and stages when the task is large.
 6. Create a meaningful short-lived branch.
 7. Open a Draft PR early.
-8. Write progress updates in Issue or PR comments when useful.
+8. Write required stage or final result comments in the Issue or PR.
 9. Commit changes.
 10. Run checks and smoke tests.
 11. Update PR description.
@@ -168,6 +182,7 @@ Status labels: `needs-triage`, `ready`, `in-progress`, `blocked`, `in-review`, `
 - related Issue or PR is linked;
 - work claim comment exists for agent work;
 - agent id and run id are repeated in PR or handoff when relevant;
+- required stage or final result comment exists;
 - changes are committed;
 - smoke tests were run or reason is documented;
 - PR description is updated;
