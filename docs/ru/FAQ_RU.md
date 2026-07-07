@@ -1,3 +1,0 @@
-# FAQ
-
-English-only repository.

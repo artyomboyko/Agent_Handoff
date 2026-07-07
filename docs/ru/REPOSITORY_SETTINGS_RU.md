@@ -1,3 +1,0 @@
-# Settings
-
-English-only repository.
