@@ -1,28 +1,18 @@
-name: Research / Исследование
-description: Compare options / Сравнить варианты
+name: Research
+description: Compare options
 title: "Research: "
 labels:
   - research
 body:
-  - type: dropdown
-    id: language
-    attributes:
-      label: Issue language / Язык заполнения Issue
-      description: Choose the language you will use to fill in this Issue. Field names stay bilingual. / Выберите язык, на котором будете заполнять Issue. Названия полей остаются двуязычными.
-      options:
-        - English
-        - Русский
-    validations:
-      required: true
   - type: textarea
     id: question
     attributes:
-      label: Question / Вопрос
+      label: Question
     validations:
       required: true
   - type: textarea
     id: result
     attributes:
-      label: Expected result / Ожидаемый результат
+      label: Expected result
     validations:
       required: true
