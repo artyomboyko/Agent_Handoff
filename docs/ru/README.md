@@ -13,6 +13,7 @@
 - [Протокол handoff](PROTOCOL_RU.md)
 - [Agent identity](../../ai/AGENT_IDENTITY.md)
 - [Work claim protocol](../../ai/WORK_CLAIM_PROTOCOL.md)
+- [Task report protocol](../../ai/TASK_REPORT_PROTOCOL.md)
 - [Состояние проекта](PROJECT_RU.md)
 - [Решения](../../ai/DECISIONS.md)
 - [Refactoring workflow](../../ai/REFACTORING.md)
@@ -45,9 +46,7 @@
 Внедри Agent Handoff в этот существующий репозиторий.
 Используй последнюю версию стандарта из https://github.com/artyomboyko/Agent_Handoff.
 Сначала изучи текущую структуру репозитория.
-Не перезаписывай важные существующие файлы без анализа.
 Аккуратно объедини похожие файлы.
-Устаревшие длинные заметки при необходимости перенеси в ai/archive.
 Актуальное состояние сожми в ai/PROJECT_STATE.md.
 Устойчивые решения перенеси в ai/DECISIONS.md.
 Настрой smoke tests в ai/HANDOFF_PROTOCOL.md.
