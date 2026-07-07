@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 from pathlib import Path
+import re
 import sys
 import yaml
 
@@ -13,7 +14,7 @@ REQUIRED = [
     'ai/GITHUB_WORKFLOW.md', 'ai/HANDOFF_PROTOCOL.md', 'ai/AGENT_IDENTITY.md',
     'ai/WORK_CLAIM_PROTOCOL.md', 'ai/TASK_REPORT_PROTOCOL.md', 'ai/REFACTORING.md',
     'ai/handoffs/INDEX.md', '.github/ISSUE_TEMPLATE', '.github/pull_request_template.md',
-    '.github/workflows/standard-check.yml', 'docs/en', 'docs/ru',
+    '.github/workflows/standard-check.yml', 'docs/en',
     'docs/index.html', 'docs/404.html', 'docs/robots.txt', 'docs/sitemap.xml',
     'examples/README.md', 'assets/social-preview.svg',
 ]
@@ -27,12 +28,23 @@ PR_REQUIRED = [
     'Smoke tests were run or reason is documented.',
 ]
 
+ENGLISH_ONLY_PATHS = [
+    'README.md', 'AGENTS.md', 'AGENT_HANDOFF_STANDARD.md', 'CONTRIBUTING.md',
+    'FAQ.md', 'CHANGELOG.md', 'ai', 'docs/en', '.github/ISSUE_TEMPLATE',
+    '.github/pull_request_template.md', 'docs/index.html', 'examples/README.md',
+]
+
+CYRILLIC_RE = re.compile(r'[А-Яа-яЁё]')
+
 
 def main():
     errors = []
     for item in REQUIRED:
         if not (ROOT / item).exists():
             errors.append(f'missing required path: {item}')
+
+    if (ROOT / 'docs' / 'ru').exists():
+        errors.append('docs/ru should not exist in the English-only repository')
 
     for directory in [ROOT / '.github' / 'ISSUE_TEMPLATE', ROOT / '.github' / 'workflows']:
         if directory.exists():
@@ -58,6 +70,21 @@ def main():
         for item in ['Agent Handoff Stage Result', 'Agent Handoff Final Result']:
             if item not in text:
                 errors.append(f'TASK_REPORT_PROTOCOL.md missing: {item}')
+
+    for item in ENGLISH_ONLY_PATHS:
+        path = ROOT / item
+        if path.is_file():
+            paths = [path]
+        elif path.is_dir():
+            paths = sorted(p for p in path.rglob('*') if p.is_file())
+        else:
+            paths = []
+        for file_path in paths:
+            if file_path.suffix.lower() not in {'.md', '.yml', '.yaml', '.html', '.py'}:
+                continue
+            text = file_path.read_text(encoding='utf-8')
+            if CYRILLIC_RE.search(text):
+                errors.append(f'non-English Cyrillic text found: {file_path.relative_to(ROOT)}')
 
     preview = ROOT / 'assets' / 'social-preview.svg'
     if preview.exists():
