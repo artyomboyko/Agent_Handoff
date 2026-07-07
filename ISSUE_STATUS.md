@@ -1,6 +1,6 @@
-# Issue Status / Статусы Issue
+# Issue Status
 
-Status labels / Статусные метки:
+Status labels:
 
 - `needs-triage`
 - `ready`
@@ -9,6 +9,3 @@ Status labels / Статусные метки:
 - `in-review`
 - `changes-requested`
 - `ready-to-merge`
-
-Use status labels only while they reflect current state.
-Используйте статусные метки только пока они отражают текущее состояние.
