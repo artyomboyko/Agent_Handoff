@@ -2,53 +2,57 @@
 type: architecture_record
 version: 1
 status: active
-updated: 2026-07-02
+updated: 2026-07-07
 project: Agent_Handoff
 ---
 
-# Architecture Records / Архитектурные записи
+# Architecture Records
 
-## 2026-06-29 — Adopt Agent Handoff Standard 1.1 / Принять Agent Handoff Standard 1.1
+## 2026-06-29 — Adopt Agent Handoff Standard 1.1
 
-Status / Статус: accepted
+Status: accepted
 
-### Background / Контекст
+### Background
 
 The initial standard needed support for parallel agents, GitHub templates, smoke tests, and machine-readable metadata.
-Начальному стандарту требовалась поддержка параллельных агентов, GitHub templates, smoke tests и machine-readable metadata.
 
-### Decision / Решение
+### Decision
 
 Adopt Agent Handoff Standard 1.1 as a compact workflow scaffold.
-Принять Agent Handoff Standard 1.1 как компактный workflow scaffold.
 
-### Related / Связано
+### Related
 
 - Issue: #1
 
-## 2026-07-02 — Rename to Agent Handoff / Переименовать в Agent Handoff
+## 2026-07-02 — Rename to Agent Handoff
 
-Status / Статус: accepted
+Status: accepted
 
-### Background / Контекст
+### Background
 
 The project name should emphasize agent-to-agent development handoff.
-Название проекта должно подчёркивать передачу контекста между агентами.
 
-### Decision / Решение
+### Decision
 
 Use Agent Handoff as the project and standard name.
-Использовать Agent Handoff как название проекта и стандарта.
 
-### Related / Связано
+### Related
 
 - Standard file: `AGENT_HANDOFF_STANDARD.md`
 
-## 2026-07-02 — Bilingual documentation / Двуязычная документация
+## 2026-07-07 — English-only canonical repository
 
-Status / Статус: accepted
+Status: accepted
 
-### Decision / Решение
+### Background
 
-User-facing docs and templates should support English and Russian and keep matching meaning.
-Пользовательские документы и шаблоны должны поддерживать английский и русский языки и сохранять соответствие смысла.
+The public repository should be simpler to maintain and easier for an international audience to scan.
+
+### Decision
+
+Maintain this repository in English only. Downstream projects may adapt Agent Handoff to another repository language, but canonical files here stay English-only.
+
+### Related
+
+- `AGENT_HANDOFF_STANDARD.md`
+- `docs/en/README.md`
