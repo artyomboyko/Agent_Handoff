@@ -1,66 +1,55 @@
-name: Bug report / Сообщение об ошибке
-description: Report a problem / Сообщить о проблеме
+name: Bug report
+description: Report a problem
 title: "Bug: "
 labels:
   - bug
 body:
-  - type: dropdown
-    id: language
-    attributes:
-      label: Issue language / Язык заполнения Issue
-      description: Choose the language you will use to fill in this Issue. Field names stay bilingual. / Выберите язык, на котором будете заполнять Issue. Названия полей остаются двуязычными.
-      options:
-        - English
-        - Русский
-    validations:
-      required: true
   - type: markdown
     attributes:
       value: |
         Use this form for a focused bug report.
-        Используйте эту форму для точного сообщения об ошибке.
   - type: textarea
     id: current
     attributes:
-      label: Current behavior / Текущее поведение
+      label: Current behavior
     validations:
       required: true
   - type: textarea
     id: expected
     attributes:
-      label: Expected behavior / Ожидаемое поведение
+      label: Expected behavior
     validations:
       required: true
   - type: textarea
     id: steps
     attributes:
-      label: Steps to reproduce or inspect / Шаги для воспроизведения или проверки
+      label: Steps to reproduce or inspect
     validations:
       required: true
   - type: dropdown
     id: area
     attributes:
-      label: Affected area / Затронутая область
+      label: Affected area
       options:
-        - Standard text / Текст стандарта
+        - Standard text
         - AGENTS.md
-        - ai/ memory files / Файлы памяти ai/
-        - Handoff protocol / Протокол handoff
-        - GitHub templates / Шаблоны GitHub
-        - Repository structure / Структура репозитория
-        - Other / Другое
+        - ai/ memory files
+        - Handoff protocol
+        - GitHub templates
+        - Repository structure
+        - Other
     validations:
       required: true
   - type: textarea
     id: risk
     attributes:
-      label: Risk / Риск
+      label: Risk
     validations:
       required: false
   - type: checkboxes
     id: checks
     attributes:
-      label: Pre-submit checks / Проверки перед отправкой
+      label: Pre-submit checks
       options:
-        - label: I checked for an existing related issue. / Я проверил(а), что похожего Issue нет.
+        - label: I checked for an existing related issue.
           required: true
