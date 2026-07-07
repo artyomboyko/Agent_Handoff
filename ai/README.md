@@ -2,19 +2,17 @@
 type: ai_readme
 version: 1
 status: active
-updated: 2026-07-04
+updated: 2026-07-07
 project: Agent_Handoff
 ---
 
-# Agent Memory Map / Карта памяти агента
+# Agent Memory Map
 
 This folder stores compact repository memory.
-Эта папка хранит компактную память репозитория.
 
 It does not replace GitHub Issues, Pull Requests, checks, or Git history.
-Она не заменяет GitHub Issues, Pull Requests, проверки или историю Git.
 
-## Reading order / Порядок чтения
+## Reading order
 
 1. `AGENTS.md`
 2. `AGENT_HANDOFF_STANDARD.md`
@@ -25,24 +23,23 @@ It does not replace GitHub Issues, Pull Requests, checks, or Git history.
 7. `ai/TASK_REPORT_PROTOCOL.md`
 8. `ai/PROJECT_STATE.md`
 9. `ai/DECISIONS.md`
-10. Related Issue or PR / Связанное Issue или PR
-11. `ai/REFACTORING.md` when relevant / `ai/REFACTORING.md`, когда релевантно
+10. related Issue or PR
+11. `ai/REFACTORING.md` when relevant
 12. `ai/handoffs/INDEX.md`
-13. Relevant handoff files only / Только релевантные handoff-файлы
+13. relevant handoff files only
 
-## Files / Файлы
+## Files
 
-- `PROJECT_STATE.md` — project snapshot / snapshot проекта.
-- `DECISIONS.md` — durable decisions / устойчивые решения.
-- `GITHUB_WORKFLOW.md` — coordinated GitHub workflow / координированный GitHub workflow.
-- `HANDOFF_PROTOCOL.md` — workflow protocol / протокол работы.
-- `AGENT_IDENTITY.md` — agent identity protocol / протокол идентификации агента.
-- `WORK_CLAIM_PROTOCOL.md` — work claim protocol / протокол claim работы.
-- `TASK_REPORT_PROTOCOL.md` — required result comments / обязательные result comments.
-- `REFACTORING.md` — refactoring workflow / workflow рефакторинга.
-- `handoffs/INDEX.md` — handoff index / индекс handoff.
+- `PROJECT_STATE.md` — project snapshot.
+- `DECISIONS.md` — durable decisions.
+- `GITHUB_WORKFLOW.md` — coordinated GitHub workflow.
+- `HANDOFF_PROTOCOL.md` — workflow protocol.
+- `AGENT_IDENTITY.md` — agent identity protocol.
+- `WORK_CLAIM_PROTOCOL.md` — work claim protocol.
+- `TASK_REPORT_PROTOCOL.md` — required result comments.
+- `REFACTORING.md` — refactoring workflow.
+- `handoffs/INDEX.md` — handoff index.
 
-## Rules / Правила
+## Rules
 
 Keep files compact.
-Файлы должны быть компактными.
