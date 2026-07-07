@@ -1,27 +1,3 @@
 # FAQ
 
-This page mirrors `FAQ.md` for English documentation readers.
-
-## What is Agent Handoff?
-
-Agent Handoff is a GitHub-native standard for passing project context between AI coding agents, human maintainers, and human-supervised agents.
-
-## Why not just use chat memory?
-
-Chat memory is usually tied to one tool, session, or provider. Agent Handoff stores compact durable context in the repository, next to Issues, Pull Requests, and code history.
-
-## Is this a replacement for README?
-
-No. README explains the project to people. Agent Handoff adds workflow, ownership, compact memory, and handoff rules for agents and maintainers.
-
-## Is this a replacement for GitHub Issues?
-
-No. GitHub Issues and Pull Requests remain the source of work truth. Agent Handoff uses them as the coordination layer.
-
-## What is stored in `ai/`?
-
-Compact durable project state, decisions, protocols, and handoff indexes. Do not store secrets, full logs, full chats, or large generated data.
-
-## Can I use it with Codex, ChatGPT, Cursor, Claude Code, or local agents?
-
-Yes. Agent Handoff is tool-agnostic. It is designed for GitHub-based workflows and can be used by humans and different coding agents.
+Agent Handoff FAQ.
