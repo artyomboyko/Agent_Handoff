@@ -1,22 +1,12 @@
-name: Validation / Проверка
-description: Checks / Проверки
+name: Validation
+description: Checks
 title: "Testing: "
 labels:
   - testing
 body:
-  - type: dropdown
-    id: language
-    attributes:
-      label: Issue language / Язык заполнения Issue
-      description: Choose the language for the text you write in this Issue. Field names stay bilingual. / Выберите язык текста, который вы будете писать в этом Issue. Названия полей остаются двуязычными.
-      options:
-        - English
-        - Русский
-    validations:
-      required: true
   - type: textarea
     id: summary
     attributes:
-      label: Summary / Описание
+      label: Summary
     validations:
       required: true
