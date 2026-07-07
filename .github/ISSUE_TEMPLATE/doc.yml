@@ -1,34 +1,24 @@
-name: Documentation / Документация
-description: Improve docs / Улучшить документацию
+name: Documentation
+description: Improve documentation
 title: "Docs: "
 labels:
   - docs
 body:
-  - type: dropdown
-    id: language
-    attributes:
-      label: Issue language / Язык заполнения Issue
-      description: Choose the language you will use to fill in this Issue. Field names stay bilingual. / Выберите язык, на котором будете заполнять Issue. Названия полей остаются двуязычными.
-      options:
-        - English
-        - Русский
-    validations:
-      required: true
   - type: textarea
     id: problem
     attributes:
-      label: Documentation problem / Проблема в документации
+      label: Documentation problem
     validations:
       required: true
   - type: textarea
     id: proposal
     attributes:
-      label: Proposed text or change / Предлагаемый текст или изменение
+      label: Proposed change
     validations:
       required: true
   - type: textarea
     id: related
     attributes:
-      label: Related page or file / Связанная страница или файл
+      label: Related page or file
     validations:
       required: false
