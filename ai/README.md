@@ -2,7 +2,7 @@
 type: ai_readme
 version: 1
 status: active
-updated: 2026-07-02
+updated: 2026-07-04
 project: Agent_Handoff
 ---
 
@@ -22,12 +22,13 @@ It does not replace GitHub Issues, Pull Requests, checks, or Git history.
 4. `ai/HANDOFF_PROTOCOL.md`
 5. `ai/AGENT_IDENTITY.md`
 6. `ai/WORK_CLAIM_PROTOCOL.md`
-7. `ai/PROJECT_STATE.md`
-8. `ai/DECISIONS.md`
-9. Related Issue or PR / Связанное Issue или PR
-10. `ai/REFACTORING.md`
-11. `ai/handoffs/INDEX.md`
-12. Relevant handoff files only / Только релевантные handoff-файлы
+7. `ai/TASK_REPORT_PROTOCOL.md`
+8. `ai/PROJECT_STATE.md`
+9. `ai/DECISIONS.md`
+10. Related Issue or PR / Связанное Issue или PR
+11. `ai/REFACTORING.md` when relevant / `ai/REFACTORING.md`, когда релевантно
+12. `ai/handoffs/INDEX.md`
+13. Relevant handoff files only / Только релевантные handoff-файлы
 
 ## Files / Файлы
 
@@ -37,7 +38,8 @@ It does not replace GitHub Issues, Pull Requests, checks, or Git history.
 - `HANDOFF_PROTOCOL.md` — workflow protocol / протокол работы.
 - `AGENT_IDENTITY.md` — agent identity protocol / протокол идентификации агента.
 - `WORK_CLAIM_PROTOCOL.md` — work claim protocol / протокол claim работы.
-- `REFACTORING.md` — cleanup workflow / workflow cleanup.
+- `TASK_REPORT_PROTOCOL.md` — required result comments / обязательные result comments.
+- `REFACTORING.md` — refactoring workflow / workflow рефакторинга.
 - `handoffs/INDEX.md` — handoff index / индекс handoff.
 
 ## Rules / Правила
