@@ -1,34 +1,24 @@
-name: Backlog / Бэклог
-description: Future work / Отложенная работа
+name: Backlog
+description: Future work
 title: "Backlog: "
 labels:
   - backlog
 body:
-  - type: dropdown
-    id: language
-    attributes:
-      label: Issue language / Язык заполнения Issue
-      description: Choose the language you will use to fill in this Issue. Field names stay bilingual. / Выберите язык, на котором будете заполнять Issue. Названия полей остаются двуязычными.
-      options:
-        - English
-        - Русский
-    validations:
-      required: true
   - type: textarea
     id: summary
     attributes:
-      label: Summary / Описание
+      label: Summary
     validations:
       required: true
   - type: textarea
     id: reason
     attributes:
-      label: Reason / Причина
+      label: Reason
     validations:
       required: true
   - type: textarea
     id: related
     attributes:
-      label: Related context / Связанный контекст
+      label: Related context
     validations:
       required: false
