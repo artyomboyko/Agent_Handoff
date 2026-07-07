@@ -52,6 +52,7 @@ ai/GITHUB_WORKFLOW.md
 ai/HANDOFF_PROTOCOL.md
 ai/AGENT_IDENTITY.md
 ai/WORK_CLAIM_PROTOCOL.md
+ai/TASK_REPORT_PROTOCOL.md
 ai/REFACTORING.md
 ai/handoffs/INDEX.md
 .github/ISSUE_TEMPLATE/
@@ -71,10 +72,11 @@ docs/ru/
 5. `ai/HANDOFF_PROTOCOL.md`
 6. `ai/AGENT_IDENTITY.md`
 7. `ai/WORK_CLAIM_PROTOCOL.md`
-8. `ai/PROJECT_STATE.md`
-9. `ai/DECISIONS.md`
-10. связанный GitHub Issue или Pull Request
-11. релевантные handoffs через `ai/handoffs/INDEX.md`
+8. `ai/TASK_REPORT_PROTOCOL.md`
+9. `ai/PROJECT_STATE.md`
+10. `ai/DECISIONS.md`
+11. связанный GitHub Issue или Pull Request
+12. релевантные handoffs через `ai/handoffs/INDEX.md`
 
 ## Agent identity / Идентификация агента
 
@@ -126,6 +128,18 @@ Next:
 
 Если в Issue или PR уже есть свежий work claim, нужно согласовать продолжение в связанном Issue или PR.
 
+## Task result reports / Отчёты результата задачи
+
+Task result comments обязательны для значимых Issues.
+
+Большие или многоэтапные Issues должны иметь stage result comment после каждого стабильного stage.
+
+Небольшие одноэтапные Issues должны иметь один final result comment перед завершением работы.
+
+Для каждого stage большой задачи агент должен зафиксировать findings, сделать маленькое сфокусированное изменение, запустить targeted tests или объяснить, почему они не запускались, обновить AI или project docs, когда это релевантно, сделать bilingual commit, если репозиторий двуязычный, и продолжать только после стабильного слоя.
+
+Используйте `ai/TASK_REPORT_PROTOCOL.md` для обязательных comment templates.
+
 ## Branch naming / Имена веток
 
 Используйте осмысленные имена веток без `/`, без номеров Issue и без случайных идентификаторов по умолчанию.
@@ -162,10 +176,10 @@ Status labels: `needs-triage`, `ready`, `in-progress`, `blocked`, `in-review`, `
 2. Проверьте существующие work claims, linked PRs, active handoffs и recent comments.
 3. Выберите agent identity.
 4. Зафиксируйте claim работы.
-5. Определите scope.
+5. Определите scope и stages, если задача большая.
 6. Создайте осмысленную short-lived branch.
 7. Рано откройте Draft PR.
-8. Пишите progress updates в Issue или PR comments, когда это полезно.
+8. Оставляйте обязательные stage или final result comments в Issue или PR.
 9. Commit changes.
 10. Run checks and smoke tests.
 11. Обновите PR description.
@@ -176,6 +190,7 @@ Status labels: `needs-triage`, `ready`, `in-progress`, `blocked`, `in-review`, `
 - related Issue или PR связан;
 - work claim comment существует для agent work;
 - agent id и run id повторены в PR или handoff, когда это релевантно;
+- обязательный stage или final result comment существует;
 - changes committed;
 - smoke tests выполнены или причина описана;
 - PR description обновлён;
