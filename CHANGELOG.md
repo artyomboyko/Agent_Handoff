@@ -2,13 +2,7 @@
 
 All notable changes to Agent Handoff are documented here.
 
-## Unreleased
-
-### Changed
-
-- Repository documentation and templates are being simplified to English-only canonical files.
-
-## 1.2 - 2026-07-04
+## 1.2 - 2026-07-07
 
 ### Added
 
@@ -26,6 +20,7 @@ All notable changes to Agent Handoff are documented here.
 
 ### Changed
 
+- Repository documentation and templates simplified to English-only canonical files.
 - Repository license note finalized as GPL-3.0.
 - Repository Website moved from the repository URL to the GitHub Pages site.
 - Repository topics aligned with the current public About sidebar.
