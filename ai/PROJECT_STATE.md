@@ -10,9 +10,9 @@ project: Agent_Handoff
 
 ## Current phase
 
-Agent Handoff Standard 1.2 is in final pre-release review.
+Agent Handoff Standard 1.2 is ready for final publication review.
 
-The repository is being simplified to an English-only canonical version.
+The repository is maintained as an English-only canonical version.
 
 ## Implemented
 
