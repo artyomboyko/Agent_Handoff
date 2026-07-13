@@ -1,8 +1,8 @@
 ---
 standard: Agent Handoff
-version: "1.2"
-status: active
-updated: 2026-07-07
+version: "1.3"
+status: draft
+updated: 2026-07-14
 ---
 
 # Agent Handoff Standard
@@ -83,6 +83,14 @@ Use `ai/TASK_REPORT_PROTOCOL.md` for the required comment templates.
 10. Run checks and smoke tests.
 11. Update PR description.
 12. Leave a handoff when work is completed or interrupted.
+
+## GUI testing
+
+Do not create brittle automated GUI tests that locate, interact with, or validate interface elements through absolute coordinates, screen position, pixel offsets, or incidental layout order.
+
+Position-dependent GUI checks must be performed manually or as supervised exploratory checks with Codex. They must not be committed as part of the routine automated test suite.
+
+Automated GUI tests should use stable semantic selectors such as roles, accessible names, labels, documented component identifiers, or dedicated test IDs.
 
 ## Definition of Done
 
