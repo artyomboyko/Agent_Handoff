@@ -1,7 +1,7 @@
 ---
 standard: Agent Handoff
 version: "1.3"
-status: draft
+status: active
 updated: 2026-07-18
 ---
 
