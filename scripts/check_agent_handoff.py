@@ -13,8 +13,9 @@ REQUIRED = [
     'ai/README.md', 'ai/PROJECT_STATE.md', 'ai/DECISIONS.md',
     'ai/GITHUB_WORKFLOW.md', 'ai/HANDOFF_PROTOCOL.md', 'ai/AGENT_IDENTITY.md',
     'ai/WORK_CLAIM_PROTOCOL.md', 'ai/TASK_REPORT_PROTOCOL.md', 'ai/REFACTORING.md',
-    'ai/handoffs/INDEX.md', '.github/ISSUE_TEMPLATE', '.github/pull_request_template.md',
-    '.github/workflows/standard-check.yml', 'docs/en',
+    'ai/CONTAINERIZATION.md', 'ai/handoffs/INDEX.md',
+    '.github/ISSUE_TEMPLATE', '.github/pull_request_template.md',
+    '.github/workflows/standard-check.yml', 'docs/en', 'docs/releases',
     'docs/index.html', 'docs/404.html', 'docs/robots.txt', 'docs/sitemap.xml',
     'examples/README.md', 'assets/social-preview.svg',
 ]
@@ -26,16 +27,32 @@ PR_REQUIRED = [
     'Forms are valid when changed.',
     'Required stage or final result comment exists.',
     'Smoke tests were run or reason is documented.',
+    'Mandatory containerization decision was confirmed when relevant, or not applicable.',
+    'Changed Compose configuration was rendered and checked, or reason and risk are documented.',
+    'Automated GUI tests avoid position-dependent selectors, or manual/supervised checks are documented.',
 ]
 
 ENGLISH_ONLY_PATHS = [
     'README.md', 'AGENTS.md', 'AGENT_HANDOFF_STANDARD.md', 'CONTRIBUTING.md',
     'CODE_OF_CONDUCT.md', 'SECURITY.md', 'ISSUE_LABELS.md', 'ISSUE_STATUS.md',
-    'FAQ.md', 'CHANGELOG.md', 'ai', 'docs/en', '.github/ISSUE_TEMPLATE',
-    '.github/pull_request_template.md', 'docs/index.html', 'examples/README.md',
+    'FAQ.md', 'CHANGELOG.md', 'ai', 'docs/en', 'docs/releases',
+    '.github/ISSUE_TEMPLATE', '.github/pull_request_template.md',
+    'docs/index.html', 'examples/README.md',
 ]
 
 CYRILLIC_RE = re.compile(r'[А-Яа-яЁё]')
+FRONT_MATTER_RE = re.compile(r'^---\n(.*?)\n---\n', re.DOTALL)
+
+
+def read_front_matter(path: Path):
+    text = path.read_text(encoding='utf-8')
+    match = FRONT_MATTER_RE.match(text)
+    if not match:
+        raise ValueError('missing YAML front matter')
+    data = yaml.safe_load(match.group(1))
+    if not isinstance(data, dict):
+        raise ValueError('front matter root must be a map')
+    return data
 
 
 def main():
@@ -68,6 +85,37 @@ def main():
         for item in ['Agent Handoff Stage Result', 'Agent Handoff Final Result']:
             if item not in text:
                 errors.append(f'TASK_REPORT_PROTOCOL.md missing: {item}')
+
+    standard = ROOT / 'AGENT_HANDOFF_STANDARD.md'
+    if standard.exists():
+        try:
+            metadata = read_front_matter(standard)
+            version = str(metadata.get('version', '')).strip()
+            if not version:
+                errors.append('standard metadata missing version')
+            if metadata.get('status') != 'active':
+                errors.append('standard status must be active')
+            if version:
+                release_notes = ROOT / 'docs' / 'releases' / f'v{version}.md'
+                if not release_notes.exists():
+                    errors.append(f'missing release notes: {release_notes.relative_to(ROOT)}')
+                readme = (ROOT / 'README.md').read_text(encoding='utf-8')
+                if f'standard-{version}-blue' not in readme:
+                    errors.append('README standard badge does not match active standard version')
+                citation = yaml.safe_load((ROOT / 'CITATION.cff').read_text(encoding='utf-8'))
+                if str(citation.get('version', '')).strip() != version:
+                    errors.append('CITATION.cff version does not match active standard version')
+        except Exception as exc:
+            errors.append(f'invalid standard metadata: {exc}')
+
+    containerization = ROOT / 'ai' / 'CONTAINERIZATION.md'
+    if containerization.exists():
+        try:
+            metadata = read_front_matter(containerization)
+            if metadata.get('status') != 'active':
+                errors.append('containerization protocol status must be active')
+        except Exception as exc:
+            errors.append(f'invalid containerization metadata: {exc}')
 
     for item in ENGLISH_ONLY_PATHS:
         path = ROOT / item
