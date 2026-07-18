@@ -59,7 +59,7 @@ Maintain this repository in English only. Downstream projects may adapt Agent Ha
 
 ## 2026-07-18 — User-controlled containerization layout
 
-Status: accepted for Standard 1.3 draft
+Status: accepted in Standard 1.3
 
 ### Background
 
@@ -86,11 +86,39 @@ Do not allow the agent to infer approval or automatically apply the recommended 
 - Existing repositories are preserved until migration is explicitly approved.
 - New repositories do not receive speculative Docker infrastructure.
 - Agents have a complete catalog of supported layouts and shared verification requirements.
-- Initialization prompts and handoff procedures must expose the decision gate explicitly.
+- Initialization prompts and handoff procedures expose the decision gate explicitly.
 
 ### Related
 
+- Issue: #12
+- Pull Request: #13
 - `AGENT_HANDOFF_STANDARD.md`
 - `ai/CONTAINERIZATION.md`
 - `ai/HANDOFF_PROTOCOL.md`
 - `docs/en/README.md`
+
+## 2026-07-18 — Stable GUI automation over position-dependent tests
+
+Status: accepted in Standard 1.3
+
+### Background
+
+GUI tests that depend on absolute coordinates, screen positions, pixel offsets, or incidental layout order are fragile and frequently fail after harmless interface changes.
+
+### Decision
+
+Do not include position-dependent GUI checks in the routine automated test suite. Perform those checks manually or as supervised exploratory checks with Codex.
+
+Automated GUI tests use stable semantic roles, accessible names, labels, documented component identifiers, or dedicated test IDs.
+
+### Consequences
+
+- Routine GUI automation is more resilient to layout changes.
+- Visual and position-dependent behavior remains explicitly testable through manual or supervised exploratory checks.
+- Handoffs and Pull Requests must state when such checks were performed manually.
+
+### Related
+
+- Issue: #12
+- Pull Request: #13
+- `AGENT_HANDOFF_STANDARD.md`
