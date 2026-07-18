@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Agent Handoff — GitHub-native context handoff for AI coding agents</title>
-  <meta name="description" content="Agent Handoff is a GitHub-native standard for passing project context between AI coding agents, human maintainers, and human-supervised agents.">
+  <title>Agent Handoff 1.3 — GitHub-native context handoff for AI coding agents</title>
+  <meta name="description" content="Agent Handoff 1.3 is a GitHub-native standard for passing project context between AI coding agents, human maintainers, and human-supervised agents.">
   <meta name="robots" content="index, follow">
-  <meta property="og:title" content="Agent Handoff">
-  <meta property="og:description" content="GitHub-native context handoff for AI coding agents, project memory, work claims, PRs, checks, and handoffs.">
+  <meta property="og:title" content="Agent Handoff 1.3">
+  <meta property="og:description" content="GitHub-native context handoff for AI coding agents, project memory, work claims, PRs, checks, handoffs, and user-controlled containerization decisions.">
   <meta property="og:type" content="website">
   <style>
     :root {
@@ -53,6 +53,7 @@
       <nav aria-label="Main navigation">
         <a href="https://github.com/artyomboyko/Agent_Handoff">GitHub</a>
         <a href="https://github.com/artyomboyko/Agent_Handoff/blob/main/AGENT_HANDOFF_STANDARD.md">Standard</a>
+        <a href="https://github.com/artyomboyko/Agent_Handoff/blob/main/docs/releases/v1.3.md">Release 1.3</a>
         <a href="https://github.com/artyomboyko/Agent_Handoff/tree/main/examples">Examples</a>
       </nav>
     </header>
@@ -60,7 +61,7 @@
     <main>
       <section class="hero">
         <div>
-          <span class="badge">GitHub-native standard · English · GPL-3.0</span>
+          <span class="badge">Standard 1.3 · GitHub-native · English · GPL-3.0</span>
           <h1>Context handoff for AI coding agents</h1>
           <p class="lead">Agent Handoff helps AI agents and humans keep durable project context inside GitHub, Git, and compact repository-tracked memory files.</p>
           <div class="actions">
@@ -82,14 +83,14 @@
 
       <section class="grid" aria-label="Key benefits">
         <article class="card"><h2>For humans</h2><p>See who owns work, what changed, what was tested, what remains risky, and where the next contributor should continue.</p></article>
-        <article class="card"><h2>For agents</h2><p>Start from <code>AGENTS.md</code>, claim work in GitHub, open a Draft PR early, keep <code>ai/</code> compact, and leave a short handoff.</p></article>
+        <article class="card"><h2>For agents</h2><p>Start from <code>AGENTS.md</code>, claim work in GitHub, ask for required user decisions, open a Draft PR early, keep <code>ai/</code> compact, and leave a short handoff.</p></article>
         <article class="card"><h2>For repositories</h2><p>Use Issues, PRs, checks, labels, branches, commits, and small durable memory files instead of long chat logs.</p></article>
       </section>
 
       <section class="card">
         <h2>Quick start</h2>
         <p>Copy this prompt into an AI coding agent:</p>
-        <p><code>Add Agent Handoff to this repository. Use the latest standard from https://github.com/artyomboyko/Agent_Handoff.</code></p>
+        <p><code>Add Agent Handoff to this repository. Use the latest standard from https://github.com/artyomboyko/Agent_Handoff. Inspect the repository first and ask me a separate explicit question about Docker and Docker Compose organization before changing container files or paths.</code></p>
       </section>
     </main>
 
