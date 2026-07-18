@@ -2,6 +2,21 @@
 
 All notable changes to Agent Handoff are documented here.
 
+## 1.3 - Draft
+
+### Added
+
+- GUI testing rule that prohibits brittle automated tests based on absolute coordinates, screen position, pixel offsets, or incidental layout order.
+- `ai/CONTAINERIZATION.md` with supported Docker and Docker Compose organization approaches.
+- Supported containerization choices for no repository-managed containers, colocated files, centralized `docker/`, hybrid layout, modular monorepos, separate deployment repositories, and established custom layouts.
+- Container layout migration inventory, verification, project-memory, and handoff requirements.
+
+### Changed
+
+- New-repository initialization and existing-repository adoption now require a separate, explicit user decision about containerization and file layout.
+- Agents may not infer, create, relocate, consolidate, or migrate container infrastructure before the user answers the mandatory question.
+- The hybrid layout is a recommended option to present, not an automatic default.
+
 ## 1.2 - 2026-07-07
 
 ### Added
