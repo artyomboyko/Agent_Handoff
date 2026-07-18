@@ -54,4 +54,5 @@ GitHub Pages is published from the `/docs` folder on `main`.
 - Review Issues, PRs, and Actions logs.
 - Confirm About description, Website, topics, and social preview.
 - Confirm GitHub Actions checks and Pages deployment are green.
-- Create release `v1.2`.
+- Confirm citation metadata and release notes match the active standard version.
+- Create a tagged GitHub release when a tag is part of the publication plan.
