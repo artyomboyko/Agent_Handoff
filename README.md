@@ -1,6 +1,6 @@
 # Agent Handoff
 
-[![Standard](https://img.shields.io/badge/standard-1.3--draft-orange)](AGENT_HANDOFF_STANDARD.md)
+[![Standard](https://img.shields.io/badge/standard-1.3-blue)](AGENT_HANDOFF_STANDARD.md)
 [![Language](https://img.shields.io/badge/language-English-blue)](docs/en/README.md)
 [![GitHub native](https://img.shields.io/badge/GitHub-native-black)](ai/GITHUB_WORKFLOW.md)
 [![AI agent ready](https://img.shields.io/badge/AI%20agent-ready-purple)](ai/AGENT_IDENTITY.md)
@@ -83,6 +83,7 @@ Open a Pull Request and leave a compact handoff.
 | Issue status | [ISSUE_STATUS.md](ISSUE_STATUS.md) |
 | FAQ | [FAQ.md](FAQ.md) |
 | Examples | [examples/](examples/) |
+| Release notes | [docs/releases/v1.3.md](docs/releases/v1.3.md) |
 
 ## Comparison
 
