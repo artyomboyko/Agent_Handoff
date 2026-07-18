@@ -1,8 +1,8 @@
 ---
 standard: Agent Handoff
-version: "1.2"
+version: "1.3"
 status: active
-updated: 2026-07-07
+updated: 2026-07-18
 ---
 
 # Agent Handoff Standard
@@ -42,6 +42,8 @@ ai/handoffs/INDEX.md
 docs/en/
 ```
 
+For projects that use or plan Docker or Docker Compose, `ai/CONTAINERIZATION.md` is also required.
+
 ## Start order
 
 Before meaningful work, read:
@@ -56,8 +58,9 @@ Before meaningful work, read:
 8. `ai/TASK_REPORT_PROTOCOL.md`
 9. `ai/PROJECT_STATE.md`
 10. `ai/DECISIONS.md`
-11. related GitHub Issue or Pull Request
-12. relevant handoffs through `ai/handoffs/INDEX.md`
+11. `ai/CONTAINERIZATION.md` when Docker or Compose is used, planned, or being discussed
+12. related GitHub Issue or Pull Request
+13. relevant handoffs through `ai/handoffs/INDEX.md`
 
 ## Task result reports
 
@@ -84,6 +87,47 @@ Use `ai/TASK_REPORT_PROTOCOL.md` for the required comment templates.
 11. Update PR description.
 12. Leave a handoff when work is completed or interrupted.
 
+## Repository initialization and adoption decision gate
+
+When Agent Handoff is initialized in a new repository or added to an existing repository, the agent MUST inspect the repository and ask the user a separate, explicit question about containerization before changing any Docker or Compose structure.
+
+The question must confirm:
+
+- whether Docker or Docker Compose is used now or planned;
+- which container file layout the user wants;
+- for an existing repository, whether the current layout must be preserved or may be migrated;
+- whether production deployment configuration belongs in the same repository or a separate deployment repository.
+
+The agent MUST NOT infer this decision from existing files, an empty repository, general best practices, or the recommended default.
+
+Until the user answers, the agent must not create, move, rename, delete, or consolidate Dockerfiles, Compose files, build contexts, ignore files, container scripts, environment-file references, or container configuration.
+
+For an unanswered new-repository decision, create no container infrastructure. For an unanswered existing-repository decision, preserve the current layout.
+
+## Containerized project organization
+
+Agent Handoff supports these approaches:
+
+1. no repository-managed containerization;
+2. Dockerfiles colocated with service code and primary Compose files at the root;
+3. centralized Docker and Compose infrastructure under `docker/`;
+4. a hybrid layout with root Compose files, service-local Dockerfiles, and shared infrastructure under `docker/`;
+5. a modular monorepo layout with service-level container modules and explicit top-level orchestration;
+6. a separate deployment repository for production orchestration;
+7. preservation of an established or custom layout.
+
+The hybrid layout is the recommended option to present for many small and medium multi-service repositories, but it must never be selected without explicit user confirmation.
+
+The selected approach, canonical commands, build contexts, Compose file order, environment handling, and migration decision must be documented. Use `ai/CONTAINERIZATION.md` for the complete decision gate, layouts, migration rules, and verification requirements.
+
+## GUI testing
+
+Do not create brittle automated GUI tests that locate, interact with, or validate interface elements through absolute coordinates, screen position, pixel offsets, or incidental layout order.
+
+Position-dependent GUI checks must be performed manually or as supervised exploratory checks with Codex. They must not be committed as part of the routine automated test suite.
+
+Automated GUI tests should use stable semantic selectors such as roles, accessible names, labels, documented component identifiers, or dedicated test IDs.
+
 ## Definition of Done
 
 - related Issue or PR is linked;
@@ -95,7 +139,10 @@ Use `ai/TASK_REPORT_PROTOCOL.md` for the required comment templates.
 - PR description is updated;
 - risks are listed;
 - handoff exists for meaningful work;
-- `ai/handoffs/INDEX.md` is updated when needed.
+- `ai/handoffs/INDEX.md` is updated when needed;
+- mandatory initialization or adoption questions were answered when relevant;
+- container layout and canonical commands are recorded when Docker or Compose is used;
+- changed Compose configuration was rendered and checked, or the reason and risk are documented.
 
 ## Final rule
 

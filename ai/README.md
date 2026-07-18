@@ -2,7 +2,7 @@
 type: ai_readme
 version: 1
 status: active
-updated: 2026-07-07
+updated: 2026-07-18
 project: Agent_Handoff
 ---
 
@@ -23,10 +23,11 @@ It does not replace GitHub Issues, Pull Requests, checks, or Git history.
 7. `ai/TASK_REPORT_PROTOCOL.md`
 8. `ai/PROJECT_STATE.md`
 9. `ai/DECISIONS.md`
-10. related Issue or PR
-11. `ai/REFACTORING.md` when relevant
-12. `ai/handoffs/INDEX.md`
-13. relevant handoff files only
+10. `ai/CONTAINERIZATION.md` when Docker or Compose is used, planned, present, or being discussed
+11. related Issue or PR
+12. `ai/REFACTORING.md` when relevant
+13. `ai/handoffs/INDEX.md`
+14. relevant handoff files only
 
 ## Files
 
@@ -38,8 +39,11 @@ It does not replace GitHub Issues, Pull Requests, checks, or Git history.
 - `WORK_CLAIM_PROTOCOL.md` — work claim protocol.
 - `TASK_REPORT_PROTOCOL.md` — required result comments.
 - `REFACTORING.md` — refactoring workflow.
+- `CONTAINERIZATION.md` — user-controlled Docker and Compose layout decisions, supported approaches, migration rules, and checks.
 - `handoffs/INDEX.md` — handoff index.
 
 ## Rules
 
 Keep files compact.
+
+Do not choose or migrate a container layout without explicit user confirmation during new-repository initialization or existing-repository adoption.
