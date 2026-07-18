@@ -1,10 +1,11 @@
 # English documentation
 
-This page is the documentation index for Agent Handoff.
+This page is the documentation index for Agent Handoff Standard 1.3.
 
 ## Documents
 
 - [Standard](../../AGENT_HANDOFF_STANDARD.md)
+- [Release notes 1.3](../releases/v1.3.md)
 - [Issue labels](../../ISSUE_LABELS.md)
 - [Issue status](../../ISSUE_STATUS.md)
 - [Guide](../../AGENTS.md)
