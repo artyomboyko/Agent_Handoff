@@ -55,9 +55,9 @@ Ask me a separate explicit question about Docker and Docker Compose organization
 Ask whether containerization is used or planned, which supported layout I want, whether an existing layout must be preserved or may be migrated, and whether production deployment configuration belongs in this repository or a separate deployment repository.
 Do not infer the answer or choose the recommended layout automatically.
 
-Before making security or evidence work blocking or expanding the task, connect it to a concrete and credible current-scope risk, affected asset or trust boundary, likely impact, minimum sufficient control, and verification.
-Preserve the existing security baseline, classify unsupported hardening as non-blocking follow-up or explicitly owner-accepted risk, and run the smallest useful end-to-end scenario as early as practical.
-Do not add gates, ADRs, checkers, or separate stages solely for a theoretical risk.
+Do not let security or evidence work block acceptance or expand scope unless a current-scope risk is verified as High or Critical with reproducible evidence or a directly applicable authoritative source.
+A suspected High or Critical risk permits only a short, time-boxed investigation until confirmed. Keep Low, Medium, unrated, and unverified risks non-blocking, preserve the existing security baseline, and run the smallest useful end-to-end scenario as early as practical.
+Do not add hardening, gates, ADRs, checkers, or separate stages for theoretical or unverified risks. Cite any exact acceptance criterion or verified mandatory requirement used as an independent blocker.
 
 Open a Pull Request and leave a compact handoff.
 ```
@@ -69,7 +69,7 @@ Open a Pull Request and leave a compact handoff.
 3. `ai/` is compact durable memory.
 4. Handoffs are short, structured, and reviewable.
 5. Humans stay in control of structural and migration decisions.
-6. Security and evidence work stays proportional to concrete current-scope risk.
+6. Security and evidence work blocks or expands scope only for verified High or Critical current-scope risk or an exactly cited mandatory requirement.
 
 ## What is included
 
@@ -110,7 +110,7 @@ Use Agent Handoff to see who owns work, what changed, what was tested, what rema
 
 ## For agents
 
-Start from `AGENTS.md`, read the required files, claim work in GitHub, ask for required user decisions, keep security and evidence proportional to concrete current-scope risk, open a Draft PR early, keep `ai/` compact, and leave a handoff when work is completed, paused, blocked, or transferred.
+Start from `AGENTS.md`, read the required files, claim work in GitHub, ask for required user decisions, keep security and evidence non-blocking unless a High or Critical current-scope risk is verified, open a Draft PR early, keep `ai/` compact, and leave a handoff when work is completed, paused, blocked, or transferred.
 
 ## Repository visibility
 
