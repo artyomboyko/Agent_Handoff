@@ -157,7 +157,7 @@ Use a 10–15% security-and-evidence share only as a non-binding planning heuris
 ### Related
 
 - Issue: #14
-- Pull Request: pending
+- Pull Request: #15
 - `AGENT_HANDOFF_STANDARD.md`
 - `ai/HANDOFF_PROTOCOL.md`
 - `ai/TASK_REPORT_PROTOCOL.md`

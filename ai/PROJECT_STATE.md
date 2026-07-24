@@ -70,7 +70,7 @@ The repository is maintained as an English-only canonical version.
 - Status: active
 - Publication date: 2026-07-24
 - Issue: #14
-- Pull Request: pending
+- Pull Request: #15
 
 ## Next
 
