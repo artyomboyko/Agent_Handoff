@@ -20,7 +20,7 @@ Large or multi-stage Issues need one result comment after each stable stage.
 
 Small Issues may have one final result comment.
 
-Risk reporting must distinguish blocking risk, follow-up hardening, and owner-accepted risk. Treat security or evidence work as blocking only when it is tied to a concrete and credible current-scope threat or failure scenario, affected asset or trust boundary, likely impact, minimum sufficient control, and verification.
+Risk reporting must distinguish verified blocking High or Critical risk, time-boxed investigation of suspected High or Critical risk, follow-up hardening, and owner-accepted risk. Security or evidence work may block acceptance or expand scope only for a verified High or Critical current-scope risk supported by reproducible evidence or a directly applicable authoritative source, or for an exactly cited acceptance criterion or verified mandatory requirement.
 
 ## Stage work
 
@@ -55,8 +55,9 @@ Commit:
 - <commit sha or not committed yet>
 
 Risks:
-- Blocking: <risk that prevents acceptance, or none>
-- Follow-up hardening: <non-blocking improvement, or none>
+- Blocking: <verified High or Critical risk, exactly cited mandatory requirement, or none>
+- Investigation: <time-boxed suspected High or Critical risk, or none>
+- Follow-up hardening: <Low, Medium, unrated, unverified, or optional improvement, or none>
 - Accepted: <risk explicitly accepted by the owner, or none>
 
 Next:
@@ -91,8 +92,9 @@ Commits:
 - <commit shas>
 
 Risks:
-- Blocking: <risk that prevents acceptance, or none>
-- Follow-up hardening: <non-blocking improvement, or none>
+- Blocking: <verified High or Critical risk, exactly cited mandatory requirement, or none>
+- Investigation: <time-boxed suspected High or Critical risk, or none>
+- Follow-up hardening: <Low, Medium, unrated, unverified, or optional improvement, or none>
 - Accepted: <risk explicitly accepted by the owner, or none>
 
 Follow-up:
