@@ -12,10 +12,11 @@ All notable changes to Agent Handoff are documented here.
 
 ### Changed
 
-- MVPs, prototypes, and runtime spikes now prioritize the smallest useful end-to-end scenario while preserving the existing security baseline and addressing concrete critical risks.
-- Security controls, gates, ADRs, checkers, and evidence steps must be justified by a concrete and credible current-scope risk, acceptance criterion, or verified requirement.
+- MVPs, prototypes, and runtime spikes now prioritize the smallest useful end-to-end scenario while preserving the existing security baseline and addressing verified High or Critical risks.
+- Security work may block acceptance or expand scope only for a verified High or Critical current-scope risk, an exact acceptance criterion, or a verified mandatory requirement.
+- Suspected High or Critical risks permit only short, time-boxed investigation until confirmed; Low, Medium, unrated, and unverified risks remain non-blocking.
 - The 10–15% security-and-evidence share is explicitly a non-binding planning heuristic, not an acceptance metric or hard cap.
-- The Pull Request checklist and structural checker now verify that proportionality is acknowledged without attempting to score risk automatically.
+- The Pull Request checklist and structural checker verify the threshold is acknowledged without attempting to score risk automatically.
 
 ## 1.3 - 2026-07-18
 
