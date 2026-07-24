@@ -32,11 +32,11 @@ This page is the documentation index for Agent Handoff Standard 1.4.
 
 ## Proportionate security and evidence
 
-Before a coding agent expands scope or treats security or evidence work as blocking, require it to connect the measure to a concrete and credible current-scope risk, affected asset or trust boundary, likely impact, minimum sufficient control, and verification.
+Security and evidence work must not block acceptance or expand scope unless a current-scope risk is verified as High or Critical with reproducible evidence or a directly applicable authoritative source. A suspected High or Critical risk permits only a short, time-boxed investigation until confirmed.
 
-The agent preserves the existing security baseline and addresses concrete critical risks. Unsupported hardening is non-blocking follow-up or explicitly owner-accepted risk, and it must not delay the smallest useful end-to-end scenario.
+Low, Medium, unrated, and unverified risks remain non-blocking. The agent preserves the existing security baseline and runs the smallest useful end-to-end scenario early. An exact acceptance criterion or verified mandatory requirement may independently block acceptance only when cited.
 
-The 10–15% security-and-evidence share is only an optional planning heuristic. It is not an acceptance metric or hard limit.
+The 10–15% security-and-evidence share is only an optional planning heuristic. Substantially exceeding it requires a verified High or Critical risk or an exactly cited mandatory requirement.
 
 ## Mandatory containerization question
 
@@ -57,8 +57,8 @@ Before creating any Docker or Docker Compose files, ask me a separate explicit q
 Ask whether Docker or Compose is needed, which supported layout I want, and whether production deployment configuration belongs in this repository or a separate deployment repository.
 Do not infer the answer or create container infrastructure until I answer.
 
-Keep security and evidence work proportional to concrete current-scope risks.
-Preserve the existing security baseline, classify unsupported hardening as follow-up or explicitly owner-accepted risk, and prioritize the smallest useful end-to-end scenario.
+Do not let security or evidence work block acceptance or expand scope without a verified High or Critical current-scope risk or an exactly cited mandatory requirement.
+Keep Low, Medium, unrated, and unverified risks non-blocking, preserve the existing security baseline, and prioritize the smallest useful end-to-end scenario.
 
 Create the first short handoff and update the handoff index.
 ```
@@ -78,8 +78,8 @@ Inspect existing Dockerfiles, Compose files, scripts, build contexts, ignore fil
 Then ask me a separate explicit question whether the existing container layout must be preserved or may be migrated, which supported target layout I want, and whether production deployment configuration belongs here or in a separate repository.
 Do not move, rename, delete, consolidate, or create container infrastructure until I answer.
 
-Keep security and evidence work proportional to concrete current-scope risks.
-Preserve the existing security baseline, classify unsupported hardening as follow-up or explicitly owner-accepted risk, and prioritize the smallest useful end-to-end scenario.
+Do not let security or evidence work block acceptance or expand scope without a verified High or Critical current-scope risk or an exactly cited mandatory requirement.
+Keep Low, Medium, unrated, and unverified risks non-blocking, preserve the existing security baseline, and prioritize the smallest useful end-to-end scenario.
 
 Open a pull request and leave a short handoff.
 ```
