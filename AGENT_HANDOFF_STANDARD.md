@@ -130,28 +130,30 @@ Automated GUI tests should use stable semantic selectors such as roles, accessib
 
 ## Proportionate security and evidence
 
-Security and evidence work MUST be proportional to a concrete and credible risk introduced, changed, or exposed by the current scope.
+Security and evidence work MUST NOT block acceptance or expand the current scope unless it addresses a verified High or Critical risk introduced, changed, or exposed by the current scope. A risk is verified only when it is supported by reproducible evidence from the current implementation or environment, or by a directly applicable authoritative source. A possible or merely credible scenario is not sufficient.
 
-Before treating a security or evidence requirement as blocking or expanding the scope, the agent must state:
+Before declaring security or evidence work blocking, the agent must state:
 
-- the concrete threat or failure scenario;
+- the concrete threat or failure scenario and its supporting evidence;
 - the affected asset or trust boundary;
 - why the risk applies to the current change;
-- the likely impact;
+- the High or Critical severity, using the project's adopted method or, when none exists, an explicit likelihood-and-impact rationale showing equivalent severity;
 - the minimum sufficient control;
-- the verification that demonstrates the control works.
+- the smallest verification that demonstrates the control works.
 
-If that connection cannot be established, classify the proposal as non-blocking hardening, follow-up work, owner-accepted risk when explicit acceptance exists, or out of scope. Do not add gates, architecture decision records, checkers, mandatory evidence steps, or separate stages solely for a theoretical risk.
+A credible suspicion of a High or Critical risk may justify only a short, time-boxed investigation to confirm or refute it. Before confirmation, it MUST NOT justify hardening, architecture changes, gates, architecture decision records, checkers, mandatory evidence steps, or a separate stage. If the investigation does not confirm the risk, classify the proposal as non-blocking follow-up, owner-accepted risk when explicit acceptance exists, or out of scope.
 
-An MVP, prototype, or runtime spike must preserve the existing security baseline, address concrete critical risks, and run the smallest useful end-to-end scenario as early as practical. Optional hardening, exhaustive compatibility checks, and defense in depth follow a working vertical slice unless they are acceptance criteria, a verified legal or project requirement, or a minimum control for a credible critical risk.
+Low, Medium, unrated, and unverified risks MUST NOT block an MVP or working vertical slice, expand the current Issue, or add mandatory work. Record them as a warning, documentation note, or backlog item. An opportunistic fix is allowed only when it already fits the current scope and does not delay acceptance.
 
-For a local, owner-only, and easily recoverable risk, a warning or documentation may be sufficient. Stronger safeguards are normally required for secrets, untrusted input, external network access, privilege boundaries, irreversible or destructive actions, sensitive data, supply-chain exposure, and verified legal or project requirements.
+An MVP, prototype, or runtime spike must preserve the existing security baseline, address verified High or Critical risks, and run the smallest useful end-to-end scenario as early as practical. Optional hardening, exhaustive compatibility checks, and defense in depth follow a working vertical slice. An exact acceptance criterion or a verified legal or project requirement may independently block acceptance, but the agent must cite the exact requirement and must not invent one.
+
+For a local, owner-only, and easily recoverable risk, a warning or documentation is normally sufficient. Secrets, untrusted input, external network access, privilege boundaries, irreversible or destructive actions, sensitive data, and supply-chain exposure justify checking applicability; their presence alone does not prove High or Critical severity.
 
 The existing security baseline MUST NOT be weakened without an explicit owner decision. Agents must not invent policies or regulatory requirements; unresolved requirements are questions for the owner.
 
-A 10–15% share of stage work for security and evidence may be used as a non-binding planning heuristic, never as an acceptance metric or hard cap. Exceeding it is appropriate when a concrete reason is recorded.
+A 10–15% share of stage work for security and evidence may be used as a non-binding planning heuristic, never as an acceptance metric or hard cap. Substantially exceeding it requires a verified High or Critical risk or an exactly cited mandatory requirement.
 
-Reviews, task reports, and handoffs must distinguish blocking risk, follow-up hardening, and owner-accepted risk.
+Reviews, task reports, and handoffs must distinguish verified blocking High or Critical risks, time-boxed investigations of suspected High or Critical risks, follow-up hardening, and owner-accepted risks.
 
 ## Definition of Done
 
@@ -162,8 +164,8 @@ Reviews, task reports, and handoffs must distinguish blocking risk, follow-up ha
 - changes are committed;
 - smoke tests were run or reason is documented;
 - PR description is updated;
-- blocking risks, follow-up hardening, and owner-accepted risks are distinguished;
-- security and evidence work is proportional to a concrete current-scope risk;
+- verified blocking High or Critical risks, time-boxed investigations, follow-up hardening, and owner-accepted risks are distinguished;
+- security and evidence work did not block acceptance or expand scope without a verified High or Critical current-scope risk or an exactly cited mandatory requirement;
 - handoff exists for meaningful work;
 - `ai/handoffs/INDEX.md` is updated when needed;
 - mandatory initialization or adoption questions were answered when relevant;
