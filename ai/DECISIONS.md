@@ -133,11 +133,13 @@ The standard required risks and checks to be recorded but did not require securi
 
 ### Decision
 
-Treat security and evidence work as blocking only when it is connected to a concrete and credible current-scope threat or failure scenario, affected asset or trust boundary, likely impact, minimum sufficient control, and verification.
+Treat security and evidence work as blocking or scope-expanding only for a verified High or Critical current-scope risk supported by reproducible evidence or a directly applicable authoritative source. Record the scenario, asset or trust boundary, applicability, severity rationale, minimum sufficient control, and smallest verification.
 
-Preserve the existing security baseline and prioritize concrete critical risks. Classify unsupported hardening as non-blocking follow-up, explicitly owner-accepted risk, or out of scope so MVPs, prototypes, and runtime spikes can run the smallest useful vertical slice early.
+A suspected High or Critical risk permits only a short, time-boxed investigation until confirmed. Low, Medium, unrated, and unverified risks remain non-blocking and belong in warnings, documentation, backlog, explicitly owner-accepted risk, or out of scope.
 
-Use a 10–15% security-and-evidence share only as a non-binding planning heuristic.
+Preserve the existing security baseline and run the smallest useful vertical slice early. An exact acceptance criterion or verified legal or project requirement may independently block acceptance only when cited.
+
+Use a 10–15% security-and-evidence share only as a non-binding planning heuristic. Substantially exceeding it requires a verified High or Critical risk or an exactly cited mandatory requirement.
 
 ### Rejected alternatives
 
@@ -149,10 +151,11 @@ Use a 10–15% security-and-evidence share only as a non-binding planning heuris
 
 ### Consequences
 
-- Blocking security work has a reviewable current-scope justification.
-- Evidence and process remain minimal unless acceptance criteria, verified requirements, or credible critical risks require more.
-- Reviews and handoffs distinguish blocking risk, follow-up hardening, and owner-accepted risk.
-- The structural checker confirms the PR checklist item but does not judge risk realism.
+- Blocking or scope-expanding security work requires a verified High or Critical current-scope risk or an exactly cited mandatory requirement.
+- Suspected High or Critical risks permit only short, time-boxed investigation until confirmed.
+- Low, Medium, unrated, and unverified risks remain non-blocking.
+- Reviews and handoffs distinguish verified blockers, time-boxed investigations, follow-up hardening, and owner-accepted risk.
+- The structural checker confirms the PR checklist item but does not judge evidence or severity.
 
 ### Related
 
