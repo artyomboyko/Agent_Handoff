@@ -32,8 +32,9 @@ The repository is maintained as an English-only canonical version.
 - Mandatory separate containerization question for new-repository initialization and existing-repository adoption.
 - Supported no-containerization, colocated, centralized, hybrid, modular monorepo, separate deployment repository, and preserved custom layouts.
 - Container migration, Compose path, verification, project-memory, and handoff requirements.
-- Proportionate security and evidence rule tied to concrete and credible current-scope risks.
-- Required separation of blocking risk, follow-up hardening, and owner-accepted risk.
+- Security and evidence may block or expand scope only for verified High or Critical current-scope risks or exactly cited mandatory requirements.
+- Suspected High or Critical risks permit only short, time-boxed investigation until confirmed.
+- Low, Medium, unrated, and unverified risks remain non-blocking.
 - Early smallest useful end-to-end scenario for MVPs, prototypes, and runtime spikes.
 - Non-binding 10–15% security-and-evidence planning heuristic.
 
@@ -60,9 +61,9 @@ The repository is maintained as an English-only canonical version.
 - Existing container infrastructure cannot be migrated without explicit approval.
 - Position-dependent GUI tests stay outside the routine automated test suite.
 - Automated GUI tests use stable semantic selectors.
-- Blocking security and evidence work is justified by a concrete and credible current-scope risk.
+- Blocking or scope-expanding security and evidence work requires a verified High or Critical current-scope risk or an exactly cited mandatory requirement.
 - Existing security baselines stay intact unless the owner explicitly approves a change.
-- Unsupported hardening remains non-blocking and does not delay the smallest useful vertical slice.
+- Low, Medium, unrated, unverified, and otherwise unsupported hardening remains non-blocking and does not delay the smallest useful vertical slice.
 
 ## Current publication
 
