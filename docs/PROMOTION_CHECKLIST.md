@@ -4,8 +4,8 @@ Reusable checklist for publishing Agent Handoff releases.
 
 ## Current release
 
-- Standard 1.3 is active in `AGENT_HANDOFF_STANDARD.md`.
-- README, citation metadata, changelog, release notes, project state, and public documentation identify version 1.3.
+- Standard 1.4 is active in `AGENT_HANDOFF_STANDARD.md`.
+- README, citation metadata, changelog, release notes, project state, and public documentation identify version 1.4.
 - Repository checks validate active standard metadata and release-note presence.
 
 ## Public repository checks

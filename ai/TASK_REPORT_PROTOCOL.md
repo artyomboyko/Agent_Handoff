@@ -20,6 +20,8 @@ Large or multi-stage Issues need one result comment after each stable stage.
 
 Small Issues may have one final result comment.
 
+Risk reporting must distinguish blocking risk, follow-up hardening, and owner-accepted risk. Treat security or evidence work as blocking only when it is tied to a concrete and credible current-scope threat or failure scenario, affected asset or trust boundary, likely impact, minimum sufficient control, and verification.
+
 ## Stage work
 
 For each stage, an agent records findings, makes a small focused change, runs targeted tests or documents why they were not run, updates docs when relevant, continues after a stable layer, and leaves a stage result comment.
@@ -53,7 +55,9 @@ Commit:
 - <commit sha or not committed yet>
 
 Risks:
-- <remaining risks>
+- Blocking: <risk that prevents acceptance, or none>
+- Follow-up hardening: <non-blocking improvement, or none>
+- Accepted: <risk explicitly accepted by the owner, or none>
 
 Next:
 - <next stage or handoff target>
@@ -87,7 +91,9 @@ Commits:
 - <commit shas>
 
 Risks:
-- <remaining risks>
+- Blocking: <risk that prevents acceptance, or none>
+- Follow-up hardening: <non-blocking improvement, or none>
+- Accepted: <risk explicitly accepted by the owner, or none>
 
 Follow-up:
 - <next work, if any>

@@ -38,6 +38,22 @@ Use meaningful branch names without `/`, Issue numbers, or random identifiers by
 
 Open a Draft PR early.
 
+## Proportionate security and evidence
+
+Before security or evidence work expands the Issue scope or becomes a blocking gate:
+
+1. state the concrete threat or failure scenario;
+2. identify the affected asset or trust boundary;
+3. explain why it applies to the current change and its likely impact;
+4. choose the minimum sufficient control;
+5. name the verification that demonstrates the control works.
+
+If this connection is missing, keep the proposal non-blocking and classify it as follow-up hardening, explicitly owner-accepted risk, or out of scope.
+
+Preserve the existing security baseline and address concrete critical risks, but do not delay the smallest useful end-to-end scenario for theoretical hardening. A formal threat model, extra approval stage, architecture decision record, or automated checker is not required unless the current risk, acceptance criteria, or a verified project or legal requirement justifies it.
+
+Treat a 10–15% share of stage work for security and evidence only as a non-binding planning heuristic. Record the concrete reason when substantially more work is necessary.
+
 ## Initialization and adoption decision gate
 
 When initializing Agent Handoff in a new repository or adding it to an existing repository, ask the user a separate, explicit question about Docker and Compose organization.
@@ -93,7 +109,8 @@ For container changes, also run the applicable Compose rendering, image build, s
 - Branch contains only intended changes.
 - Smoke tests were run or reason is documented.
 - PR description is updated.
-- Risks are listed.
+- Blocking risks, follow-up hardening, and owner-accepted risks are distinguished.
+- Security and evidence work is proportional to a concrete current-scope risk.
 - Handoff file is created when needed.
 - `ai/handoffs/INDEX.md` is updated when needed.
 - Mandatory initialization or adoption questions were answered when relevant.

@@ -2,6 +2,21 @@
 
 All notable changes to Agent Handoff are documented here.
 
+## 1.4 - 2026-07-24
+
+### Added
+
+- Normative proportional-security and evidence rule for blocking work and scope expansion.
+- Required risk classification for blocking risk, follow-up hardening, and owner-accepted risk.
+- Release notes in `docs/releases/v1.4.md`.
+
+### Changed
+
+- MVPs, prototypes, and runtime spikes now prioritize the smallest useful end-to-end scenario while preserving the existing security baseline and addressing concrete critical risks.
+- Security controls, gates, ADRs, checkers, and evidence steps must be justified by a concrete and credible current-scope risk, acceptance criterion, or verified requirement.
+- The 10–15% security-and-evidence share is explicitly a non-binding planning heuristic, not an acceptance metric or hard cap.
+- The Pull Request checklist and structural checker now verify that proportionality is acknowledged without attempting to score risk automatically.
+
 ## 1.3 - 2026-07-18
 
 ### Added

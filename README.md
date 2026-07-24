@@ -1,6 +1,6 @@
 # Agent Handoff
 
-[![Standard](https://img.shields.io/badge/standard-1.3-blue)](AGENT_HANDOFF_STANDARD.md)
+[![Standard](https://img.shields.io/badge/standard-1.4-blue)](AGENT_HANDOFF_STANDARD.md)
 [![Language](https://img.shields.io/badge/language-English-blue)](docs/en/README.md)
 [![GitHub native](https://img.shields.io/badge/GitHub-native-black)](ai/GITHUB_WORKFLOW.md)
 [![AI agent ready](https://img.shields.io/badge/AI%20agent-ready-purple)](ai/AGENT_IDENTITY.md)
@@ -55,6 +55,10 @@ Ask me a separate explicit question about Docker and Docker Compose organization
 Ask whether containerization is used or planned, which supported layout I want, whether an existing layout must be preserved or may be migrated, and whether production deployment configuration belongs in this repository or a separate deployment repository.
 Do not infer the answer or choose the recommended layout automatically.
 
+Before making security or evidence work blocking or expanding the task, connect it to a concrete and credible current-scope risk, affected asset or trust boundary, likely impact, minimum sufficient control, and verification.
+Preserve the existing security baseline, classify unsupported hardening as non-blocking follow-up or explicitly owner-accepted risk, and run the smallest useful end-to-end scenario as early as practical.
+Do not add gates, ADRs, checkers, or separate stages solely for a theoretical risk.
+
 Open a Pull Request and leave a compact handoff.
 ```
 
@@ -65,6 +69,7 @@ Open a Pull Request and leave a compact handoff.
 3. `ai/` is compact durable memory.
 4. Handoffs are short, structured, and reviewable.
 5. Humans stay in control of structural and migration decisions.
+6. Security and evidence work stays proportional to concrete current-scope risk.
 
 ## What is included
 
@@ -83,7 +88,7 @@ Open a Pull Request and leave a compact handoff.
 | Issue status | [ISSUE_STATUS.md](ISSUE_STATUS.md) |
 | FAQ | [FAQ.md](FAQ.md) |
 | Examples | [examples/](examples/) |
-| Release notes | [docs/releases/v1.3.md](docs/releases/v1.3.md) |
+| Release notes | [docs/releases/v1.4.md](docs/releases/v1.4.md) |
 
 ## Comparison
 
@@ -97,7 +102,7 @@ Open a Pull Request and leave a compact handoff.
 
 ## Natural search terms
 
-Agent Handoff is related to AI coding agents, Codex-like agents, ChatGPT coding workflows, Cursor, Claude Code, LLM agents, project context, agent memory, GitHub workflow, multi-agent development, handoff protocol, pull request workflow, containerization decisions, Docker Compose organization, and human-agent collaboration.
+Agent Handoff is related to AI coding agents, Codex-like agents, ChatGPT coding workflows, Cursor, Claude Code, LLM agents, project context, agent memory, GitHub workflow, multi-agent development, handoff protocol, pull request workflow, proportionate security, evidence scope, vertical slices, containerization decisions, Docker Compose organization, and human-agent collaboration.
 
 ## For humans
 
@@ -105,7 +110,7 @@ Use Agent Handoff to see who owns work, what changed, what was tested, what rema
 
 ## For agents
 
-Start from `AGENTS.md`, read the required files, claim work in GitHub, ask for required user decisions, open a Draft PR early, keep `ai/` compact, and leave a handoff when work is completed, paused, blocked, or transferred.
+Start from `AGENTS.md`, read the required files, claim work in GitHub, ask for required user decisions, keep security and evidence proportional to concrete current-scope risk, open a Draft PR early, keep `ai/` compact, and leave a handoff when work is completed, paused, blocked, or transferred.
 
 ## Repository visibility
 

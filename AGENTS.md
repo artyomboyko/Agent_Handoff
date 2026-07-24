@@ -20,6 +20,8 @@ Use GitHub Issues and Pull Requests as the primary workflow system.
 
 Report each meaningful Issue with a required stage or final result comment.
 
+Before expanding scope for security or evidence work, connect each blocking measure to a concrete and credible current-scope risk, its affected asset or trust boundary, likely impact, minimum sufficient control, and verification. Preserve the existing security baseline, classify other hardening as follow-up or explicitly owner-accepted risk, and prioritize the smallest useful end-to-end scenario.
+
 When initializing Agent Handoff in a new repository or adding it to an existing repository, ask the user a separate explicit question about containerization and file layout before changing any Docker or Compose structure. Do not infer or automatically select the recommended approach.
 
 Keep `ai/` files compact.

@@ -1,8 +1,8 @@
 ---
 standard: Agent Handoff
-version: "1.3"
+version: "1.4"
 status: active
-updated: 2026-07-18
+updated: 2026-07-24
 ---
 
 # Agent Handoff Standard
@@ -128,6 +128,31 @@ Position-dependent GUI checks must be performed manually or as supervised explor
 
 Automated GUI tests should use stable semantic selectors such as roles, accessible names, labels, documented component identifiers, or dedicated test IDs.
 
+## Proportionate security and evidence
+
+Security and evidence work MUST be proportional to a concrete and credible risk introduced, changed, or exposed by the current scope.
+
+Before treating a security or evidence requirement as blocking or expanding the scope, the agent must state:
+
+- the concrete threat or failure scenario;
+- the affected asset or trust boundary;
+- why the risk applies to the current change;
+- the likely impact;
+- the minimum sufficient control;
+- the verification that demonstrates the control works.
+
+If that connection cannot be established, classify the proposal as non-blocking hardening, follow-up work, owner-accepted risk when explicit acceptance exists, or out of scope. Do not add gates, architecture decision records, checkers, mandatory evidence steps, or separate stages solely for a theoretical risk.
+
+An MVP, prototype, or runtime spike must preserve the existing security baseline, address concrete critical risks, and run the smallest useful end-to-end scenario as early as practical. Optional hardening, exhaustive compatibility checks, and defense in depth follow a working vertical slice unless they are acceptance criteria, a verified legal or project requirement, or a minimum control for a credible critical risk.
+
+For a local, owner-only, and easily recoverable risk, a warning or documentation may be sufficient. Stronger safeguards are normally required for secrets, untrusted input, external network access, privilege boundaries, irreversible or destructive actions, sensitive data, supply-chain exposure, and verified legal or project requirements.
+
+The existing security baseline MUST NOT be weakened without an explicit owner decision. Agents must not invent policies or regulatory requirements; unresolved requirements are questions for the owner.
+
+A 10–15% share of stage work for security and evidence may be used as a non-binding planning heuristic, never as an acceptance metric or hard cap. Exceeding it is appropriate when a concrete reason is recorded.
+
+Reviews, task reports, and handoffs must distinguish blocking risk, follow-up hardening, and owner-accepted risk.
+
 ## Definition of Done
 
 - related Issue or PR is linked;
@@ -137,7 +162,8 @@ Automated GUI tests should use stable semantic selectors such as roles, accessib
 - changes are committed;
 - smoke tests were run or reason is documented;
 - PR description is updated;
-- risks are listed;
+- blocking risks, follow-up hardening, and owner-accepted risks are distinguished;
+- security and evidence work is proportional to a concrete current-scope risk;
 - handoff exists for meaningful work;
 - `ai/handoffs/INDEX.md` is updated when needed;
 - mandatory initialization or adoption questions were answered when relevant;

@@ -2,7 +2,7 @@
 type: architecture_record
 version: 1
 status: active
-updated: 2026-07-18
+updated: 2026-07-24
 project: Agent_Handoff
 ---
 
@@ -122,3 +122,42 @@ Automated GUI tests use stable semantic roles, accessible names, labels, documen
 - Issue: #12
 - Pull Request: #13
 - `AGENT_HANDOFF_STANDARD.md`
+
+## 2026-07-24 — Proportionate security and evidence
+
+Status: accepted in Standard 1.4
+
+### Background
+
+The standard required risks and checks to be recorded but did not require security and evidence work to be proportional to a risk in the current scope. Hypothetical threats could therefore create blocking gates, extra documents, or separate stages before a useful end-to-end scenario existed.
+
+### Decision
+
+Treat security and evidence work as blocking only when it is connected to a concrete and credible current-scope threat or failure scenario, affected asset or trust boundary, likely impact, minimum sufficient control, and verification.
+
+Preserve the existing security baseline and prioritize concrete critical risks. Classify unsupported hardening as non-blocking follow-up, explicitly owner-accepted risk, or out of scope so MVPs, prototypes, and runtime spikes can run the smallest useful vertical slice early.
+
+Use a 10–15% security-and-evidence share only as a non-binding planning heuristic.
+
+### Rejected alternatives
+
+- Require a formal threat model for every Pull Request.
+- Enforce a fixed percentage of work for security and evidence.
+- Add automated risk-severity scoring.
+- Add approval stages or ADRs for theoretical risks.
+- Weaken existing controls to accelerate delivery.
+
+### Consequences
+
+- Blocking security work has a reviewable current-scope justification.
+- Evidence and process remain minimal unless acceptance criteria, verified requirements, or credible critical risks require more.
+- Reviews and handoffs distinguish blocking risk, follow-up hardening, and owner-accepted risk.
+- The structural checker confirms the PR checklist item but does not judge risk realism.
+
+### Related
+
+- Issue: #14
+- Pull Request: pending
+- `AGENT_HANDOFF_STANDARD.md`
+- `ai/HANDOFF_PROTOCOL.md`
+- `ai/TASK_REPORT_PROTOCOL.md`
