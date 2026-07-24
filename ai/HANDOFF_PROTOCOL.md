@@ -40,19 +40,20 @@ Open a Draft PR early.
 
 ## Proportionate security and evidence
 
-Before security or evidence work expands the Issue scope or becomes a blocking gate:
+Security or evidence work may expand the Issue scope or become blocking only for a verified High or Critical current-scope risk:
 
-1. state the concrete threat or failure scenario;
+1. state the concrete threat or failure scenario and reproducible evidence or directly applicable authoritative source;
 2. identify the affected asset or trust boundary;
-3. explain why it applies to the current change and its likely impact;
-4. choose the minimum sufficient control;
-5. name the verification that demonstrates the control works.
+3. explain why it applies to the current change;
+4. record High or Critical severity using the project's adopted method or an explicit likelihood-and-impact rationale;
+5. choose the minimum sufficient control;
+6. name the smallest verification that demonstrates the control works.
 
-If this connection is missing, keep the proposal non-blocking and classify it as follow-up hardening, explicitly owner-accepted risk, or out of scope.
+A suspected High or Critical risk permits only a short, time-boxed investigation until confirmed. It does not justify hardening, architecture changes, an extra approval stage, an architecture decision record, an automated checker, mandatory evidence work, or a separate stage.
 
-Preserve the existing security baseline and address concrete critical risks, but do not delay the smallest useful end-to-end scenario for theoretical hardening. A formal threat model, extra approval stage, architecture decision record, or automated checker is not required unless the current risk, acceptance criteria, or a verified project or legal requirement justifies it.
+Keep Low, Medium, unrated, and unverified risks non-blocking and classify them as warning, documentation, backlog, explicitly owner-accepted risk, or out of scope. Preserve the existing security baseline and do not delay the smallest useful end-to-end scenario. An exact acceptance criterion or verified legal or project requirement may independently block acceptance only when cited.
 
-Treat a 10–15% share of stage work for security and evidence only as a non-binding planning heuristic. Record the concrete reason when substantially more work is necessary.
+Treat a 10–15% share of stage work for security and evidence only as a non-binding planning heuristic. Substantially exceed it only for a verified High or Critical risk or an exactly cited mandatory requirement.
 
 ## Initialization and adoption decision gate
 
@@ -109,8 +110,8 @@ For container changes, also run the applicable Compose rendering, image build, s
 - Branch contains only intended changes.
 - Smoke tests were run or reason is documented.
 - PR description is updated.
-- Blocking risks, follow-up hardening, and owner-accepted risks are distinguished.
-- Security and evidence work is proportional to a concrete current-scope risk.
+- Verified blocking High or Critical risks, time-boxed investigations, follow-up hardening, and owner-accepted risks are distinguished.
+- Security and evidence work did not block acceptance or expand scope without a verified High or Critical current-scope risk or an exactly cited mandatory requirement.
 - Handoff file is created when needed.
 - `ai/handoffs/INDEX.md` is updated when needed.
 - Mandatory initialization or adoption questions were answered when relevant.
