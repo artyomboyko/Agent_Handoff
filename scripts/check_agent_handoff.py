@@ -27,7 +27,7 @@ PR_REQUIRED = [
     'Forms are valid when changed.',
     'Required stage or final result comment exists.',
     'Smoke tests were run or reason is documented.',
-    'Security and evidence work is proportional to a concrete current-scope risk; other hardening is classified as follow-up or owner-accepted risk.',
+    'Security and evidence work did not block acceptance or expand scope without a verified High/Critical current-scope risk or an exactly cited mandatory requirement; other items remain non-blocking.',
     'Mandatory containerization decision was confirmed when relevant, or not applicable.',
     'Changed Compose configuration was rendered and checked, or reason and risk are documented.',
     'Automated GUI tests avoid position-dependent selectors, or manual/supervised checks are documented.',
