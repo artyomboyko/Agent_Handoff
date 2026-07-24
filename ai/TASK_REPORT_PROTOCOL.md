@@ -20,6 +20,8 @@ Large or multi-stage Issues need one result comment after each stable stage.
 
 Small Issues may have one final result comment.
 
+Risk reporting must distinguish verified blocking High or Critical risk, time-boxed investigation of suspected High or Critical risk, follow-up hardening, and owner-accepted risk. Security or evidence work may block acceptance or expand scope only for a verified High or Critical current-scope risk supported by reproducible evidence or a directly applicable authoritative source, or for an exactly cited acceptance criterion or verified mandatory requirement.
+
 ## Stage work
 
 For each stage, an agent records findings, makes a small focused change, runs targeted tests or documents why they were not run, updates docs when relevant, continues after a stable layer, and leaves a stage result comment.
@@ -53,7 +55,10 @@ Commit:
 - <commit sha or not committed yet>
 
 Risks:
-- <remaining risks>
+- Blocking: <verified High or Critical risk, exactly cited mandatory requirement, or none>
+- Investigation: <time-boxed suspected High or Critical risk, or none>
+- Follow-up hardening: <Low, Medium, unrated, unverified, or optional improvement, or none>
+- Accepted: <risk explicitly accepted by the owner, or none>
 
 Next:
 - <next stage or handoff target>
@@ -87,7 +92,10 @@ Commits:
 - <commit shas>
 
 Risks:
-- <remaining risks>
+- Blocking: <verified High or Critical risk, exactly cited mandatory requirement, or none>
+- Investigation: <time-boxed suspected High or Critical risk, or none>
+- Follow-up hardening: <Low, Medium, unrated, unverified, or optional improvement, or none>
+- Accepted: <risk explicitly accepted by the owner, or none>
 
 Follow-up:
 - <next work, if any>

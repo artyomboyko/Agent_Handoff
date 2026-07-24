@@ -2,7 +2,7 @@
 type: architecture_record
 version: 1
 status: active
-updated: 2026-07-18
+updated: 2026-07-24
 project: Agent_Handoff
 ---
 
@@ -122,3 +122,45 @@ Automated GUI tests use stable semantic roles, accessible names, labels, documen
 - Issue: #12
 - Pull Request: #13
 - `AGENT_HANDOFF_STANDARD.md`
+
+## 2026-07-24 — Proportionate security and evidence
+
+Status: accepted in Standard 1.4
+
+### Background
+
+The standard required risks and checks to be recorded but did not require security and evidence work to be proportional to a risk in the current scope. Hypothetical threats could therefore create blocking gates, extra documents, or separate stages before a useful end-to-end scenario existed.
+
+### Decision
+
+Treat security and evidence work as blocking or scope-expanding only for a verified High or Critical current-scope risk supported by reproducible evidence or a directly applicable authoritative source. Record the scenario, asset or trust boundary, applicability, severity rationale, minimum sufficient control, and smallest verification.
+
+A suspected High or Critical risk permits only a short, time-boxed investigation until confirmed. Low, Medium, unrated, and unverified risks remain non-blocking and belong in warnings, documentation, backlog, explicitly owner-accepted risk, or out of scope.
+
+Preserve the existing security baseline and run the smallest useful vertical slice early. An exact acceptance criterion or verified legal or project requirement may independently block acceptance only when cited.
+
+Use a 10–15% security-and-evidence share only as a non-binding planning heuristic. Substantially exceeding it requires a verified High or Critical risk or an exactly cited mandatory requirement.
+
+### Rejected alternatives
+
+- Require a formal threat model for every Pull Request.
+- Enforce a fixed percentage of work for security and evidence.
+- Add automated risk-severity scoring.
+- Add approval stages or ADRs for theoretical risks.
+- Weaken existing controls to accelerate delivery.
+
+### Consequences
+
+- Blocking or scope-expanding security work requires a verified High or Critical current-scope risk or an exactly cited mandatory requirement.
+- Suspected High or Critical risks permit only short, time-boxed investigation until confirmed.
+- Low, Medium, unrated, and unverified risks remain non-blocking.
+- Reviews and handoffs distinguish verified blockers, time-boxed investigations, follow-up hardening, and owner-accepted risk.
+- The structural checker confirms the PR checklist item but does not judge evidence or severity.
+
+### Related
+
+- Issue: #14
+- Pull Request: #15
+- `AGENT_HANDOFF_STANDARD.md`
+- `ai/HANDOFF_PROTOCOL.md`
+- `ai/TASK_REPORT_PROTOCOL.md`
