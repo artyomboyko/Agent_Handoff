@@ -2,7 +2,7 @@
 type: task_report_protocol
 version: 1
 status: active
-updated: 2026-07-07
+updated: 2026-07-26
 project: Agent_Handoff
 ---
 
@@ -16,15 +16,19 @@ Task reports are written in the related Issue or PR so humans and agents can fol
 
 Every meaningful Issue needs a result comment.
 
-Large or multi-stage Issues need one result comment after each stable stage.
+Large or multi-stage Issues need one result comment after each legitimate outcome stage.
 
 Small Issues may have one final result comment.
 
 Risk reporting must distinguish verified blocking High or Critical risk, time-boxed investigation of suspected High or Critical risk, follow-up hardening, and owner-accepted risk. Security or evidence work may block acceptance or expand scope only for a verified High or Critical current-scope risk supported by reproducible evidence or a directly applicable authoritative source, or for an exactly cited acceptance criterion or verified mandatory requirement.
 
+Every result report must identify the primary outcome, outcome progress, acceptance proof, supporting work, verified blocker, and next direct outcome step.
+
 ## Stage work
 
-For each stage, an agent records findings, makes a small focused change, runs targeted tests or documents why they were not run, updates docs when relevant, continues after a stable layer, and leaves a stage result comment.
+A stage result is appropriate only when the primary outcome materially advanced, the smallest acceptance proof completed, a verified blocker remains outside the execution envelope, or work is genuinely interrupted or transferred.
+
+A supporting-tool failure or localized repair is not a stage by itself. Summarize routine supporting fixes and bounded post-fix verification in the next legitimate stage or final report.
 
 ## Stage result comment
 
@@ -35,6 +39,11 @@ Stage: <number or name>
 Agent ID: <agent_id>
 Run ID: <run_id>
 Status: completed | blocked | partial
+Primary outcome: <observable behavior, artifact, decision, or capability>
+Outcome progress: advanced | unchanged | completed | progress-stalled
+Acceptance proof: <completed proof, current proof state, or not completed>
+Supporting work: <minimum supporting work performed, or none>
+Verified blocker: <out-of-envelope blocker, or none>
 
 Findings:
 - <what was found>
@@ -60,8 +69,8 @@ Risks:
 - Follow-up hardening: <Low, Medium, unrated, unverified, or optional improvement, or none>
 - Accepted: <risk explicitly accepted by the owner, or none>
 
-Next:
-- <next stage or handoff target>
+Next direct outcome step:
+- <shortest next step toward the primary outcome, completion, or handoff target>
 ```
 
 ## Final result comment
@@ -72,6 +81,11 @@ Next:
 Agent ID: <agent_id>
 Run ID: <run_id>
 Status: completed | blocked | partial
+Primary outcome: <observable behavior, artifact, decision, or capability>
+Outcome progress: advanced | unchanged | completed | progress-stalled
+Acceptance proof: <completed proof, current proof state, or not completed>
+Supporting work: <minimum supporting work performed, or none>
+Verified blocker: <out-of-envelope blocker, or none>
 
 Summary:
 - <what was done>
@@ -97,10 +111,12 @@ Risks:
 - Follow-up hardening: <Low, Medium, unrated, unverified, or optional improvement, or none>
 - Accepted: <risk explicitly accepted by the owner, or none>
 
-Follow-up:
-- <next work, if any>
+Next direct outcome step:
+- <next outcome work, follow-up, or none>
 ```
 
-## Stability gate
+## Outcome gate
 
-A multi-stage Issue moves to the next stage after the current stage has a result comment and the stage checks are stable or the blocker is documented.
+A multi-stage Issue moves to the next stage after the current legitimate outcome stage has a result comment and its acceptance proof is stable, or an out-of-envelope blocker is documented.
+
+If two consecutive updates or proposed stages report unchanged outcome progress and only supporting work, mark the work `progress-stalled` and replan the shortest path before creating another stage.

@@ -2,7 +2,7 @@
 type: architecture_record
 version: 1
 status: active
-updated: 2026-07-24
+updated: 2026-07-26
 project: Agent_Handoff
 ---
 
@@ -164,3 +164,53 @@ Use a 10–15% security-and-evidence share only as a non-binding planning heuris
 - `AGENT_HANDOFF_STANDARD.md`
 - `ai/HANDOFF_PROTOCOL.md`
 - `ai/TASK_REPORT_PROTOCOL.md`
+
+## 2026-07-26 — Outcome-oriented execution and bounded supporting work
+
+Status: accepted in Standard 1.5
+
+### Background
+
+Standard 1.4 constrained disproportionate security and evidence work, but the general reporting workflow still allowed any repaired supporting layer to qualify as a stable stage. A failure in a test harness, smoke wrapper, CI layer, evidence collector, release helper, or incidental refactoring could therefore create its own report, handoff, owner approval gate, and verification cycle without advancing the Issue's primary outcome.
+
+The missing boundary was general rather than security-specific: the standard did not require an observable primary outcome, a smallest acceptance proof, or an execution envelope, and it did not distinguish an unchanged retry from verification after a relevant fix.
+
+### Decision
+
+Require every meaningful work item to record its primary outcome, smallest acceptance proof, and execution envelope before implementation.
+
+Keep supporting work minimum sufficient. A localized, reversible, in-scope supporting defect and one bounded verification rerun after each evidence-based fix remain inside the current work item and authorization unless the execution envelope is stricter or an explicit approval boundary is crossed.
+
+Treat stage results and handoffs as legitimate only when the primary outcome materially advanced, the acceptance proof completed, a verified blocker remains outside the execution envelope, or work is genuinely interrupted or transferred.
+
+After two consecutive supporting-only updates without outcome progress, require `progress-stalled` recovery: stop optional supporting work, restate the outcome and proof, identify the shortest path, move non-blocking work to follow-up or backlog, and continue or request one owner decision only when a real approval boundary was crossed.
+
+### Approval boundary
+
+A new owner decision remains required for changes to the outcome or acceptance criteria, scope or architecture, accepted baseline, destructive or out-of-envelope external effects, material resource or risk expansion, security-control weakening, and project-specific or platform-enforced permission gates.
+
+### Rejected alternatives
+
+- Extend only the proportional-security rule; the failure mode also applies to non-security supporting work.
+- Treat every supporting-tool repair as a separate stage for maximum traceability.
+- Require a new approval before every post-fix verification rerun.
+- Automatically score semantic outcome progress in the structural checker.
+- Use a fixed percentage cap for all supporting work.
+
+### Consequences
+
+- Work claims expose the result, proof, and authorization boundary before implementation.
+- Localized supporting failures are repaired and verified without unnecessary report-review-approval loops.
+- Stage reports and handoffs describe outcome boundaries instead of auxiliary-layer stability.
+- `progress-stalled` makes repeated supporting-only checkpoints visible and forces shortest-path replanning.
+- Existing safety controls, external permission systems, and explicit project approval gates remain authoritative.
+- The structural checker validates required fields but does not attempt to judge whether progress is semantically real.
+
+### Related
+
+- Issue: #16
+- Pull Request: #17
+- `AGENT_HANDOFF_STANDARD.md`
+- `ai/WORK_CLAIM_PROTOCOL.md`
+- `ai/TASK_REPORT_PROTOCOL.md`
+- `ai/HANDOFF_PROTOCOL.md`

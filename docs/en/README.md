@@ -1,11 +1,11 @@
 # English documentation
 
-This page is the documentation index for Agent Handoff Standard 1.4.
+This page is the documentation index for Agent Handoff Standard 1.5.
 
 ## Documents
 
 - [Standard](../../AGENT_HANDOFF_STANDARD.md)
-- [Release notes 1.4](../releases/v1.4.md)
+- [Release notes 1.5](../releases/v1.5.md)
 - [Issue labels](../../ISSUE_LABELS.md)
 - [Issue status](../../ISSUE_STATUS.md)
 - [Guide](../../AGENTS.md)
@@ -38,6 +38,14 @@ Low, Medium, unrated, and unverified risks remain non-blocking. The agent preser
 
 The 10–15% security-and-evidence share is only an optional planning heuristic. Substantially exceeding it requires a verified High or Critical risk or an exactly cited mandatory requirement.
 
+## Outcome-oriented execution
+
+Every meaningful work item records a primary outcome, the smallest acceptance proof, and an execution envelope before implementation.
+
+Supporting work stays minimum sufficient. A localized, reversible supporting-tool failure is fixed and verified inside the current work item and authorization unless an explicit approval boundary is crossed. The failure or repair does not become its own stage, handoff, completion target, or approval gate.
+
+One bounded verification rerun after an evidence-based fix is permitted unless the execution envelope sets a stricter limit. After two consecutive supporting-only updates without outcome progress, the agent marks the work `progress-stalled` and replans the shortest path.
+
 ## Mandatory containerization question
 
 For both a new repository and an existing repository, the coding agent must ask a separate, explicit question about Docker and Docker Compose organization before changing any container files or paths.
@@ -60,6 +68,10 @@ Do not infer the answer or create container infrastructure until I answer.
 Do not let security or evidence work block acceptance or expand scope without a verified High or Critical current-scope risk or an exactly cited mandatory requirement.
 Keep Low, Medium, unrated, and unverified risks non-blocking, preserve the existing security baseline, and prioritize the smallest useful end-to-end scenario.
 
+Record the primary outcome, smallest acceptance proof, and execution envelope before implementation.
+Keep supporting work minimum sufficient. Fix localized reversible supporting-work failures and perform bounded post-fix verification inside the same work item.
+Do not create a separate stage, handoff, completion target, or approval gate for a supporting-tool failure alone.
+
 Create the first short handoff and update the handoff index.
 ```
 
@@ -80,6 +92,10 @@ Do not move, rename, delete, consolidate, or create container infrastructure unt
 
 Do not let security or evidence work block acceptance or expand scope without a verified High or Critical current-scope risk or an exactly cited mandatory requirement.
 Keep Low, Medium, unrated, and unverified risks non-blocking, preserve the existing security baseline, and prioritize the smallest useful end-to-end scenario.
+
+Record the primary outcome, smallest acceptance proof, and execution envelope before implementation.
+Keep supporting work minimum sufficient. Fix localized reversible supporting-work failures and perform bounded post-fix verification inside the same work item.
+Do not create a separate stage, handoff, completion target, or approval gate for a supporting-tool failure alone.
 
 Open a pull request and leave a short handoff.
 ```

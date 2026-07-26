@@ -2,7 +2,7 @@
 type: refactoring_protocol
 version: 1
 status: active
-updated: 2026-07-07
+updated: 2026-07-26
 project: Agent_Handoff
 ---
 
@@ -41,7 +41,7 @@ Keep external behavior unchanged unless the Issue explicitly allows behavior cha
 
 For large or multi-stage refactoring, create stages and follow `ai/TASK_REPORT_PROTOCOL.md`.
 
-Each stage should record findings, make a small focused change, run targeted tests or explain why they were not run, update docs when relevant, continue after the layer is stable, and leave a stage result comment.
+Each stage should materially advance the refactoring outcome, complete part of the stated acceptance proof, or document a verified out-of-envelope blocker. A stable supporting layer or repaired check is not a stage by itself. Record findings, make a small focused change, run targeted tests or explain why they were not run, and leave a stage result comment only at a legitimate outcome boundary.
 
 ## Baseline audit
 

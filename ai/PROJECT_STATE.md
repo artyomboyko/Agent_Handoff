@@ -2,7 +2,7 @@
 type: project_state
 version: 1
 status: active
-updated: 2026-07-24
+updated: 2026-07-26
 project: Agent_Handoff
 ---
 
@@ -10,7 +10,7 @@ project: Agent_Handoff
 
 ## Current phase
 
-Agent Handoff Standard 1.4 is the active standard.
+Agent Handoff Standard 1.5 is the active standard.
 
 The repository is maintained as an English-only canonical version.
 
@@ -37,6 +37,12 @@ The repository is maintained as an English-only canonical version.
 - Low, Medium, unrated, and unverified risks remain non-blocking.
 - Early smallest useful end-to-end scenario for MVPs, prototypes, and runtime spikes.
 - Non-binding 10–15% security-and-evidence planning heuristic.
+- Required primary outcome, smallest acceptance proof, and execution envelope for meaningful work.
+- Supporting work remains minimum sufficient and subordinate to the primary outcome.
+- Localized reversible supporting-work fixes and bounded post-fix verification remain inside the current authorization and execution envelope.
+- Outcome-based stage and handoff boundaries.
+- `progress-stalled` recovery after two consecutive supporting-only updates without outcome progress.
+- Structural checks for the outcome fields without automated semantic progress scoring.
 
 ## Main files
 
@@ -52,7 +58,7 @@ The repository is maintained as an English-only canonical version.
 - `ai/CONTAINERIZATION.md`
 - `.github/pull_request_template.md`
 - `scripts/check_agent_handoff.py`
-- `docs/releases/v1.4.md`
+- `docs/releases/v1.5.md`
 
 ## Active decisions
 
@@ -64,17 +70,22 @@ The repository is maintained as an English-only canonical version.
 - Blocking or scope-expanding security and evidence work requires a verified High or Critical current-scope risk or an exactly cited mandatory requirement.
 - Existing security baselines stay intact unless the owner explicitly approves a change.
 - Low, Medium, unrated, unverified, and otherwise unsupported hardening remains non-blocking and does not delay the smallest useful vertical slice.
+- Meaningful work records a primary outcome, smallest acceptance proof, and execution envelope before implementation.
+- The execution envelope records existing authorization and cannot be used by an agent to widen its own authority.
+- Supporting-tool failures do not create separate stages, handoffs, completion targets, or approval gates unless an explicit outcome or approval boundary is crossed.
+- One bounded post-fix verification rerun is permitted after each relevant fix unless the execution envelope is stricter.
+- Two consecutive supporting-only updates without outcome progress trigger `progress-stalled` and shortest-path replanning.
 
 ## Current publication
 
-- Standard version: `1.4`
+- Standard version: `1.5`
 - Status: active
-- Publication date: 2026-07-24
-- Issue: #14
-- Pull Request: #15
+- Publication date: 2026-07-26
+- Issue: #16
+- Pull Request: #17
 
 ## Next
 
 1. Keep repository checks and public documentation synchronized with future standard changes.
-2. Collect feedback from projects adopting the proportional-security and containerization decision rules.
+2. Collect feedback from projects adopting the outcome-oriented execution rule.
 3. Prepare a future version only through a focused Issue, branch, Pull Request, checks, and release handoff.
