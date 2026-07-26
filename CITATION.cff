@@ -4,8 +4,8 @@ title: "Agent Handoff: GitHub-native context handoff for AI coding agents"
 authors:
   - family-names: "Boyko"
     given-names: "Artyom"
-version: "1.4"
-date-released: 2026-07-24
+version: "1.5"
+date-released: 2026-07-26
 url: "https://github.com/artyomboyko/Agent_Handoff"
 repository-code: "https://github.com/artyomboyko/Agent_Handoff"
 license: "GPL-3.0-only"
@@ -17,6 +17,8 @@ keywords:
   - "agent-memory"
   - "multi-agent-system"
   - "handoff-protocol"
+  - "outcome-oriented-execution"
+  - "bounded-supporting-work"
   - "proportionate-security"
   - "docker-compose"
   - "containerization"

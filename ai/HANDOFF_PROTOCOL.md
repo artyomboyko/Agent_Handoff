@@ -2,7 +2,7 @@
 type: handoff_protocol
 version: 1
 status: active
-updated: 2026-07-18
+updated: 2026-07-26
 project: Agent_Handoff
 ---
 
@@ -24,7 +24,7 @@ Leave a work claim comment with `ai/WORK_CLAIM_PROTOCOL.md` before changing code
 
 Meaningful Issues require result comments.
 
-Large or multi-stage Issues use stage result comments after stable stages.
+Large or multi-stage Issues use stage result comments after legitimate outcome stages.
 
 Small Issues use one final result comment before completion.
 
@@ -37,6 +37,28 @@ One meaningful work item should have one Issue, one branch, one PR, and one clea
 Use meaningful branch names without `/`, Issue numbers, or random identifiers by default.
 
 Open a Draft PR early.
+
+## Outcome-oriented execution
+
+Before implementation, record the primary outcome, smallest acceptance proof, and execution envelope in the Work Claim.
+
+Keep supporting work minimum sufficient. A localized, reversible, in-scope supporting-work failure and its bounded post-fix verification remain inside the current work item and authorization unless an explicit approval boundary is crossed.
+
+Do not turn a supporting-tool failure or repair into a separate stage, handoff, approval gate, or completion target.
+
+Distinguish an unchanged retry from post-fix verification:
+
+- do not repeat the same failed action without a relevant change and documented reason;
+- rerun the affected check after an evidence-based fix as verification inside the current execution envelope;
+- unless the execution envelope is stricter, allow one bounded verification rerun after each relevant fix.
+
+Stop the fix-and-verification cycle when the execution envelope would be exceeded, the same failure recurs without a new evidence-based fix, or the progress-stall rule is triggered.
+
+Request a new owner decision only when the proposed action changes the outcome or acceptance criteria, expands scope or architecture, changes an accepted baseline, crosses a destructive or external-effect boundary, materially exceeds declared resource or risk limits, weakens a security control, or conflicts with an enforced permission gate.
+
+Create a stage result or handoff only when the primary outcome materially advanced, the smallest acceptance proof completed, a verified blocker remains outside the execution envelope, or work is genuinely interrupted or transferred.
+
+After two consecutive supporting-only updates without outcome progress, mark the work `progress-stalled`, stop optional supporting work, restate the outcome and proof, identify the shortest remaining path, move non-blocking work to follow-up or backlog, and continue or request one decision only when an approval boundary was crossed.
 
 ## Proportionate security and evidence
 
@@ -106,9 +128,13 @@ For container changes, also run the applicable Compose rendering, image build, s
 
 - Related Issue or PR is linked.
 - Work claim comment exists.
+- Primary outcome, smallest acceptance proof, and execution envelope are recorded.
 - Required stage or final result comment exists.
 - Branch contains only intended changes.
 - Smoke tests were run or reason is documented.
+- Supporting work stayed subordinate, and post-fix verification stayed inside the execution envelope.
+- Stage and handoff boundaries reflect outcome progress, completed acceptance proof, an out-of-envelope blocker, or genuine interruption or transfer.
+- `progress-stalled` was handled after two consecutive supporting-only updates without outcome progress.
 - PR description is updated.
 - Verified blocking High or Critical risks, time-boxed investigations, follow-up hardening, and owner-accepted risks are distinguished.
 - Security and evidence work did not block acceptance or expand scope without a verified High or Critical current-scope risk or an exactly cited mandatory requirement.

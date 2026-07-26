@@ -2,7 +2,7 @@
 type: work_claim_protocol
 version: 1
 status: active
-updated: 2026-07-07
+updated: 2026-07-26
 project: Agent_Handoff
 ---
 
@@ -17,8 +17,9 @@ This file defines current work ownership in GitHub Issues and Pull Requests.
 3. Check active handoffs.
 4. Choose `agent_name`, `agent_id`, and `run_id`.
 5. Leave a work claim comment.
-6. Plan stage or final result reports using `ai/TASK_REPORT_PROTOCOL.md`.
-7. Create a branch and Draft PR early.
+6. Record the primary outcome, smallest acceptance proof, and execution envelope.
+7. Plan only legitimate stage or final result reports using `ai/TASK_REPORT_PROTOCOL.md`.
+8. Create a branch and Draft PR early.
 
 ## Claim comment
 
@@ -35,6 +36,9 @@ Issue: #<issue-number>
 Branch: <branch-name>
 Draft PR: #<pr-number or TBD>
 Scope: <short scope>
+Primary outcome: <observable behavior, artifact, decision, or capability>
+Smallest acceptance proof: <minimum demonstration, check, or evidence>
+Execution envelope: <permitted scope, verification runs, resource limits, external effects, and separate approval boundaries>
 Status: in-progress
 Next update: <time or condition>
 ```
@@ -47,17 +51,24 @@ Next update: <time or condition>
 Agent ID: <agent_id>
 Run ID: <run_id>
 Status: in-progress | blocked | completed
+Primary outcome:
+Outcome progress: advanced | unchanged | completed | progress-stalled
+Acceptance proof:
+Supporting work:
+Verified blocker:
 Changed:
 Tested:
 Risk:
-Next:
+Next direct outcome step:
 ```
+
+Use `progress-stalled` after two consecutive updates that report unchanged outcome progress and advance only supporting work. Then stop optional supporting work, restate the shortest path, move non-blocking work to follow-up or backlog, and continue within the execution envelope or request one decision only when an approval boundary has been crossed.
 
 ## Result comments
 
 Every meaningful Issue must have result comments.
 
-Large or multi-stage Issues use stage result comments after each stable stage.
+Large or multi-stage Issues use stage result comments after each legitimate outcome stage.
 
 Small Issues use one final result comment before completion.
 

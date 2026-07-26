@@ -27,6 +27,7 @@ PR_REQUIRED = [
     'Forms are valid when changed.',
     'Required stage or final result comment exists.',
     'Smoke tests were run or reason is documented.',
+    'Primary outcome, smallest acceptance proof, and execution envelope are recorded; supporting work did not become an independent stage, handoff, completion target, or approval gate without crossing an explicit boundary.',
     'Security and evidence work did not block acceptance or expand scope without a verified High/Critical current-scope risk or an exactly cited mandatory requirement; other items remain non-blocking.',
     'Mandatory containerization decision was confirmed when relevant, or not applicable.',
     'Changed Compose configuration was rendered and checked, or reason and risk are documented.',
@@ -83,9 +84,32 @@ def main():
     task_report = ROOT / 'ai' / 'TASK_REPORT_PROTOCOL.md'
     if task_report.exists():
         text = task_report.read_text(encoding='utf-8')
-        for item in ['Agent Handoff Stage Result', 'Agent Handoff Final Result']:
+        for item in [
+            'Agent Handoff Stage Result',
+            'Agent Handoff Final Result',
+            'Primary outcome:',
+            'Outcome progress:',
+            'Acceptance proof:',
+            'Supporting work:',
+            'Verified blocker:',
+            'Next direct outcome step:',
+            'progress-stalled',
+        ]:
             if item not in text:
                 errors.append(f'TASK_REPORT_PROTOCOL.md missing: {item}')
+
+    work_claim = ROOT / 'ai' / 'WORK_CLAIM_PROTOCOL.md'
+    if work_claim.exists():
+        text = work_claim.read_text(encoding='utf-8')
+        for item in [
+            'Primary outcome:',
+            'Smallest acceptance proof:',
+            'Execution envelope:',
+            'Outcome progress:',
+            'progress-stalled',
+        ]:
+            if item not in text:
+                errors.append(f'WORK_CLAIM_PROTOCOL.md missing: {item}')
 
     standard = ROOT / 'AGENT_HANDOFF_STANDARD.md'
     if standard.exists():
@@ -106,6 +130,15 @@ def main():
                 citation = yaml.safe_load((ROOT / 'CITATION.cff').read_text(encoding='utf-8'))
                 if str(citation.get('version', '')).strip() != version:
                     errors.append('CITATION.cff version does not match active standard version')
+                standard_text = standard.read_text(encoding='utf-8')
+                for item in [
+                    '## Outcome-oriented execution and bounded supporting work',
+                    '### Authorization and approval boundary',
+                    '### Stage and handoff boundary',
+                    '### Progress-stall rule',
+                ]:
+                    if item not in standard_text:
+                        errors.append(f'AGENT_HANDOFF_STANDARD.md missing: {item}')
         except Exception as exc:
             errors.append(f'invalid standard metadata: {exc}')
 

@@ -2,6 +2,29 @@
 
 All notable changes to Agent Handoff are documented here.
 
+## 1.5 - 2026-07-26
+
+### Why
+
+- Standard 1.4 constrained disproportionate security and evidence work, but the general workflow still allowed a failed smoke wrapper, test harness, CI layer, evidence collector, or other supporting tool to become its own stable stage, handoff, approval gate, and completion target. This could create repeated process loops without advancing the Issue's primary outcome.
+
+### Added
+
+- Required `Primary outcome`, `Smallest acceptance proof`, and `Execution envelope` fields for meaningful work claims.
+- Normative distinction between an unchanged retry and bounded post-fix verification.
+- Explicit authorization and approval boundaries for localized supporting-work fixes.
+- Outcome-based stage and handoff boundaries.
+- A `progress-stalled` rule after two consecutive supporting-only updates without outcome progress.
+- Release notes in `docs/releases/v1.5.md`.
+
+### Changed
+
+- Supporting work must remain minimum sufficient and cannot become an independent stage, handoff, approval gate, or completion target merely because it failed or required repair.
+- Task reports now record outcome progress, acceptance proof, supporting work, verified blockers, and the next direct outcome step.
+- Stage results now require material outcome progress, completed acceptance proof, a verified out-of-envelope blocker, or genuine interruption or transfer.
+- The original authorization now explicitly covers reversible in-scope implementation, localized blocker fixes, focused tests, and bounded verification reruns inside the declared execution envelope.
+- The Pull Request checklist and structural checker verify the new protocol fields without attempting to judge semantic progress automatically.
+
 ## 1.4 - 2026-07-24
 
 ### Added

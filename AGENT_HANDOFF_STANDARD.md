@@ -1,8 +1,8 @@
 ---
 standard: Agent Handoff
-version: "1.4"
+version: "1.5"
 status: active
-updated: 2026-07-24
+updated: 2026-07-26
 ---
 
 # Agent Handoff Standard
@@ -66,7 +66,7 @@ Before meaningful work, read:
 
 Task result comments are mandatory for meaningful Issues.
 
-Large or multi-stage Issues must have a stage result comment after each stable stage.
+Large or multi-stage Issues must have a stage result comment after each legitimate outcome stage.
 
 Small single-stage Issues must have one final result comment before the work is marked done.
 
@@ -78,7 +78,7 @@ Use `ai/TASK_REPORT_PROTOCOL.md` for the required comment templates.
 2. Check existing work claims, linked PRs, active handoffs, and recent comments.
 3. Choose agent identity.
 4. Claim the work.
-5. Define scope and stages when the task is large.
+5. Define the primary outcome, smallest acceptance proof, execution envelope, and stages when the task is large.
 6. Create a meaningful short-lived branch.
 7. Open a Draft PR early.
 8. Write required stage or final result comments in the Issue or PR.
@@ -128,6 +128,83 @@ Position-dependent GUI checks must be performed manually or as supervised explor
 
 Automated GUI tests should use stable semantic selectors such as roles, accessible names, labels, documented component identifiers, or dedicated test IDs.
 
+## Outcome-oriented execution and bounded supporting work
+
+Before implementation starts, every meaningful work item MUST identify:
+
+- the primary outcome: the observable behavior, artifact, decision, or capability that the work must deliver;
+- the smallest acceptance proof: the minimum demonstration, check, or evidence that establishes the outcome;
+- the execution envelope: permitted in-scope changes, verification runs, resource limits, external effects, and actions that require separate owner approval.
+
+The primary outcome may itself be application behavior, infrastructure, test tooling, documentation, research, security, release preparation, or another deliverable when the related Issue explicitly defines it as such.
+
+Work that only enables, checks, documents, or proves the primary outcome is supporting work. Examples include test harnesses, smoke wrappers, evidence collection, CI scaffolding, review preparation, release mechanics, optional hardening, benchmarks, and incidental refactoring.
+
+### Outcome progress
+
+Work counts as outcome progress only when it:
+
+1. implements or improves the primary outcome;
+2. produces the stated smallest acceptance proof; or
+3. removes a verified blocker on the shortest path to the primary outcome.
+
+Supporting work MUST remain minimum sufficient. It MUST NOT become a separate stage, handoff, approval gate, or completion target merely because it failed or required repair.
+
+A localized, reversible, in-scope defect in supporting work MUST normally be fixed and verified within the current work item, work claim, and execution envelope.
+
+A repeated failed action and post-fix verification are different:
+
+- repeating the same failed action without a relevant change is a retry and SHOULD NOT be performed without a documented reason;
+- rerunning the affected check after an evidence-based fix is verification and remains part of the current work item.
+
+Unless the execution envelope sets a stricter run or resource limit, one bounded verification rerun after each relevant fix is permitted.
+
+The fix-and-verification cycle MUST stop when the execution envelope would be exceeded, the same failure recurs without a new evidence-based fix, or the progress-stall rule is triggered.
+
+### Authorization and approval boundary
+
+The original work authorization covers reversible implementation, localized blocker fixes, focused tests, and bounded verification reruns that remain inside the declared scope and execution envelope.
+
+A new owner decision is required only when the proposed action:
+
+- changes the primary outcome or acceptance criteria;
+- expands the Issue scope, architecture, or accepted baseline;
+- is destructive, irreversible, or has an external side effect outside the declared envelope;
+- materially exceeds the declared cost, resource, data, security, or time boundary;
+- weakens an existing security control;
+- conflicts with a project-specific or platform-enforced permission gate.
+
+A supporting-tool failure alone MUST NOT create a new approval requirement.
+
+### Stage and handoff boundary
+
+A supporting-tool failure or its localized repair is not by itself a legitimate outcome stage.
+
+A stage result or handoff is appropriate only when:
+
+- the primary outcome materially advanced;
+- the smallest acceptance proof was completed;
+- a verified blocker remains outside the current execution envelope; or
+- work is genuinely interrupted or transferred to another actor.
+
+Routine supporting fixes and their verification SHOULD be summarized in the next legitimate stage or final report instead of creating additional handoff cycles.
+
+### Progress-stall rule
+
+If two consecutive work updates, proposed stages, or handoffs report no outcome progress and advance only supporting work, the agent MUST mark the work `progress-stalled`.
+
+The agent must then:
+
+1. stop adding optional supporting work;
+2. restate the primary outcome and smallest acceptance proof;
+3. identify the shortest remaining path;
+4. move non-blocking work to follow-up or backlog;
+5. continue inside the execution envelope, or request one owner decision when an approval boundary has actually been crossed.
+
+A separate Issue for supporting work is justified only when that work has an independent primary outcome, cannot safely fit the current execution envelope, or is a verified blocker that cannot be resolved within the current scope.
+
+Agent Handoff does not override tool, platform, repository, or organization permission systems.
+
 ## Proportionate security and evidence
 
 Security and evidence work MUST NOT block acceptance or expand the current scope unless it addresses a verified High or Critical risk introduced, changed, or exposed by the current scope. A risk is verified only when it is supported by reproducible evidence from the current implementation or environment, or by a directly applicable authoritative source. A possible or merely credible scenario is not sufficient.
@@ -161,6 +238,10 @@ Reviews, task reports, and handoffs must distinguish verified blocking High or C
 - work claim comment exists for agent work;
 - agent id and run id are repeated in PR or handoff when relevant;
 - required stage or final result comment exists;
+- primary outcome, smallest acceptance proof, and execution envelope are recorded;
+- supporting work remained subordinate or a justified independent outcome is documented;
+- stage and handoff boundaries reflect outcome progress, completed acceptance proof, an out-of-envelope blocker, or genuine interruption or transfer;
+- `progress-stalled` was handled when two consecutive updates advanced only supporting work;
 - changes are committed;
 - smoke tests were run or reason is documented;
 - PR description is updated;
