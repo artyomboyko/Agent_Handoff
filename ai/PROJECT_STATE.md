@@ -81,7 +81,7 @@ The repository is maintained as an English-only canonical version.
 - Status: release candidate
 - Publication date: 2026-07-26
 - Issue: #16
-- Pull Request: TBD
+- Pull Request: #17
 
 ## Next
 

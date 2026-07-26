@@ -209,7 +209,7 @@ A new owner decision remains required for changes to the outcome or acceptance c
 ### Related
 
 - Issue: #16
-- Pull Request: TBD
+- Pull Request: #17
 - `AGENT_HANDOFF_STANDARD.md`
 - `ai/WORK_CLAIM_PROTOCOL.md`
 - `ai/TASK_REPORT_PROTOCOL.md`
