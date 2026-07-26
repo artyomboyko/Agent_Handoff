@@ -42,6 +42,8 @@ Open a Draft PR early.
 
 Before implementation, record the primary outcome, smallest acceptance proof, and execution envelope in the Work Claim.
 
+The Work Claim records existing authorization; it does not create or widen it. Do not place an action inside the execution envelope unless it is already authorized by the owner, Issue scope, project rules, and applicable permission systems.
+
 Keep supporting work minimum sufficient. A localized, reversible, in-scope supporting-work failure and its bounded post-fix verification remain inside the current work item and authorization unless an explicit approval boundary is crossed.
 
 Do not turn a supporting-tool failure or repair into a separate stage, handoff, approval gate, or completion target.

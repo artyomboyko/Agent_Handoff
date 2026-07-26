@@ -60,6 +60,7 @@ A suspected High or Critical risk permits only a short, time-boxed investigation
 Do not add hardening, gates, ADRs, checkers, or separate stages for theoretical or unverified risks. Cite any exact acceptance criterion or verified mandatory requirement used as an independent blocker.
 
 Before implementation, record the primary outcome, the smallest acceptance proof, and the execution envelope.
+The execution envelope records existing authorization; it does not grant broader authority.
 Keep supporting work minimum sufficient. Fix localized reversible supporting-work failures and run bounded post-fix verification inside the same work item and authorization.
 Do not create a separate stage, handoff, completion target, or owner approval gate for a supporting-tool failure alone.
 After two consecutive supporting-only updates without outcome progress, mark the work progress-stalled and replan the shortest path.

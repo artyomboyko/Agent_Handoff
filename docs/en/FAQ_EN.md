@@ -6,4 +6,4 @@ Agent Handoff FAQ.
 
 Test harnesses, smoke wrappers, evidence collectors, CI scaffolding, and similar tools usually exist to enable or prove another outcome. Turning every localized failure into a separate stage, handoff, or approval cycle can advance the process without advancing that outcome.
 
-Agent Handoff therefore keeps reversible in-scope repairs and bounded post-fix verification inside the original execution envelope. A new owner decision is still required when the outcome, scope, architecture, accepted baseline, external effects, resource or risk boundary, security baseline, or enforced permission gate changes.
+Agent Handoff therefore keeps reversible in-scope repairs and bounded post-fix verification inside the original execution envelope. The envelope records existing authorization and cannot be used by an agent to grant itself broader authority. A new owner decision is still required when the outcome, scope, architecture, accepted baseline, external effects, resource or risk boundary, security baseline, or enforced permission gate changes.

@@ -10,7 +10,7 @@ project: Agent_Handoff
 
 ## Current phase
 
-Agent Handoff Standard 1.5 is prepared as the active release candidate.
+Agent Handoff Standard 1.5 is the active standard.
 
 The repository is maintained as an English-only canonical version.
 
@@ -71,6 +71,7 @@ The repository is maintained as an English-only canonical version.
 - Existing security baselines stay intact unless the owner explicitly approves a change.
 - Low, Medium, unrated, unverified, and otherwise unsupported hardening remains non-blocking and does not delay the smallest useful vertical slice.
 - Meaningful work records a primary outcome, smallest acceptance proof, and execution envelope before implementation.
+- The execution envelope records existing authorization and cannot be used by an agent to widen its own authority.
 - Supporting-tool failures do not create separate stages, handoffs, completion targets, or approval gates unless an explicit outcome or approval boundary is crossed.
 - One bounded post-fix verification rerun is permitted after each relevant fix unless the execution envelope is stricter.
 - Two consecutive supporting-only updates without outcome progress trigger `progress-stalled` and shortest-path replanning.
@@ -78,13 +79,13 @@ The repository is maintained as an English-only canonical version.
 ## Current publication
 
 - Standard version: `1.5`
-- Status: release candidate
+- Status: active
 - Publication date: 2026-07-26
 - Issue: #16
 - Pull Request: #17
 
 ## Next
 
-1. Complete owner review and GitHub Actions for the Standard 1.5 Draft Pull Request.
-2. Merge only after the owner accepts the outcome-oriented execution and approval-boundary semantics.
-3. Create tag `v1.5` and the GitHub Release from the verified merge commit only after merge.
+1. Keep repository checks and public documentation synchronized with future standard changes.
+2. Collect feedback from projects adopting the outcome-oriented execution rule.
+3. Prepare a future version only through a focused Issue, branch, Pull Request, checks, and release handoff.

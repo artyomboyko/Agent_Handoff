@@ -38,10 +38,12 @@ Draft PR: #<pr-number or TBD>
 Scope: <short scope>
 Primary outcome: <observable behavior, artifact, decision, or capability>
 Smallest acceptance proof: <minimum demonstration, check, or evidence>
-Execution envelope: <permitted scope, verification runs, resource limits, external effects, and separate approval boundaries>
+Execution envelope: <already-authorized scope, verification runs, resource limits, external effects, and separate approval boundaries>
 Status: in-progress
 Next update: <time or condition>
 ```
+
+The execution envelope records existing authorization and MUST NOT be used by an agent to create or widen its own authority.
 
 ## Update comment
 

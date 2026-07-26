@@ -136,6 +136,8 @@ Before implementation starts, every meaningful work item MUST identify:
 - the smallest acceptance proof: the minimum demonstration, check, or evidence that establishes the outcome;
 - the execution envelope: permitted in-scope changes, verification runs, resource limits, external effects, and actions that require separate owner approval.
 
+The execution envelope records but does not enlarge authority established by the owner's request, the related Issue, accepted project rules, and applicable platform permissions. An agent MUST NOT make an unauthorized action permissible merely by listing it in a Work Claim or execution envelope.
+
 The primary outcome may itself be application behavior, infrastructure, test tooling, documentation, research, security, release preparation, or another deliverable when the related Issue explicitly defines it as such.
 
 Work that only enables, checks, documents, or proves the primary outcome is supporting work. Examples include test harnesses, smoke wrappers, evidence collection, CI scaffolding, review preparation, release mechanics, optional hardening, benchmarks, and incidental refactoring.

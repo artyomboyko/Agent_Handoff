@@ -23,6 +23,7 @@ All notable changes to Agent Handoff are documented here.
 - Task reports now record outcome progress, acceptance proof, supporting work, verified blockers, and the next direct outcome step.
 - Stage results now require material outcome progress, completed acceptance proof, a verified out-of-envelope blocker, or genuine interruption or transfer.
 - The original authorization now explicitly covers reversible in-scope implementation, localized blocker fixes, focused tests, and bounded verification reruns inside the declared execution envelope.
+- The execution envelope records existing authorization and cannot be used by an agent to create or widen its own authority.
 - The Pull Request checklist and structural checker verify the new protocol fields without attempting to judge semantic progress automatically.
 
 ## 1.4 - 2026-07-24
