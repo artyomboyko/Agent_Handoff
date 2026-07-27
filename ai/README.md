@@ -2,7 +2,7 @@
 type: ai_readme
 version: 1
 status: active
-updated: 2026-07-18
+updated: 2026-07-27
 project: Agent_Handoff
 ---
 
@@ -21,13 +21,14 @@ It does not replace GitHub Issues, Pull Requests, checks, or Git history.
 5. `ai/AGENT_IDENTITY.md`
 6. `ai/WORK_CLAIM_PROTOCOL.md`
 7. `ai/TASK_REPORT_PROTOCOL.md`
-8. `ai/PROJECT_STATE.md`
-9. `ai/DECISIONS.md`
-10. `ai/CONTAINERIZATION.md` when Docker or Compose is used, planned, present, or being discussed
-11. related Issue or PR
-12. `ai/REFACTORING.md` when relevant
-13. `ai/handoffs/INDEX.md`
-14. relevant handoff files only
+8. `ai/REVIEW_PROTOCOL.md` when reviewing, responding to `changes-requested`, or resuming a PR with open blocking findings
+9. `ai/PROJECT_STATE.md`
+10. `ai/DECISIONS.md`
+11. `ai/CONTAINERIZATION.md` when Docker or Compose is used, planned, present, or being discussed
+12. related Issue or PR
+13. `ai/REFACTORING.md` when relevant
+14. `ai/handoffs/INDEX.md`
+15. relevant handoff files only
 
 ## Files
 
@@ -38,6 +39,7 @@ It does not replace GitHub Issues, Pull Requests, checks, or Git history.
 - `AGENT_IDENTITY.md` — agent identity protocol.
 - `WORK_CLAIM_PROTOCOL.md` — work claim protocol.
 - `TASK_REPORT_PROTOCOL.md` — required result comments.
+- `REVIEW_PROTOCOL.md` — blocking review correction contracts, agent correction reports, and reviewer verification.
 - `REFACTORING.md` — refactoring workflow.
 - `CONTAINERIZATION.md` — user-controlled Docker and Compose layout decisions, supported approaches, migration rules, and checks.
 - `handoffs/INDEX.md` — handoff index.
