@@ -2,7 +2,7 @@
 type: architecture_record
 version: 1
 status: active
-updated: 2026-07-26
+updated: 2026-07-27
 project: Agent_Handoff
 ---
 
@@ -95,6 +95,7 @@ Do not allow the agent to infer approval or automatically apply the recommended 
 - `AGENT_HANDOFF_STANDARD.md`
 - `ai/CONTAINERIZATION.md`
 - `ai/HANDOFF_PROTOCOL.md`
+
 - `docs/en/README.md`
 
 ## 2026-07-18 — Stable GUI automation over position-dependent tests
@@ -214,3 +215,51 @@ A new owner decision remains required for changes to the outcome or acceptance c
 - `ai/WORK_CLAIM_PROTOCOL.md`
 - `ai/TASK_REPORT_PROTOCOL.md`
 - `ai/HANDOFF_PROTOCOL.md`
+
+## 2026-07-27 — Actionable review handoff without implementation lock-in
+
+Status: accepted in Standard 1.5.1
+
+### Background
+
+Standard 1.5 defined blocking eligibility, outcome progress, execution envelopes, and approval boundaries, but did not define the reviewer-to-agent correction handoff. A blocking comment could identify a defect without enough reproduction, contract, invariant, verification, or acceptance information for another agent to act independently.
+
+Requiring only a reviewer-proposed implementation would close the information gap by creating a different problem: it could turn guidance into an undocumented acceptance criterion and reject equally safe solutions.
+
+### Decision
+
+Require every blocking finding to carry a stable ID and a sufficient correction contract: evidence or reproduction, violated contract, cause confidence, required outcome, invariants and scope guard, minimum applicable verification, and observable acceptance criteria.
+
+Mark cause confidence as `confirmed`, `likely`, or `unknown`. Treat implementation guidance as optional and non-binding unless an exact mandatory requirement makes the choice normative.
+
+Allow equivalent corrections when they satisfy the required outcome, preserve the stated invariants, remain inside the execution envelope, and provide the required evidence.
+
+Keep finding state distinct from Pull Request state. The implementation agent may mark a finding `addressed`, but only the reviewer or another authorized maintainer marks it `verified`.
+
+Apply the complete contract only to blocking findings. Keep non-blocking findings and questions concise and explicitly classified.
+
+### Rejected alternatives
+
+- Require the full template for every nit, optional suggestion, or question.
+- Require every finding to have positive, negative, security, and race tests.
+- Treat a reviewer-recommended implementation as the only acceptable correction.
+- Let `addressed` automatically resolve a review thread.
+- Let a review finding widen the original authorization or Issue scope.
+- Add automated semantic scoring of review quality.
+
+### Consequences
+
+- Coding agents receive self-contained, verifiable correction tasks without private chat history.
+- Root-cause hypotheses are not represented as confirmed facts.
+- Architecture and security invariants remain explicit during correction.
+- Review cycles map finding IDs to changes, evidence, and independent verification.
+- Equivalent safe implementations remain possible.
+- The structural checker validates protocol fields but does not judge review semantics.
+
+### Related
+
+- Issue: #18
+- Pull Request: #19
+- `AGENT_HANDOFF_STANDARD.md`
+- `ai/REVIEW_PROTOCOL.md`
+- `ai/TASK_REPORT_PROTOCOL.md`
