@@ -2,7 +2,7 @@
 type: project_state
 version: 1
 status: active
-updated: 2026-07-26
+updated: 2026-07-27
 project: Agent_Handoff
 ---
 
@@ -10,7 +10,7 @@ project: Agent_Handoff
 
 ## Current phase
 
-Agent Handoff Standard 1.5 is the active standard.
+Agent Handoff Standard 1.5.1 is the active standard.
 
 The repository is maintained as an English-only canonical version.
 
@@ -23,6 +23,7 @@ The repository is maintained as an English-only canonical version.
 - Agent identity protocol.
 - Work claim protocol.
 - Task report protocol for stage and final result comments.
+- Actionable review handoff protocol for blocking correction contracts and reviewer verification.
 - Refactoring workflow.
 - FAQ and examples.
 - GitHub Actions checks workflow.
@@ -43,6 +44,9 @@ The repository is maintained as an English-only canonical version.
 - Outcome-based stage and handoff boundaries.
 - `progress-stalled` recovery after two consecutive supporting-only updates without outcome progress.
 - Structural checks for the outcome fields without automated semantic progress scoring.
+- Stable review finding IDs with cause confidence, required outcomes, invariants, scope guards, applicable verification, and acceptance criteria.
+- Agent correction reports that keep `addressed` distinct from reviewer-confirmed `verified`.
+- Implementation freedom for equivalent safe corrections that satisfy the correction contract.
 
 ## Main files
 
@@ -54,11 +58,12 @@ The repository is maintained as an English-only canonical version.
 - `ai/AGENT_IDENTITY.md`
 - `ai/WORK_CLAIM_PROTOCOL.md`
 - `ai/TASK_REPORT_PROTOCOL.md`
+- `ai/REVIEW_PROTOCOL.md`
 - `ai/REFACTORING.md`
 - `ai/CONTAINERIZATION.md`
 - `.github/pull_request_template.md`
 - `scripts/check_agent_handoff.py`
-- `docs/releases/v1.5.md`
+- `docs/releases/v1.5.1.md`
 
 ## Active decisions
 
@@ -75,17 +80,20 @@ The repository is maintained as an English-only canonical version.
 - Supporting-tool failures do not create separate stages, handoffs, completion targets, or approval gates unless an explicit outcome or approval boundary is crossed.
 - One bounded post-fix verification rerun is permitted after each relevant fix unless the execution envelope is stricter.
 - Two consecutive supporting-only updates without outcome progress trigger `progress-stalled` and shortest-path replanning.
+- Blocking review findings require a sufficient correction contract; non-blocking findings and questions remain lightweight.
+- Implementation guidance does not become a hidden acceptance criterion when an equivalent safe correction satisfies the required outcome and invariants.
+- Agent-reported `addressed` findings remain open until reviewer or authorized maintainer verification.
 
 ## Current publication
 
-- Standard version: `1.5`
+- Standard version: `1.5.1`
 - Status: active
-- Publication date: 2026-07-26
-- Issue: #16
-- Pull Request: #17
+- Publication date: 2026-07-27
+- Issue: #18
+- Pull Request: #19
 
 ## Next
 
 1. Keep repository checks and public documentation synchronized with future standard changes.
-2. Collect feedback from projects adopting the outcome-oriented execution rule.
+2. Collect feedback from projects adopting outcome-oriented execution and actionable review handoffs.
 3. Prepare a future version only through a focused Issue, branch, Pull Request, checks, and release handoff.

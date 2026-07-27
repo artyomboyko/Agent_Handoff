@@ -4,8 +4,8 @@ This page mirrors `docs/PROMOTION_CHECKLIST.md` for English documentation reader
 
 ## Current release
 
-- Standard 1.5 is active in `AGENT_HANDOFF_STANDARD.md`.
-- README, citation metadata, changelog, release notes, project state, and public documentation identify version 1.5.
+- Standard 1.5.1 is active in `AGENT_HANDOFF_STANDARD.md`.
+- README, citation metadata, changelog, release notes, project state, and public documentation identify version 1.5.1.
 - Repository checks validate active standard metadata and release-note presence.
 
 ## Public repository checks

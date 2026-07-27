@@ -12,7 +12,8 @@ REQUIRED = [
     'FAQ.md', 'CHANGELOG.md', 'CITATION.cff',
     'ai/README.md', 'ai/PROJECT_STATE.md', 'ai/DECISIONS.md',
     'ai/GITHUB_WORKFLOW.md', 'ai/HANDOFF_PROTOCOL.md', 'ai/AGENT_IDENTITY.md',
-    'ai/WORK_CLAIM_PROTOCOL.md', 'ai/TASK_REPORT_PROTOCOL.md', 'ai/REFACTORING.md',
+    'ai/WORK_CLAIM_PROTOCOL.md', 'ai/TASK_REPORT_PROTOCOL.md', 'ai/REVIEW_PROTOCOL.md',
+    'ai/REFACTORING.md',
     'ai/CONTAINERIZATION.md', 'ai/handoffs/INDEX.md',
     '.github/ISSUE_TEMPLATE', '.github/pull_request_template.md',
     '.github/workflows/standard-check.yml', 'docs/en', 'docs/releases',
@@ -28,6 +29,7 @@ PR_REQUIRED = [
     'Required stage or final result comment exists.',
     'Smoke tests were run or reason is documented.',
     'Primary outcome, smallest acceptance proof, and execution envelope are recorded; supporting work did not become an independent stage, handoff, completion target, or approval gate without crossing an explicit boundary.',
+    'Blocking review findings, when present, contain sufficient correction contracts; agent-reported addressed findings map to changes and evidence, and reviewer verification remains separate.',
     'Security and evidence work did not block acceptance or expand scope without a verified High/Critical current-scope risk or an exactly cited mandatory requirement; other items remain non-blocking.',
     'Mandatory containerization decision was confirmed when relevant, or not applicable.',
     'Changed Compose configuration was rendered and checked, or reason and risk are documented.',
@@ -94,6 +96,11 @@ def main():
             'Verified blocker:',
             'Next direct outcome step:',
             'progress-stalled',
+            'Agent Handoff Review Correction Report',
+            'Reviewed head:',
+            'Correction head:',
+            'Implementation choice:',
+            'Preserved invariants:',
         ]:
             if item not in text:
                 errors.append(f'TASK_REPORT_PROTOCOL.md missing: {item}')
@@ -136,11 +143,39 @@ def main():
                     '### Authorization and approval boundary',
                     '### Stage and handoff boundary',
                     '### Progress-stall rule',
+                    '## Actionable review handoff',
+                    'open -> addressed -> verified',
                 ]:
                     if item not in standard_text:
                         errors.append(f'AGENT_HANDOFF_STANDARD.md missing: {item}')
         except Exception as exc:
             errors.append(f'invalid standard metadata: {exc}')
+
+    review_protocol = ROOT / 'ai' / 'REVIEW_PROTOCOL.md'
+    if review_protocol.exists():
+        try:
+            metadata = read_front_matter(review_protocol)
+            if metadata.get('status') != 'active':
+                errors.append('review protocol status must be active')
+            text = review_protocol.read_text(encoding='utf-8')
+            for item in [
+                'Disposition: blocking',
+                'Finding ID',
+                'Evidence and reproduction',
+                'Violated contract',
+                'Status: confirmed | likely | unknown',
+                'Required outcome',
+                'Invariants and scope guard',
+                'Implementation guidance',
+                'Verification',
+                'Acceptance criteria',
+                'addressed',
+                'verified',
+            ]:
+                if item not in text:
+                    errors.append(f'REVIEW_PROTOCOL.md missing: {item}')
+        except Exception as exc:
+            errors.append(f'invalid review protocol metadata: {exc}')
 
     containerization = ROOT / 'ai' / 'CONTAINERIZATION.md'
     if containerization.exists():

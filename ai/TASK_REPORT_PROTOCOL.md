@@ -2,7 +2,7 @@
 type: task_report_protocol
 version: 1
 status: active
-updated: 2026-07-26
+updated: 2026-07-27
 project: Agent_Handoff
 ---
 
@@ -24,11 +24,39 @@ Risk reporting must distinguish verified blocking High or Critical risk, time-bo
 
 Every result report must identify the primary outcome, outcome progress, acceptance proof, supporting work, verified blocker, and next direct outcome step.
 
+When an agent addresses blocking review findings, it must also write one Agent Handoff Review Correction Report in the Pull Request.
+
 ## Stage work
 
 A stage result is appropriate only when the primary outcome materially advanced, the smallest acceptance proof completed, a verified blocker remains outside the execution envelope, or work is genuinely interrupted or transferred.
 
 A supporting-tool failure or localized repair is not a stage by itself. Summarize routine supporting fixes and bounded post-fix verification in the next legitimate stage or final report.
+
+## Review correction report
+
+A correction report maps every blocking finding ID to the implementation response and verification evidence. It does not replace the required stage or final result comment and does not create an additional outcome stage by itself.
+
+```md
+## Agent Handoff Review Correction Report
+
+Agent ID: <agent_id>
+Run ID: <run_id>
+Reviewed head: <commit reviewed by the blocking review>
+Correction head: <commit containing the responses>
+
+### RH-01
+
+Status: addressed | disputed | blocked | not-addressed
+Change: <files, behavior, or no change>
+Implementation choice: <recommended approach or explained equivalent alternative>
+Evidence: <tests, commands, observations, and expected results>
+Preserved invariants: <what remains true>
+Remaining concern: <risk, disagreement, blocker, or none>
+```
+
+Repeat the finding section for every blocking finding.
+
+`Addressed` means the agent believes the correction contract is satisfied. It is not reviewer verification and must not automatically resolve a review thread.
 
 ## Stage result comment
 

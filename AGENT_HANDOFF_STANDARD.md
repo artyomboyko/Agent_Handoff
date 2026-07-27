@@ -1,8 +1,8 @@
 ---
 standard: Agent Handoff
-version: "1.5"
+version: "1.5.1"
 status: active
-updated: 2026-07-26
+updated: 2026-07-27
 ---
 
 # Agent Handoff Standard
@@ -35,6 +35,7 @@ ai/HANDOFF_PROTOCOL.md
 ai/AGENT_IDENTITY.md
 ai/WORK_CLAIM_PROTOCOL.md
 ai/TASK_REPORT_PROTOCOL.md
+ai/REVIEW_PROTOCOL.md
 ai/REFACTORING.md
 ai/handoffs/INDEX.md
 .github/ISSUE_TEMPLATE/
@@ -56,11 +57,12 @@ Before meaningful work, read:
 6. `ai/AGENT_IDENTITY.md`
 7. `ai/WORK_CLAIM_PROTOCOL.md`
 8. `ai/TASK_REPORT_PROTOCOL.md`
-9. `ai/PROJECT_STATE.md`
-10. `ai/DECISIONS.md`
-11. `ai/CONTAINERIZATION.md` when Docker or Compose is used, planned, or being discussed
-12. related GitHub Issue or Pull Request
-13. relevant handoffs through `ai/handoffs/INDEX.md`
+9. `ai/REVIEW_PROTOCOL.md` when reviewing a Pull Request, responding to `changes-requested`, or resuming work with open blocking findings
+10. `ai/PROJECT_STATE.md`
+11. `ai/DECISIONS.md`
+12. `ai/CONTAINERIZATION.md` when Docker or Compose is used, planned, or being discussed
+13. related GitHub Issue or Pull Request
+14. relevant handoffs through `ai/handoffs/INDEX.md`
 
 ## Task result reports
 
@@ -71,6 +73,8 @@ Large or multi-stage Issues must have a stage result comment after each legitima
 Small single-stage Issues must have one final result comment before the work is marked done.
 
 Use `ai/TASK_REPORT_PROTOCOL.md` for the required comment templates.
+
+When blocking review findings are addressed, use the correction report in `ai/TASK_REPORT_PROTOCOL.md`.
 
 ## Workflow
 
@@ -234,6 +238,33 @@ A 10–15% share of stage work for security and evidence may be used as a non-bi
 
 Reviews, task reports, and handoffs must distinguish verified blocking High or Critical risks, time-boxed investigations of suspected High or Critical risks, follow-up hardening, and owner-accepted risks.
 
+## Actionable review handoff
+
+A blocking review MUST hand off more than the fact that a defect exists. It must provide a sufficient correction contract so another agent can act without private chat history.
+
+Each blocking finding must have:
+
+- a stable finding ID;
+- evidence and reproduction, or an exactly cited acceptance criterion or verified mandatory requirement when runtime reproduction is not applicable;
+- the violated behavioral, architectural, compatibility, security, or acceptance contract;
+- a cause marked `confirmed`, `likely`, or `unknown`;
+- the required observable outcome;
+- invariants and a scope guard;
+- minimum applicable verification and expected evidence;
+- observable acceptance criteria.
+
+Implementation guidance is optional and MUST NOT become a hidden acceptance criterion. An equivalent correction is valid when it achieves the required outcome, preserves the stated invariants, remains inside the execution envelope, and supplies the required evidence. A reviewer must not reject it solely because it differs from the recommended implementation.
+
+Positive, negative, security, and race tests are selected by applicability, not required mechanically for every finding. Race tests are required only when concurrency, lifecycle ordering, cancellation, retries, cleanup, or shared state is material.
+
+The full correction contract is mandatory only for findings classified `blocking`. Non-blocking findings and questions may remain concise but must be classified clearly. A security or evidence finding remains subject to the proportionality rule above; this review protocol does not make an otherwise ineligible finding blocking.
+
+An agent reports each blocking finding as `addressed`, `disputed`, `blocked`, or `not-addressed` and maps it to the change and evidence. `Addressed` is not `verified`: only the reviewer or another authorized maintainer verifies the correction. Finding state normally follows `open -> addressed -> verified`; failed verification reopens it.
+
+A review finding does not widen the agent's authority or Issue scope. If every safe correction crosses an approval boundary, the agent must state the minimum required expansion and request the applicable owner decision.
+
+Use `ai/REVIEW_PROTOCOL.md` for the complete templates and lifecycle.
+
 ## Definition of Done
 
 - related Issue or PR is linked;
@@ -247,6 +278,7 @@ Reviews, task reports, and handoffs must distinguish verified blocking High or C
 - changes are committed;
 - smoke tests were run or reason is documented;
 - PR description is updated;
+- blocking review findings have sufficient correction contracts and are verified or otherwise validly dispositioned before merge;
 - verified blocking High or Critical risks, time-boxed investigations, follow-up hardening, and owner-accepted risks are distinguished;
 - security and evidence work did not block acceptance or expand scope without a verified High or Critical current-scope risk or an exactly cited mandatory requirement;
 - handoff exists for meaningful work;

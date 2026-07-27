@@ -2,7 +2,7 @@
 type: handoff_protocol
 version: 1
 status: active
-updated: 2026-07-26
+updated: 2026-07-27
 project: Agent_Handoff
 ---
 
@@ -13,6 +13,8 @@ project: Agent_Handoff
 Read the required Agent Handoff files, the related Issue or PR, current branch, recent commits, and relevant handoffs.
 
 Read `ai/CONTAINERIZATION.md` when Docker or Docker Compose is used, planned, present in the repository, or part of the requested work.
+
+Read `ai/REVIEW_PROTOCOL.md` when reviewing a Pull Request, responding to `changes-requested`, or resuming work with open blocking findings.
 
 Choose `agent_name`, `agent_id`, and `run_id` before taking work.
 
@@ -29,6 +31,18 @@ Large or multi-stage Issues use stage result comments after legitimate outcome s
 Small Issues use one final result comment before completion.
 
 Use `ai/TASK_REPORT_PROTOCOL.md`.
+
+## Actionable review handoff
+
+A blocking review must provide a stable finding ID, evidence or reproduction, violated contract, cause confidence, required outcome, preserved invariants, scope guard, applicable verification, and observable acceptance criteria.
+
+Treat implementation guidance as a recommendation unless an exact mandatory requirement makes the implementation choice normative. Equivalent safe corrections remain valid when they satisfy the required outcome, preserve invariants, remain inside the execution envelope, and provide the required evidence.
+
+After correction, write one compact Agent Handoff Review Correction Report that maps every blocking finding ID to status, change, implementation choice, evidence, preserved invariants, and remaining concern.
+
+Agent-reported `addressed` does not mean `verified` and does not automatically resolve a review thread. Return the Pull Request to `in-review`; only the reviewer or another authorized maintainer verifies the correction.
+
+Do not let a review finding widen authority or scope. Stop and request the applicable decision if every safe correction crosses an existing approval boundary.
 
 ## Scope
 
@@ -138,6 +152,7 @@ For container changes, also run the applicable Compose rendering, image build, s
 - Stage and handoff boundaries reflect outcome progress, completed acceptance proof, an out-of-envelope blocker, or genuine interruption or transfer.
 - `progress-stalled` was handled after two consecutive supporting-only updates without outcome progress.
 - PR description is updated.
+- Blocking review findings have sufficient correction contracts, and each is verified or otherwise validly dispositioned before merge.
 - Verified blocking High or Critical risks, time-boxed investigations, follow-up hardening, and owner-accepted risks are distinguished.
 - Security and evidence work did not block acceptance or expand scope without a verified High or Critical current-scope risk or an exactly cited mandatory requirement.
 - Handoff file is created when needed.
